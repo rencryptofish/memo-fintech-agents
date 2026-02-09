@@ -192,3 +192,6 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Declare deps in `pyproject.toml`** rather than using `uv run --with` flags on every invocation. Simpler commands (`uv run python scripts/foo.py`) and ensures all scripts use consistent dependency versions.
 - **Data modules in `data/`** separate sourced data from visualization logic in `scripts/`. Chart scripts import from `data/` — makes it easy to update numbers without touching chart code.
 - **Keep CLAUDE.md in sync with repo structure.** When reorganizing files, update CLAUDE.md immediately — stale paths cause confusion for both humans and agents.
+- **Replace unresolved placeholders with explicit assumptions.** Avoid `TBD/???` in production memos/charts; use scenario ranges (for example, `2-8%`) and record the assumption basis inline.
+- **Never hardcode machine-specific paths in scripts.** Use `Path(__file__).resolve()` + repo-relative output folders so scripts run on any machine/clone.
+- **Keep generated artifacts in a single canonical directory.** Writing the same chart set to both `charts/` and `charts/x402/` creates drift; standardize outputs under the domain folder only.
