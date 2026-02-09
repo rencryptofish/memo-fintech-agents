@@ -208,6 +208,7 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Biggest whitespace identified:** Cross-protocol payment orchestration abstracting across x402/ACP/AP2/TAP. No company has built this. Could be the highest-value infrastructure play in the entire agent economy.
 - **Timing risk is the primary risk, not directional risk.** The direction (agents will transact autonomously and need financial infrastructure) is clear. Whether the market develops in 2026-2027 or 2028-2030 determines which companies survive. Capital-efficient companies that can survive either timeline are the best investments.
 
+- **Opportunity scoring matrices should be generated artifacts, not hand-edited tables.** Keep weights and raw 0-10 factor scores in one script (`scripts/generate_agent_fintech_opportunity_matrix.py`) and regenerate both the CSV (`data/agent_fintech_startup_opportunity_matrix.csv`) and scorecard chart (`charts/intersection/05_startup_opportunity_scorecard.png`) together so memo rankings stay traceable.
 ### Visualization & Tooling Learnings
 - This project has a `pyproject.toml` declaring matplotlib, numpy, and pandas — run scripts with `uv run python scripts/<script>.py`. For standalone scripts without a pyproject, use `uv run --with matplotlib --with numpy script.py`.
 - **Matplotlib color gotcha:** Use tuples `(1, 1, 1, 0.9)` for RGBA colors, NOT CSS-style `rgba(255,255,255,0.9)` strings. Matplotlib only accepts 0-1 float tuples, hex strings, or named colors.

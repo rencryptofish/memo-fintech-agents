@@ -213,6 +213,40 @@ Update scenario weights quarterly based on these indicators:
 
 ---
 
+## 8. Weighted Startup Opportunity Matrix (0-100)
+
+Method: weighted score on six dimensions:
+
+1. `Market Size` (22%)
+2. `Startup Capture Potential` (25%)
+3. `Moat Durability` (20%)
+4. `Time to Revenue` (13%)
+5. `Regulatory Tailwind` (10%)
+6. `Path Dependence Leverage` (10%)
+
+![Startup Opportunity Scorecard](../charts/intersection/05_startup_opportunity_scorecard.png)
+
+Underlying data: `../data/agent_fintech_startup_opportunity_matrix.csv`
+
+| Rank | Opportunity | Stack Layer | Weighted Score | Market | Capture | Moat | Time | Reg | Path |
+|------|-------------|-------------|---------------:|-------:|--------:|-----:|-----:|----:|-----:|
+| 1 | Agent Compliance + Audit Infrastructure | Layer 6 | **86.1** | 8.5 | 8.0 | 9.5 | 8.0 | 9.5 | 8.5 |
+| 2 | Vertical Agentic Finance Workflows (CFO stack/AP-AR/Treasury) | Application Layer | **83.5** | 9.0 | 8.0 | 8.5 | 9.0 | 7.0 | 8.0 |
+| 3 | Agent Identity + Authorization (KYA) | Layers 2-3 | **82.7** | 8.5 | 7.5 | 9.0 | 7.5 | 8.5 | 9.0 |
+| 4 | Agent Service Discovery + Reputation Marketplaces | Layer 5 | **80.2** | 9.0 | 8.5 | 8.5 | 5.5 | 5.5 | 9.5 |
+| 5 | Cross-Protocol Payment Orchestration | Layer 7 | **79.6** | 9.5 | 7.5 | 8.0 | 6.5 | 6.0 | 9.5 |
+| 6 | Dispute Resolution + Recovery for Agent Transactions | Post-Settlement | **77.1** | 7.5 | 8.0 | 8.0 | 7.0 | 8.5 | 7.0 |
+| 7 | Agent Wallet Abstraction + Policy Controls | Layer 0 | **65.0** | 7.0 | 6.0 | 6.5 | 7.0 | 6.0 | 6.5 |
+| 8 | Pure Settlement Facilitation (No Compliance Layer) | Layer 1 | **47.7** | 6.0 | 5.0 | 3.0 | 6.5 | 4.5 | 3.0 |
+
+Interpretation:
+
+1. The most robust startup wedges are `Compliance/Audit`, `Vertical Workflow Ownership`, and `Identity/KYA`.
+2. `Orchestration` remains a high-upside bet, but execution risk and incumbent bundling risk keep it below the top three.
+3. Pure settlement facilitation is structurally weakest due to fee compression and low defensibility.
+
+---
+
 ## Bottom Line
 
 The end state is most likely **hybrid and layered**, with value captured by entities that own trust, policy, routing, and workflow context.  
