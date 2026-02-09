@@ -4,6 +4,13 @@ Date: February 9, 2026
 Prepared For: Investment Committee
 Prepared By: Research Team (Fintech + Agent Economy Synthesis)
 
+## Memo Navigation
+
+- Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
+- Full Hierarchy: [Memo Index](README.md)
+- Portfolio Synthesis: [Top 15 Opportunities](investment-opportunities.md)
+- Supporting Deep Dives: [Agent-Fintech Deep Dive](agent-fintech-intersection-deep-dive.md), [Market Map](../research/market-map.md)
+
 ## Decision Request
 
 Approve a focused 12-month theme allocation to agent-fintech infrastructure, centered on identity/compliance and cross-rail orchestration, with strict evidence gates before scaling position sizes.

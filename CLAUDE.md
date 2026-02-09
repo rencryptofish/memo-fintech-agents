@@ -128,6 +128,7 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 ### Fresh-Read Synthesis Learnings (Feb 9, 2026)
 - Directional conviction and underwriting confidence should be separated explicitly; estimated metrics can support thesis direction but should not be treated as precision anchors.
 - Keep one canonical synthesis artifact (`memos/00-top-level-takeaways.md`) and link downstream decision memos to it, rather than duplicating drifting summary blocks.
+- After generating top findings, translate each into an actionable decision test and record it in the top-level takeaways memo before updating downstream recommendation docs.
 - Control points (identity, compliance, policy, routing) consistently screen as stronger value-capture layers than commodity payment transport.
 - Recovery narratives should be baseline-scoped; when multiple accepted baselines exist, show each implied growth rate instead of one headline figure.
 - Protocol traction metrics are necessary but insufficient for moat claims; require quality-of-volume tests (organic vs speculative, repeat utility, payer diversity).
