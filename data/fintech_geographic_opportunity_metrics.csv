@@ -1,0 +1,10 @@
+metric_group,label,value,unit
+share_indicator_pct,North America market share (2024),35.8,percent
+share_indicator_pct,Brazil share of LatAm fintechs,58.7,percent
+share_indicator_pct,Singapore share of ASEAN fintechs,40.0,percent
+india_market_size,India fintech market (2024),111.0,usd_b
+india_market_size,India fintech market (2029),421.0,usd_b
+africa_hubs,Lagos,503.0,active_firms
+africa_hubs,Lagos funding,6.03,usd_b
+africa_hubs,Nairobi,210.0,active_firms
+africa_hubs,Nairobi funding,4.64,usd_b

@@ -1,0 +1,10 @@
+side,label,amount_b
+value_creation,Stripe valuation,106.7
+value_creation,Revolut valuation,75.0
+value_creation,Nubank 2024 revenue,11.5
+value_creation,Chime IPO valuation,18.4
+value_creation,Plaid valuation,6.1
+value_destruction,Klarna valuation drop,38.9
+value_destruction,FTX valuation collapse,32.0
+value_destruction,Wirecard fraud hole,1.9
+value_destruction,Synapse funds affected,0.265
