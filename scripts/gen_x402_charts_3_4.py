@@ -172,10 +172,7 @@ def make_chart4():
 
 
 if __name__ == "__main__":
-    os.makedirs(
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), "charts"),
-        exist_ok=True,
-    )
+    (ROOT / "charts" / "x402").mkdir(parents=True, exist_ok=True)
     make_chart3()
     make_chart4()
     print("Done: Charts 3 & 4 generated.")
