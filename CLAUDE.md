@@ -248,6 +248,7 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 ### Repo Organization Learnings
 - **Organize by type, not by topic, at the top level.** Flat repos with 30+ files become unnavigable. Subdirectories by file type (`memos/`, `charts/`, `scripts/`, `data/`) keep the root clean and make it obvious where to add new files.
 - **Charts subdirectories by domain** (`charts/agent-economy/`, `charts/fintech/`, `charts/intersection/`, `charts/x402/`) prevent a single folder with dozens of PNGs. Group by research domain, not by chart type.
+- **Use memo-relative chart paths in markdown embeds.** Files under `memos/` should link charts as `../charts/<domain>/<file>.png` so links resolve in both local markdown preview and repo rendering.
 - **Declare deps in `pyproject.toml`** rather than using `uv run --with` flags on every invocation. Simpler commands (`uv run python scripts/foo.py`) and ensures all scripts use consistent dependency versions.
 - **Data modules in `data/`** separate sourced data from visualization logic in `scripts/`. Chart scripts import from `data/` — makes it easy to update numbers without touching chart code.
 - **Keep CLAUDE.md in sync with repo structure.** When reorganizing files, update CLAUDE.md immediately — stale paths cause confusion for both humans and agents.
