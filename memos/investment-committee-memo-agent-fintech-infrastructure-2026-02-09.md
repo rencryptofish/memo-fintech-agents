@@ -45,6 +45,14 @@ Value is most likely to accrue to control points, not commodity pipes.
 4. Crypto and fiat rails are likely complementary; winning infrastructure must abstract across both.
 5. Facilitator-only models show weak defensibility; facilitator plus compliance/policy bundles may still be investable.
 
+## Supporting Charts
+
+![Fintech VC vs Deals Trend](../charts/fintech/fintech_vc_vs_deals_trend.png)
+
+![Agent-Fintech Layer Funding Heatmap](../charts/intersection/03_layer_funding_heatmap.png)
+
+![x402 Risk Matrix](../charts/x402/x402_14_risk_matrix.png)
+
 ## Base-Rate Evidence (Added Feb 9, 2026)
 
 1. Market size is large enough for control-point winners: global payments generated ~$2.5T revenue on ~$2.0 quadrillion flows in 2024.

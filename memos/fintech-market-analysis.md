@@ -36,6 +36,18 @@ The biggest opportunities today center on **AI-native fintech** (agentic AI hand
 
 The clearest historical lesson: **B2B infrastructure plays that become embedded in customer workflows** (Stripe, Plaid, Adyen) have the highest success rates, while **B2C fintech without defensible moats** and **models subsidized by cheap capital** (BNPL, many neobanks) face the highest failure rates.
 
+## Key Charts
+
+![Fintech Market Size Projection](../charts/fintech/fintech_market_size_projection.png)
+
+![Fintech VC vs Deals Trend](../charts/fintech/fintech_vc_vs_deals_trend.png)
+
+![Fintech Funding by Category](../charts/fintech/fintech_funding_by_category.png)
+
+![Fintech Market Map](../charts/fintech/fintech_market_map.png)
+
+![Fintech Funding Heatmap](../charts/fintech/fintech_funding_heatmap.png)
+
 ---
 
 ## Market Landscape & Size

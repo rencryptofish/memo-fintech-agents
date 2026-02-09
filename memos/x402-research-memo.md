@@ -16,6 +16,16 @@
 
 x402 is an open-source payment protocol developed by Coinbase that revives the long-dormant HTTP 402 ("Payment Required") status code to embed native stablecoin payments directly into web traffic. Launched in May 2025 and backed by a foundation co-created with Cloudflare, the protocol has processed **157.6M cumulative transactions** and **$600M+ in volume** across Base and Solana. It is purpose-built for the emerging **agentic economy** — where AI agents autonomously transact for data, compute, and services — and enables micropayments as small as $0.001 per request with zero protocol fees.
 
+## Key Charts
+
+![x402 Daily Transaction Trajectory](../charts/x402/x402_01_daily_tx_trajectory.png)
+
+![x402 Cumulative Growth](../charts/x402/x402_02_cumulative_growth.png)
+
+![x402 Chain Split](../charts/x402/x402_03_chain_split.png)
+
+![x402 Facilitator Share](../charts/x402/x402_04_facilitator_share.png)
+
 ---
 
 ## 1. What x402 Is

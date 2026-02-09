@@ -25,6 +25,14 @@ We identified **15 high-conviction investment opportunities** across three domai
 - CFO Stack funding: **$1.8B across 90 deals** in Q4 2025 alone
 - AI agent VC investment: **$8-12B in 2025**
 
+## Supporting Charts
+
+![Fintech Funding vs Revenue Trajectory](../charts/fintech/fintech_funding_vs_revenue.png)
+
+![Agent Economy Funding vs Revenue Trajectory](../charts/agent-economy/agent_economy_funding_vs_revenue.png)
+
+![Agent-Commerce Readiness Roadmap](../charts/intersection/04_agent_commerce_readiness_roadmap.png)
+
 ---
 
 ## Top 15 Investment Opportunities — Ranked by Conviction
