@@ -1,0 +1,35 @@
+cohort,outcome,driver,driver_type,amount_b
+1. Pre-2008,did_well,PayPal,company,1.5
+1. Pre-2008,did_well,Adyen,company,0.2
+1. Pre-2008,not_well,Klarna (overfunding/repricing cycle),company,3.5
+1. Pre-2008,not_well,LendingClub (model stress/pivot),company,0.4
+2. Post-Crisis,did_well,Stripe,company,8.7
+2. Post-Crisis,did_well,SoFi,company,2.5
+2. Post-Crisis,did_well,Chime,company,2.3
+2. Post-Crisis,did_well,Plaid,company,0.75
+2. Post-Crisis,did_well,Coinbase,company,0.55
+2. Post-Crisis,did_well,Wise,company,0.4
+2. Post-Crisis,did_well,Square,company,0.2
+2. Post-Crisis,not_well,Oscar,company,1.3
+2. Post-Crisis,not_well,Affirm,company,0.8
+3. Boom,did_well,Nubank,company,2.3
+3. Boom,did_well,Revolut,company,1.7
+3. Boom,did_well,Robinhood,company,0.86
+3. Boom,did_well,Monzo,company,0.4
+3. Boom,not_well,Root,company,0.525
+3. Boom,not_well,Lemonade,company,0.48
+4. Maturation,did_well,Brex,company,1.2
+4. Maturation,did_well,Mercury,company,0.3
+4. Maturation,not_well,ICO funding wave (2018),category,7.8
+4. Maturation,not_well,ICO funding wave (2017),category,6.2
+5. COVID,did_well,Ramp,company,1.6
+5. COVID,did_well,Stripe (2020 round),company,0.6
+5. COVID,did_well,Robinhood (2020 round),company,0.28
+5. COVID,not_well,FTX,company,1.0
+6. Peak Mania,did_well,Nubank (2021 round),company,1.1
+6. Peak Mania,did_well,Chime (2021 round),company,1.1
+6. Peak Mania,not_well,Klarna (2021 round),company,1.2
+6. Peak Mania,not_well,FTX (2021 round),company,1.0
+8. New Era,did_well,AI-native fintech,category,2.0
+8. New Era,did_well,CFO stack funding (Q4 2025),category,1.8
+8. New Era,did_well,Stablecoin infra VC,category,1.5

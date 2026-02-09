@@ -1,0 +1,9 @@
+cohort_order,cohort,era,funding_pool_b,did_well_b,not_well_b,did_well_share_pct,not_well_share_pct,method
+1,1. Pre-2008,1982-2007,5.0,1.8,3.2,35.0,65.0,estimated_split
+2,2. Post-Crisis,2008-2012,20.0,15.0,5.0,75.0,25.0,estimated_split
+3,3. Boom,2013-2015,48.4,31.5,16.9,65.0,35.0,estimated_split
+4,4. Maturation,2016-2018,91.5,27.4,64.1,30.0,70.0,estimated_split
+5,5. COVID,2019-2020,83.6,46.0,37.6,55.0,45.0,estimated_split
+6,6. Peak Mania,2021,131.5,46.0,85.5,35.0,65.0,estimated_split
+7,7. Correction,2022-2023,135.1,60.8,74.3,45.0,55.0,estimated_split
+8,8. New Era,2024-2026 est,148.6,96.6,52.0,65.0,35.0,estimated_split

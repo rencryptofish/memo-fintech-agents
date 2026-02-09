@@ -130,6 +130,9 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **BNPL was "the purest example of ZIRP-enabled financial engineering"** — funding costs were 8-12% during ZIRP, then rose with rates. Klarna crashed 85% ($45.6B → $6.7B). 41% of BNPL users late on payments by 2025.
 - **Geographic diversification accelerating**: 60% of funded fintechs now outside the US (2024-2026). India $111B→$421B by 2029; Lagos 503 fintechs; Singapore 40% of ASEAN fintech.
 - **Cohort comparison table format** works well for side-by-side analysis: columns for era, VC environment, biggest rounds, top categories, what worked, what didn't work. Added to fintech-market-analysis.md.
+- **Outcome split modeling works best as two artifacts**: (1) `data/fintech_cohort_outcome_split_estimated.csv` for cohort pools and assumed winner/loser shares, and (2) `data/fintech_cohort_outcome_driver_anchors.csv` for explicit company/category funding anchors.
+- **Keep estimated and observed values visibly separate.** Include a `method` field (`estimated_split`) and avoid blending anchor evidence with rolled-up estimates in the same table.
+- **Use a single generator script for sync between data and visual** (`scripts/generate_fintech_cohort_outcome_split.py`) so CSVs and `charts/fintech/fintech_cohort_outcome_split_estimated.png` cannot drift.
 
 ### AI Agent Domain Insights
 - AI agent market: ~$7-8B (2025), 44-46% CAGR to $47-52B by 2030. Broader estimates reach $200B by early 2030s.
