@@ -330,6 +330,47 @@ Agent errors in production can be costly. 95-99% accuracy sounds good until you 
 
 ---
 
+## Probability-Weighted Outlook and Rail Economics (Updated Feb 9, 2026)
+
+### Base-Rate Anchors for Underwriting
+
+| Anchor | Data Point | Underwriting Implication |
+|--------|------------|--------------------------|
+| Global payments | ~$2.5T revenue on ~$2.0 quadrillion flows (2024) | Very large incumbent pool; small control-point share shifts are enough for venture outcomes. |
+| Rail migration speed | ACH $93T in 2025; RTP >$1T cumulative since 2017; FedNow 1,192 institutions but 1.5M transactions in 2024 | New rails need multi-year coexistence models, not displacement assumptions. |
+| Friction and fraud | 70.19% checkout abandonment; $33.41B card fraud losses; $12.5B US consumer fraud losses | Workflow automation, trust, and risk layers should command durable budget share. |
+| Stablecoin readiness | $300B+ supply; ~$46T raw and ~$9T adjusted annualized volume | Crypto rails are now relevant for certain categories, but require compliance-first packaging. |
+
+### Where Value Capture Is Most Likely
+
+Estimated share of eventual profit pool:
+1. Trust/control (identity, policy, compliance, fraud): **35-45%**
+2. Discovery/distribution (agent ranking and access): **20-30%**
+3. Cross-rail orchestration: **15-20%**
+4. Settlement/facilitation rails: **10-15%**
+
+This reinforces the ranking logic in this memo: prioritize companies that own trust, routing, and workflow control points over pure transaction transport.
+
+### Crypto Rails for Agents: Advantages vs. Disadvantages
+
+| Dimension | Crypto Rails (Stablecoin/x402-like) | Fiat Rails (Card/ACH/RTP) |
+|-----------|-------------------------------------|----------------------------|
+| Micropayments | Better unit economics (example: $1 payment ~1.5c at 1.5% vs ~32.9c card fee). | Fixed fee stack is punitive on low-ticket autonomous transactions. |
+| Cross-border | Faster, often cheaper settlement paths. | More intermediaries, slower settlement in many corridors. |
+| Consumer trust/disputes | Weaker default protections. | Strong mature protection, refund, and dispute mechanisms. |
+| Compliance and acceptance | Fragmented and jurisdiction-sensitive. | Mature, broadly accepted merchant standards. |
+
+### Most Likely 2030 Outcomes
+
+| Scenario | Probability | Portfolio Implication |
+|----------|-------------|-----------------------|
+| Hybrid default | 55% | Back multi-rail infrastructure with fiat distribution and crypto optionality. |
+| Multi-rail equilibrium | 30% | Orchestration and policy engines become the highest-value control layer. |
+| Crypto-first mainstream | 10% | Upside for crypto-native infra, but should not drive base-case underwriting. |
+| Delayed adoption | 5% | Preserve downside protection via capital-efficient teams and near-term revenue. |
+
+---
+
 ## Timeline: What to Watch in the Next 6-12 Months
 
 ### Q1 2026 (Now)
@@ -384,4 +425,4 @@ The infrastructure layer is being built NOW. The companies founded in 2024-2026 
 
 ---
 
-*This memo synthesizes research from three parallel research streams conducted February 2026. Sources include Crunchbase, PitchBook, Fortune, TechCrunch, PYMNTS, Bloomberg, CB Insights, a16z, McKinsey, BCG/QED, Gartner, Bessemer, company press releases, SEC filings, and extensive web research. Investment decisions should be informed by additional due diligence.*
+*This memo synthesizes research from three parallel research streams conducted February 2026. Sources include Crunchbase, PitchBook, Fortune, TechCrunch, PYMNTS, Bloomberg, CB Insights, a16z, McKinsey, BCG/QED, Gartner, Bessemer, company press releases, SEC filings, and extensive web research. Additional quantitative anchors in the probability section include Nacha (ACH), The Clearing House (RTP), Federal Reserve (FedNow), World Bank Remittance Prices Worldwide, Baymard checkout benchmarks, Nilson Report card fraud estimates, FTC fraud reports, and Chainalysis. Investment decisions should be informed by additional due diligence.*

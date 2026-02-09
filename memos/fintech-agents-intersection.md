@@ -359,6 +359,71 @@ The "Stripe moment" company will likely emerge from one of these wedges:
 
 ---
 
+## 9. First-Principles Outlook: Base Rates, Value Capture, and Crypto Rails (Updated Feb 9, 2026)
+
+### Base-Rate Anchors
+
+| Base-Rate Metric | Latest Data Point | Implication for Agent-Fintech |
+|------------------|-------------------|-------------------------------|
+| Global payments economics | ~$2.5T revenue on ~$2.0 quadrillion flows (2024) | Even small shifts in control points can support multi-billion-dollar outcomes. |
+| ACH scale (US) | $93T in 2025 | Legacy rails remain dominant; new rails must coexist, not assume displacement. |
+| RTP adoption speed (US) | >$1T cumulative value since launch (2017) | New rails can scale, but institutional migration is measured in years. |
+| FedNow usage (2024) | 1,192 institutions, 1.5M transactions | Distribution can scale faster than usage; behavior change is the bottleneck. |
+| Global remittance price | 6.49% average total cost | Cross-border remains a structural pain point and a stablecoin opening. |
+| E-commerce checkout friction | 70.19% cart abandonment | Agent-led checkout can capture value by reducing decision and form-fill friction. |
+| Fraud baseline | $33.41B global card fraud losses; $12.5B US consumer fraud losses | Autonomy increases fraud exposure; risk/compliance spend is mandatory, not optional. |
+| Stablecoin scale | $300B+ supply; ~$46T raw and ~$9T adjusted annualized volume | Crypto rails are now system-relevant for select flows, especially machine-native payments. |
+| Stablecoin risk signal | 63% of illicit crypto volume uses stablecoins (illicit is 0.14% of all on-chain volume) | Compliance and monitoring layers are prerequisite for institutional scale. |
+
+### First-Principles Value-Capture Model
+
+Assumptions:
+1. Agent-influenced commerce by 2030 falls in a $1T (low) to $5T (high) range; base case $3T.
+2. Monetizable net take-rate across the full stack ranges from 20-80 bps depending on rail mix and software attach.
+3. Most durable margin sits above rails (identity, authorization, compliance, fraud, orchestration, and discovery).
+
+| Scenario | Agent-Influenced GMV | Net Stack Take Rate | Revenue Pool |
+|----------|----------------------|---------------------|--------------|
+| Low | $1T | 20 bps | $2B |
+| Base | $3T | 50 bps | $15B |
+| High | $5T | 80 bps | $40B |
+
+Estimated share of the eventual profit pool:
+1. Trust/control layer (identity, authorization, compliance, fraud): **35-45%**
+2. Discovery/distribution layer (agent ranking, marketplace access): **20-30%**
+3. Cross-rail orchestration layer: **15-20%**
+4. Settlement/facilitation rails: **10-15%**
+
+### Crypto Rails vs. Fiat Rails for Agents
+
+| Dimension | Crypto Rails (Stablecoin/x402-like) | Fiat Rails (Card/ACH/RTP) |
+|-----------|-------------------------------------|----------------------------|
+| Micropayment economics | Strong advantage. At $1 ticket size: ~1.5c fee (1.5%) vs ~32.9c on card pricing. | Weak for small tickets because fixed fee component dominates. |
+| Cross-border settlement | Strong advantage: near-24/7 settlement and lower intermediary friction. | Slower, often multi-party and batch dependent. |
+| Consumer protection | Weak by default (no native chargeback standard). | Strong, with mature dispute/refund/issuer protections. |
+| Regulatory clarity | Improving, but fragmented and jurisdiction-dependent. | Mature, with clear merchant and issuer frameworks. |
+| Merchant acceptance | Still uneven outside crypto-forward merchants. | Ubiquitous global acceptance and familiar checkout patterns. |
+| Agent-native programmability | Strong (machine wallets, programmable transfer logic). | Improving, but often layered through existing human-centric UX. |
+
+Conclusion: crypto rails are likely to win specific lanes (API micropayments, cross-border B2B, machine-to-machine settlement), while mainstream consumer checkout remains fiat-led in the medium term.
+
+### Probability-Weighted Outcomes by 2030
+
+| Scenario | Probability | What Happens |
+|----------|-------------|--------------|
+| Hybrid default | 55% | Consumer agent commerce remains card/bank front-end; stablecoins expand in back-end settlement and specific niches. |
+| Multi-rail equilibrium | 30% | Orchestration layer routes across card, A2A, ACH/RTP, and stablecoins based on cost/risk/latency. |
+| Crypto-first mainstream | 10% | Stablecoin rails become default for broad agent commerce, including mainstream consumer checkout. |
+| Adoption stalls | 5% | Liability, fraud, and regulatory frictions materially delay autonomous finance adoption. |
+
+### Frontier Blog/Substack Signal Check
+
+1. a16z's agent-payments analysis frames the market as a layered stack where authorization, trust, and rails interoperate, not winner-take-all at one protocol.
+2. Fintech Brainfood's field observations reinforce that distribution and merchant workflow integration will matter as much as rail innovation.
+3. Across both viewpoints, the overlap is clear: value capture concentrates in control points (trust, policy, routing), not commodity transaction transport.
+
+---
+
 ## Investment Framework: Fintech x Agents
 
 ### Tier 1 -- Highest Conviction (Infrastructure)
@@ -409,4 +474,4 @@ The "Stripe moment" company will likely emerge from one of these wedges:
 
 ---
 
-*Sources: Coinbase, Stripe, Google Cloud, Visa, Mastercard, PayPal, a16z, McKinsey, World Economic Forum, FINRA, SEC, FCA, PitchBook, CB Insights, CoinDesk, The Block, TechCrunch, PYMNTS, American Banker, various company press releases and blogs. Research conducted February 2026.*
+*Sources: Coinbase, Stripe, Google Cloud, Visa, Mastercard, PayPal, a16z, McKinsey, World Economic Forum, FINRA, SEC, FCA, PitchBook, CB Insights, CoinDesk, The Block, TechCrunch, PYMNTS, American Banker, various company press releases and blogs. Additional quantitative anchors in Section 9 include Nacha (ACH), The Clearing House (RTP), Federal Reserve (FedNow), World Bank Remittance Prices Worldwide, Baymard checkout benchmarks, Nilson Report card fraud estimates, FTC fraud reports, and Chainalysis. Research conducted February 2026.*
