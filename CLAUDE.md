@@ -23,6 +23,7 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `fintech-market-analysis.md` — Comprehensive fintech market analysis: $340B market (2024), geographic founding patterns, cohort analysis from pre-2008 through 2026, success/failure patterns, unit economics, hottest segments (AI-native fintech, stablecoins, embedded finance, real-time payments, B2B/SMB)
 - `x402-research-memo.md` — x402 protocol deep dive: Coinbase's HTTP-native stablecoin payment protocol, 140M+ transactions, $600M+ volume, technical architecture (ERC-3009, facilitator model), SDK ecosystem, comparative advantage for agent micropayments, analyst sentiment
 - `x402-value-capture-analysis.md` — First-principles value capture analysis of x402 stack: raw adoption data (157M tx, $600M+ volume, facilitator market share shifts), full value chain map (8 layers from protocol to discovery), 9 historical analogies with revenue data (HTTP/Stripe/Lightning/DNS/SSL), seven-force framework applied to each layer, Coinbase vertical integration thesis, three investable opportunities (marketplace, compliance, differentiated apps)
+- `x402-value-accrual-deep-dive.md` — Deep dive on buyer-seller dynamics and value accrual: ratio compression from 53:1 → 5:1 with projections, seller pricing power analysis (why it exists, why it erodes), 7-layer stack with revenue per $1B volume ($45M to Circle, $10M to Base, $880M to sellers, $100M to facilitators), Coinbase flywheel thesis ($35-38M revenue per $1B volume), facilitator layer as value trap (Dexter 5%→50% in 3 months), discovery layer as biggest whitespace
 - `fintech-agents-intersection.md` — The convergence of fintech and AI agents: four agentic payment protocols (x402, ACP, AP2, TAP), agent wallets and financial identity (Kite, Catena Labs, Crossmint, Skyfire), DeFAI movement, agent-to-agent commerce, KYA framework, "Stripe moment" analysis, regulatory landscape
 - `fintech-investment-opportunities-2026.md` — Specific investable opportunities: AI-native fintech startups (Sardine, FurtherAI, Catena Labs), stablecoin infrastructure (Circle, BVNK, Zero Hash, Crossmint), real-time payments (Column, Orum/Stripe), CFO stack (Ramp $32B, Mercury $3.5B, Brex/Capital One), embedded finance post-Synapse, pre-Series B breakouts (Duna, Hyperbots)
 - `investment-opportunities.md` — **Final synthesized memo**: Top 15 ranked investment opportunities across fintech, AI agent layer, and their intersection. Includes evaluation framework (moat, TAM, timing, risk, capital efficiency), M&A signal analysis, risk assessment, and 6-12 month watchlist
@@ -54,7 +55,7 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `fintech_market_map.png` — Market map: categories as tiles with 2025 funding, status, and key players/valuations
 - `fintech_funding_heatmap.png` — Heatmap: funding intensity by category and year, black borders on peak years
 
-### x402 (`charts/x402/`) — 8 charts
+### x402 (`charts/x402/`) — 11 charts
 - `x402_01_daily_tx_trajectory.png` — Log-scale daily tx with event annotations
 - `x402_02_cumulative_growth.png` — Dual-axis cumulative tx + volume hockey stick
 - `x402_03_chain_split.png` — Base vs Solana stacked area (97% → 75%)
@@ -63,6 +64,9 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `x402_06_ecosystem_mcap.png` — Token mcap ($100M → $12B → $10.5B)
 - `x402_07_developer_adoption.png` — Adoption funnel (5.4K stars → 31 live services)
 - `x402_08_buyer_seller_ratio.png` — Proportional circles (74K buyers vs 1.4K sellers)
+- `x402_09_buyer_seller_ratio_deep.png` — Two-panel: buyer vs seller growth (log) + ratio compression from 53:1 → 5:1 → 2.5:1 projected, with Uber/Amazon marketplace comparisons
+- `x402_10_value_accrual_stack.png` — Full 8-layer market stack diagram: every layer back-to-back with revenue per $1B volume, moat rating, and investment verdict (BUY/AVOID/WATCH)
+- `x402_11_coinbase_flywheel.png` — Circular flywheel: how Coinbase's $0-fee protocol generates ~$35-38M per $1B volume across USDC float, Base fees, facilitator, and commerce
 
 ## Scripts (`scripts/`)
 
@@ -72,6 +76,7 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `gen_x402_charts_3_4.py` — x402 chain split + facilitator share
 - `gen_x402_charts_5_6.py` — x402 value chain + ecosystem mcap
 - `gen_x402_charts_7_8.py` — x402 developer adoption + buyer/seller ratio
+- `gen_x402_value_accrual.py` — x402 buyer-seller ratio deep dive, value accrual stack diagram, Coinbase flywheel
 
 All scripts run with `uv run python scripts/<script>.py` (deps declared in `pyproject.toml`).
 
@@ -164,8 +169,20 @@ All scripts run with `uv run python scripts/<script>.py` (deps declared in `pypr
 - **Dark theme style recipe:** `plt.style.use('dark_background')`, `fig.patch.set_facecolor('#1a1a2e')`, `ax.set_facecolor('#1a1a2e')`, grid color `#333355`, figure size `(16, 9)`, dpi=150. Produces clean, presentation-ready charts.
 - **Best chart types by data story:** Log-scale line for adoption S-curves (orders of magnitude growth), stacked area for market share evolution (shows zero-sum dynamics), horizontal bars for value chain waterfalls (easy to label), proportional circles for ratio comparisons (53:1 buyer/seller).
 - **Annotation is critical for adoption data.** Raw line charts are meaningless without event labels (launch, Foundation, V2 release, etc.). Always annotate with arrows and labeled boxes for key inflection points.
-- **Chart inventory:** 24 total charts across 3 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/x402/`.
+- **Chart inventory:** 27 total charts across 3 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/x402/`.
 - **Generator scripts** in `scripts/` — all run with `uv run python scripts/<script>.py`
+
+### x402 Buyer-Seller Dynamics & Value Accrual Insights
+- **Buyer-to-seller ratio compressed 10x in 3 months** (53:1 Oct 2025 → 5:1 Jan 2026). Projection: converges toward 2.5:1 by late 2027. Comparable to Uber (5:1) today; Amazon Marketplace (1.3:1) is the long-run equilibrium for mature two-sided markets.
+- **Seller pricing power is real but temporary for commodity APIs.** Three drivers: (1) unilateral price-setting with no discovery mechanism, (2) no chargebacks = zero seller revenue risk, (3) avg payment $0.60-$1.00 vs gas floor of $0.001 = massive margin. Erodes as supply enters and price discovery tools (Fluora, V2 API discovery) emerge.
+- **Pricing power durability spectrum:** Proprietary data (very high, durable) → premium inference (high) → curated analytics (moderate, eroding) → commodity scraping/data feeds (low, race to zero) → compute/GPU (low, transparent benchmarks).
+- **The facilitator layer is a value trap.** Dexter went from 5% to 50% market share in 3 months. Zero switching costs (facilitator URL is a server config param). Fee models already diverging: Coinbase $0.001/tx, PayAI gas-free + optional 1%, Stakefy 0.5%. Equilibrium is near-zero. Analogous to DNS resolvers or email relays — commodity infrastructure always compresses.
+- **Exception:** Compliance-gated facilitators (UQPAY, launched Feb 2026) could build regulatory moats if KYC/AML becomes mandatory for agent transactions.
+- **Value accrual per $1B annual volume:** Circle/USDC $45M (4.5% on float, 95% margin), Base $10M (sequencer fees, >90% margin), Sellers $880M (88% of payments, but fragmented across thousands), Facilitators $100M (10%, but thin moat → race to zero), Infrastructure $1M (commodity).
+- **x402 protocol captures $0 by design.** It's a demand engine for adjacent layers, not a revenue engine. The Android strategy: give away the protocol, monetize through services (USDC float, Base gas, wallet/commerce ecosystem).
+- **Coinbase captures ~$35-38M per $1B x402 volume** across USDC reserve income share ($25M, 56% of Circle yield), Base sequencer fees ($7.5M), facilitator ($1M), and commerce ($2-5M). At $10B volume (2029-2030 scenario): $350-380M.
+- **Circle is the invisible monopolist.** 98.7% of x402 uses USDC. Circle earns on the entire float (not per-tx). $740M Q3 2025 revenue, 96% from reserves. Coinbase receives 56% of USDC reserve revenue. Rate-sensitive: each 100bp Fed rate cut = ~$700M revenue impact at current supply.
+- **Discovery layer ("Google for agent APIs") is the biggest whitespace.** No dominant player. Winner-take-all dynamics if one marketplace becomes the default routing layer. Fluora (MonetizedMCP) is earliest mover but nascent. This is the highest-leverage investment opportunity in the x402 stack.
 
 ### Repo Organization Learnings
 - **Organize by type, not by topic, at the top level.** Flat repos with 30+ files become unnavigable. Subdirectories by file type (`memos/`, `charts/`, `scripts/`, `data/`) keep the root clean and make it obvious where to add new files.
