@@ -3,6 +3,13 @@
 **Date:** February 2026
 **Classification:** Research Memo -- Section for Final Investment Memo
 
+## Memo Navigation
+
+- Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
+- Full Hierarchy: [Memo Index](README.md)
+- Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md), [Top 15 Opportunities](investment-opportunities.md)
+- Related: [Agent-Fintech Deep Dive](agent-fintech-intersection-deep-dive.md), [x402 Research Memo](x402-research-memo.md)
+
 ---
 
 ## Executive Summary
@@ -12,6 +19,16 @@ The convergence of fintech and AI agents represents what may be the most transfo
 Four major payment protocols (x402, ACP, AP2, TAP) launched within months of each other in 2025, backed by Coinbase, Stripe/OpenAI, Google, and Visa respectively. The agentic commerce market is projected to influence **$1T+ in e-commerce spending** near-term, with McKinsey estimating the global agentic commerce opportunity at **$3-5 trillion by 2030**. a16z projects AI agents could drive **$30 trillion in purchases by 2030**.
 
 The critical insight: **we are at the "Stripe 2010" moment for agentic finance**. The infrastructure being built today -- agent wallets, payment protocols, identity systems, compliance frameworks -- will define the next decade of financial services, just as Stripe's payment APIs defined the last decade of internet commerce.
+
+## Key Charts
+
+![Protocol Launch Timeline](../charts/intersection/01_protocol_launch_timeline.png)
+
+![Protocol Capability Matrix](../charts/intersection/02_protocol_capability_matrix.png)
+
+![Layer Funding Heatmap](../charts/intersection/03_layer_funding_heatmap.png)
+
+![Agent Commerce Readiness Roadmap](../charts/intersection/04_agent_commerce_readiness_roadmap.png)
 
 ---
 

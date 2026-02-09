@@ -1,0 +1,8 @@
+as_of_date_utc,metric_group,metric_name,value,unit,source_url,source_capture_method,last_verified_utc,confidence,notes
+2026-02-09,homepage_counter,transactions,75.41,M,https://www.x402.org,curl_html_counter_parse,2026-02-09T18:41:00Z,high,"Homepage counter labeled 'Transactions'"
+2026-02-09,homepage_counter,volume,24.24,USD_M,https://www.x402.org,curl_html_counter_parse,2026-02-09T18:41:00Z,high,"Homepage counter labeled 'Volume'"
+2026-02-09,homepage_counter,buyers,94.06,K,https://www.x402.org,curl_html_counter_parse,2026-02-09T18:41:00Z,high,"Homepage counter labeled 'Buyers'"
+2026-02-09,homepage_counter,sellers,22,K,https://www.x402.org,curl_html_counter_parse,2026-02-09T18:41:00Z,high,"Homepage counter labeled 'Sellers'"
+2025-12-11,v2_announcement,processed_payments_text,100,M_plus,https://www.x402.org/writing/x402-v2-launch,curl_text_pattern,2026-02-09T18:41:00Z,high,"Post says protocol has processed 'over 100M payments'"
+2026-02-09,legacy_memo_claim,cumulative_transactions,157.6,M,memos/x402-research-memo.md:103,local_memo_claim,2026-02-09T18:41:00Z,low,"Legacy claim repeated across memos; conflicts with homepage counters"
+2026-02-09,legacy_memo_claim,cumulative_volume,600,USD_M_plus,memos/x402-research-memo.md:104,local_memo_claim,2026-02-09T18:41:00Z,low,"Legacy claim repeated across memos; conflicts with homepage counters"

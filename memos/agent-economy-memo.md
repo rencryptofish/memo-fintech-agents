@@ -3,6 +3,13 @@
 **Date:** February 2026
 **Classification:** Research Memo
 
+## Memo Navigation
+
+- Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
+- Full Hierarchy: [Memo Index](README.md)
+- Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md), [Top 15 Opportunities](investment-opportunities.md)
+- Related: [Agent-Fintech Deep Dive](agent-fintech-intersection-deep-dive.md), [Fintech x Agents Intersection](fintech-agents-intersection.md)
+
 ---
 
 ## Executive Summary
@@ -18,6 +25,16 @@ The AI agent economy has emerged as the most consequential technology shift sinc
 - AI agent companies trade at **25-50x revenue** vs. ~7.6x median for traditional SaaS — a ~3-5x premium (Finro Financial Consulting, Aventis Advisors)
 - Both MCP (Anthropic) and A2A (Google) protocols were donated to the **Linux Foundation's Agentic AI Foundation** in December 2025, marking a "TCP/IP moment" for agents
 - The most compelling opportunities lie in **agent infrastructure** (identity, memory, observability), **vertical agents** in regulated industries, and **agent security/governance**
+
+## Key Charts
+
+![Agent Market Size Projections](../charts/agent-economy/01_agent_market_size_projections.png)
+
+![Agent ARR Race](../charts/agent-economy/04_agent_company_arr_race.png)
+
+![Agent Infrastructure Gap Analysis](../charts/agent-economy/12_infrastructure_gap_analysis.png)
+
+![Agent Funding vs Revenue Trajectory](../charts/agent-economy/agent_economy_funding_vs_revenue.png)
 
 ---
 

@@ -4,6 +4,13 @@
 **Classification:** Investment Memo — Definitive Intersection Analysis
 **Synthesized from:** 4 parallel research streams (stack mapping, business models, traction evidence, market map)
 
+## Memo Navigation
+
+- Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
+- Full Hierarchy: [Memo Index](README.md)
+- Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md), [Top 15 Opportunities](investment-opportunities.md)
+- Related: [Fintech x Agents Intersection](fintech-agents-intersection.md), [Market Map](../research/market-map.md)
+
 ---
 
 ## Executive Summary
@@ -17,6 +24,16 @@ The intersection of AI agents and fintech is producing a new economic layer wher
 3. **The biggest whitespace is cross-protocol payment orchestration** (Layer 7) — $0 in dedicated startup funding against a $10B+ TAM
 4. **Business models follow a clear hierarchy:** Identity/compliance SaaS (70-80% gross margin) > float/yield (95% margin, scales with balances) > marketplace take rates (60% operating margin) > transaction processing (commoditizing)
 5. **Traction is real but early:** x402 has 157.6M cumulative transactions but only ~$24M organic volume (4% of total); Stripe ACP is live in ChatGPT; Mastercard Agent Pay covers all US cardholders; only 33% of consumers would let AI agents make purchases autonomously
+
+## Key Charts
+
+![Protocol Launch Timeline](../charts/intersection/01_protocol_launch_timeline.png)
+
+![Protocol Capability Matrix](../charts/intersection/02_protocol_capability_matrix.png)
+
+![Layer Funding Heatmap](../charts/intersection/03_layer_funding_heatmap.png)
+
+![Agent Commerce Readiness Roadmap](../charts/intersection/04_agent_commerce_readiness_roadmap.png)
 
 ---
 

@@ -2,6 +2,13 @@
 
 > *Research compiled February 2026 | Sources: BCG/QED, CB Insights, PitchBook, McKinsey, a16z, KPMG, Innovate Finance, S&P Global*
 
+## Memo Navigation
+
+- Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
+- Full Hierarchy: [Memo Index](README.md)
+- Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md), [Top 15 Opportunities](investment-opportunities.md)
+- Related: [Fintech Investment Opportunities 2026](fintech-investment-opportunities-2026.md), [Agent-Fintech Deep Dive](agent-fintech-intersection-deep-dive.md)
+
 ---
 
 ## Table of Contents

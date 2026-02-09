@@ -3,6 +3,13 @@
 **Date:** February 9, 2026
 **Type:** First-principles analysis with raw data
 
+## Memo Navigation
+
+- Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
+- Full Hierarchy: [Memo Index](README.md)
+- Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md), [Top 15 Opportunities](investment-opportunities.md)
+- Related: [x402 Research Memo](x402-research-memo.md), [x402 Value Accrual Deep Dive](../x402-value-accrual-deep-dive.md)
+
 ---
 
 ## Executive Summary

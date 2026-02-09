@@ -2,6 +2,13 @@
 
 > *Research compiled February 2026 | Focus: Specific investable opportunities, companies, funding rounds, and emerging players*
 
+## Memo Navigation
+
+- Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
+- Full Hierarchy: [Memo Index](README.md)
+- Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md), [Top 15 Opportunities](investment-opportunities.md)
+- Related: [Fintech Market Analysis](fintech-market-analysis.md), [Fintech x Agents Intersection](fintech-agents-intersection.md)
+
 ---
 
 ## 1. AI-Native Fintech Startups

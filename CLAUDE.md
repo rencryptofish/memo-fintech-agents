@@ -255,3 +255,10 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Never hardcode machine-specific paths in scripts.** Use `Path(__file__).resolve()` + repo-relative output folders so scripts run on any machine/clone.
 - **Keep generated artifacts in a single canonical directory.** Writing the same chart set to both `charts/` and `charts/x402/` creates drift; standardize outputs under the domain folder only.
 - **Use a hierarchical memo system with explicit navigation.** Keep a top-level memo (`memos/00-top-level-takeaways.md`), a hierarchy index (`memos/README.md`), and a short "Memo Navigation" block near the top of every core memo.
+
+### Source Integrity & Verification Learnings (Feb 9, 2026)
+- **Treat URL freshness as a first-class risk.** Links that were valid earlier in the day (or cited in prior memo drafts) can return 404. Always run a direct HTTP status check and maintain a URL remediation log mapping deprecated links to current primary sources.
+- **Prefer parse-stable canonical sources when multiple official pages exist.** For UCP, the `developers.googleblog.com` under-the-hood post is materially easier to parse and monitor than dynamic cloud-blog variants; keep alternate official URLs as aliases, not canon.
+- **Resolve legal status from dual primary anchors when possible.** For major regulatory claims (for example GENIUS), pair legislative status (Congress bill page / public law) with executive signing confirmation (White House release) before marking a claim high confidence.
+- **Separate “law enacted” from “implementation complete.”** A statute being signed does not remove rulemaking risk; track agency NPR/comment/finalization milestones separately in regulatory trackers.
+- **Mark unresolved claims explicitly, not implicitly.** If a claim is rumor-only, conflicting, or method-dependent, encode that in structured files (`status`, `confidence`, `last_verified`) so downstream memo text cannot silently promote weak evidence to fact.

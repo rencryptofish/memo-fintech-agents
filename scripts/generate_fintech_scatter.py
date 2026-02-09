@@ -538,6 +538,124 @@ def generate_cohort_subplots():
     return fig
 
 
+def generate_latest_breakdown_chart():
+    """
+    2026 snapshot breakdown:
+    compare cumulative VC raised vs combined revenue by category.
+    Includes explicit highlighting for Agentic Fintech Intersection.
+    """
+    rows = []
+    for cat_name, points in CATEGORIES.items():
+        vc_b, rev_m = points[-1]
+        rows.append(
+            {
+                "cat": cat_name,
+                "label": CATEGORY_META[cat_name]["short"],
+                "vc_b": vc_b,
+                "rev_b": rev_m / 1000.0,
+                "color": COLORS[cat_name],
+            }
+        )
+
+    # Keep categories ordered by 2026 VC magnitude for easier scan.
+    rows = sorted(rows, key=lambda r: r["vc_b"], reverse=True)
+
+    labels = [r["label"] for r in rows]
+    vc_vals = np.array([r["vc_b"] for r in rows], dtype=float)
+    rev_vals = np.array([r["rev_b"] for r in rows], dtype=float)
+    colors = [r["color"] for r in rows]
+    cats = [r["cat"] for r in rows]
+
+    total_vc = float(vc_vals.sum())
+    total_rev = float(rev_vals.sum())
+    y = np.arange(len(rows))
+
+    fig, (ax1, ax2) = plt.subplots(
+        1, 2, figsize=(19, 10), sharey=True, gridspec_kw={"wspace": 0.06}
+    )
+
+    bars_vc = ax1.barh(y, vc_vals, color=colors, alpha=0.88, edgecolor="white", linewidth=0.8)
+    bars_rev = ax2.barh(y, rev_vals, color=colors, alpha=0.88, edgecolor="white", linewidth=0.8)
+
+    # Highlight the intersection category for quick visibility.
+    for i, cat in enumerate(cats):
+        if "Agentic Fintech Intersection" in cat:
+            bars_vc[i].set_linewidth(2.2)
+            bars_vc[i].set_edgecolor("#111827")
+            bars_vc[i].set_hatch("//")
+            bars_rev[i].set_linewidth(2.2)
+            bars_rev[i].set_edgecolor("#111827")
+            bars_rev[i].set_hatch("//")
+
+    # Labels and axes
+    ax1.set_yticks(y)
+    ax1.set_yticklabels(labels, fontsize=10)
+    ax2.set_yticks(y)
+    ax2.tick_params(labelleft=False)
+    ax1.invert_yaxis()
+
+    ax1.set_xlabel("Cumulative VC Raised in Snapshot ($B)", fontsize=12)
+    ax2.set_xlabel("Combined Revenue in Snapshot ($B)", fontsize=12)
+
+    ax1.set_xlim(0, max(vc_vals) * 1.25)
+    ax2.set_xlim(0, max(rev_vals) * 1.25)
+
+    for ax in (ax1, ax2):
+        ax.grid(axis="x", alpha=0.2, linestyle="--")
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+
+    # Add value + share labels for readability.
+    for i, v in enumerate(vc_vals):
+        ax1.text(
+            v + max(vc_vals) * 0.015,
+            i,
+            f"${v:.2f}B ({(v / total_vc) * 100:.1f}%)",
+            va="center",
+            fontsize=8,
+            color="#333",
+        )
+    for i, r in enumerate(rev_vals):
+        ax2.text(
+            r + max(rev_vals) * 0.015,
+            i,
+            f"${r:.2f}B ({(r / total_rev) * 100:.1f}%)",
+            va="center",
+            fontsize=8,
+            color="#333",
+        )
+
+    fig.suptitle(
+        "2026 Snapshot Breakdown: VC Raised vs Revenue by Fintech Category",
+        fontsize=19,
+        fontweight="bold",
+        color="#1a1a2e",
+        y=0.98,
+    )
+    fig.text(
+        0.5,
+        0.955,
+        "Includes Agentic Fintech Intersection (hatched) for side-by-side comparison with core fintech categories",
+        ha="center",
+        fontsize=10,
+        color="#666",
+    )
+
+    fig.text(
+        0.5,
+        0.01,
+        "Sources: fintech trajectory inputs in scripts/generate_fintech_scatter.py  |  "
+        "Snapshot = Early 2026 point from each category trajectory",
+        ha="center",
+        fontsize=8,
+        color="#888",
+        style="italic",
+    )
+
+    fig.subplots_adjust(left=0.25, right=0.98, bottom=0.08, top=0.92, wspace=0.08)
+    return fig
+
+
 if __name__ == "__main__":
     root = Path(__file__).resolve().parent.parent
     out = root / "charts" / "fintech"
@@ -552,6 +670,12 @@ if __name__ == "__main__":
     print("Generating Fintech Cohort Subplots: Funding vs Revenue Trajectory...")
     fig = generate_cohort_subplots()
     save_path = out / "fintech_funding_vs_revenue_by_cohort.png"
+    fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
+    print(f"  Saved: {save_path}")
+
+    print("Generating Fintech Breakdown: VC vs Revenue by Category (2026 snapshot)...")
+    fig = generate_latest_breakdown_chart()
+    save_path = out / "fintech_vc_vs_revenue_breakdown_2026.png"
     fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
     print(f"  Saved: {save_path}")
     plt.close("all")

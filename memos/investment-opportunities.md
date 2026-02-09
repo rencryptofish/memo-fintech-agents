@@ -3,6 +3,13 @@
 **Date:** February 2026
 **Classification:** Investment Memo — Synthesized Research
 
+## Memo Navigation
+
+- Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
+- Full Hierarchy: [Memo Index](README.md)
+- Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md)
+- Supporting Memos: [Agent Economy](agent-economy-memo.md), [Fintech Market Analysis](fintech-market-analysis.md), [Agent-Fintech Deep Dive](agent-fintech-intersection-deep-dive.md)
+
 ---
 
 ## Executive Summary
