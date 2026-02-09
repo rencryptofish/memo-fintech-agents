@@ -6,66 +6,96 @@ Prepared By: Research Team (Fintech + Agent Economy Synthesis)
 
 ## Decision Request
 
-Approve an investment theme focused on agent-fintech infrastructure for the next 12 months, prioritizing identity/compliance, cross-protocol orchestration, and enterprise settlement/treasury rails, while avoiding commoditizing layers (standalone facilitators, wrapper products).
+Approve a focused 12-month theme allocation to agent-fintech infrastructure, centered on identity/compliance and cross-rail orchestration, with strict evidence gates before scaling position sizes.
 
-## Why This Matters Now
+## What Changed After Full Repo Audit
 
-The market has moved from concept to infrastructure buildout:
+1. The strategic direction is intact, but confidence in several headline metrics should be reduced.
+2. Fintech VC recovery is real, but magnitude depends on baseline: 2025 at $51.8B is +27% versus a $40.8B baseline and +19.4% versus a $43.4B baseline.
+3. x402 traction appears directionally meaningful (large transaction count), but volume quality is uncertain and some underlying time-series points are estimated.
+4. Certain M&A claims in prior drafts should be treated as unverified until confirmed by primary sources; do not underwrite theses on rumor-based exits.
 
-1. Protocol layer is now live and fragmented: x402, ACP, AP2, TAP, UCP, Agent Pay all launched in 2025.
-2. Fintech funding is recovering ($43.4B VC-only in 2024 to $51.8B in 2025 in the internal dataset), with capital rotating toward payments, crypto rails, and B2B infra.
-3. Agentic transaction activity is no longer theoretical (~157.6M cumulative x402 transactions, $600M cumulative volume), but value capture is uneven and early.
+## Updated Thesis
 
-## Core Investment Thesis
+Value is most likely to accrue to control points, not commodity pipes.
 
-Value will accrue to control points, not commodity pipes.
+1. Compliance and identity remain the strongest moat candidates as autonomous transaction volume grows.
+2. Cross-protocol orchestration remains the largest visible whitespace, but we should assume incumbents can enter quickly.
+3. B2B agent-finance workflows should scale before B2C autonomy due to trust, audit, and liability constraints.
+4. Crypto and fiat rails are likely complementary; winning infrastructure must abstract across both.
+5. Facilitator-only models show weak defensibility; facilitator plus compliance/policy bundles may still be investable.
 
-1. Regulatory identity/compliance is the strongest moat. As agent-driven financial activity grows, KYA/KYC/AML and auditability become mandatory spend.
-2. Cross-protocol orchestration is the largest unfilled gap. No scaled player yet abstracts routing/governance across crypto and fiat protocol stacks.
-3. B2B workflows will monetize before consumer autonomy. Enterprise procurement, AP/AR, treasury, and compliance use cases have clearer ROI and lower trust barriers.
-4. Crypto and fiat rails will coexist. Micropayments economics favor stablecoin rails; merchant and consumer checkout remain fiat-led.
-5. Standalone facilitator economics are structurally weak. In x402, share shifted quickly (Coinbase facilitator share down, Dexter up), signaling low switching costs and likely fee compression.
+## Base-Rate Evidence (Added Feb 9, 2026)
+
+1. Market size is large enough for control-point winners: global payments generated ~$2.5T revenue on ~$2.0 quadrillion flows in 2024.
+2. Rail migration is slow even when infrastructure is live: ACH still processed $93T in 2025; RTP needed years to pass $1T cumulative value; FedNow had 1,192 institutions but only 1.5M transactions in 2024.
+3. Existing friction and fraud are already large: 70.19% checkout abandonment, $33.41B global card fraud losses, and $12.5B reported US consumer fraud losses.
+4. Stablecoins are now material but still compliance-sensitive: $300B+ supply and ~$46T raw (~$9T adjusted) annualized transfer volume, with persistent illicit-risk monitoring requirements.
+
+## Probability-Weighted Outcomes to 2030
+
+1. **55%: Hybrid default.** Fiat rails remain dominant for consumer-facing checkout while stablecoins grow in backend settlement and machine-native payments.
+2. **30%: Multi-rail equilibrium.** Routing/orchestration platforms become the key value-capture layer across card, bank, and stablecoin rails.
+3. **10%: Crypto-first mainstream.** Stablecoins become the default rail for broad agent commerce beyond niche use cases.
+4. **5%: Delayed adoption.** Regulatory, liability, and fraud frictions materially slow autonomous-finance penetration.
+
+## Crypto Rail Decision Lens
+
+Advantages:
+1. Better small-ticket economics (illustrative: $1 card payment fee ~32.9c versus ~1.5c stablecoin fee at 1.5%).
+2. Faster 24/7 settlement for global machine-to-machine and cross-border workflows.
+3. Higher programmability for policy-driven agent transactions.
+
+Disadvantages:
+1. Weaker default consumer protection and dispute frameworks than card networks.
+2. Higher compliance integration burden across jurisdictions.
+3. Lower mainstream merchant acceptance and user familiarity.
+
+## Priority Questions Before Scaling Capital
+
+1. What share of agent payment volume is organic utility traffic versus speculative traffic, using a reproducible method?
+2. Which team can own policy and identity across rails without being platform-dependent on one incumbent?
+3. What are real, company-level unit economics (gross margin, retention, payback), not market-level TAM narratives?
+4. Which jurisdictions will define practical KYA/KYC requirements first, and who is already license-ready?
+5. Is orchestration genuinely greenfield, or already being absorbed by large payment networks and cloud platforms?
 
 ## Where To Invest
 
-Focus on companies that satisfy at least two of these:
+Prioritize companies meeting at least two criteria:
 
-1. Regulatory or compliance moat.
-2. Cross-rail/cross-protocol abstraction.
-3. Proprietary workflow or data lock-in in financial operations.
-4. Enterprise distribution and measurable production usage.
+1. Regulatory/compliance moat (licenses, controls, audit infrastructure).
+2. Cross-rail and cross-protocol abstraction capability.
+3. Deep workflow/data integration with enterprise financial operations.
+4. Clear production traction with paying enterprise customers.
 
 Priority buckets:
 
-1. Tier 1 (highest conviction): Agent identity/compliance, compliance-native settlement infra, cross-protocol orchestration.
-2. Tier 2 (selective): Enterprise agent-finance applications with proprietary data or workflow embed.
-3. Tier 3 (optionality): Discovery/marketplace infrastructure if early network effects appear.
+1. Tier 1: Identity/compliance infrastructure and orchestration control-plane plays.
+2. Tier 2: Enterprise agent-finance applications with proprietary data/workflow lock-in.
+3. Tier 3: Discovery/marketplace bets only where early network effects are demonstrated.
 
 ## Where Not To Invest
 
-1. Standalone x402 facilitators without compliance or enterprise bundle.
-2. Generic "agent wallet/payment wrappers" with no defensibility.
-3. Consumer-first autonomous commerce bets that depend on trust/regulatory leaps before 2027+.
+1. Standalone facilitator businesses without compliance, policy, or enterprise workflow differentiation.
+2. Thin wallet/payment wrappers with no distribution, data, or regulatory moat.
+3. Consumer-first autonomy bets that require unresolved trust and liability assumptions.
+4. Deals justified primarily by unverified acquisition rumors.
 
-## Risk Assessment and Controls
+## Risk Controls
 
-1. Timing risk: Market may mature slower than expected.
-   Control: favor capital-efficient teams with current revenue and enterprise pilots.
-2. Platform capture risk: Big tech/payment networks can bundle features.
-   Control: invest where moats are hardest to bundle (regulation, trust, domain data).
-3. Data quality risk: Parts of sector datasets are estimated.
-   Control: underwrite on directionality plus company-level diligence, not category precision.
-4. Regulatory shock risk: Fast policy change can freeze flows or reshape economics.
-   Control: bias toward compliance-first operators and license-forward models.
+1. Evidence risk: treat estimated market metrics as directional, not underwriting-grade.
+2. Platform risk: assume aggressive bundling from large incumbents.
+3. Timing risk: require capital-efficient burn and near-term revenue proof.
+4. Regulatory risk: prioritize operators built for auditability and policy enforcement from day one.
 
-## 12-Month Milestones (Go/No-Go)
+## 12-Month Go/No-Go Milestones
 
-1. Evidence of production cross-protocol orchestration demand in enterprise workflows.
-2. Agent compliance tooling becoming line-item budget in fintech/enterprise RFPs.
-3. Organic (non-speculative) growth in agent transaction flows.
-4. Clear enterprise willingness to pay for agent identity, authorization, and audit controls.
-5. At least one breakout company demonstrating durable moat plus repeatable distribution.
+1. Measurable increase in organic agent transaction volume (not speculation-led).
+2. Compliance and agent identity spend appearing as explicit budget line items in enterprise RFPs.
+3. At least one orchestration platform showing repeatable production routing across rails.
+4. Demonstrated willingness to pay for policy, authorization, and audit controls.
+5. One breakout company with durable moat plus repeatable distribution.
 
 ## Recommendation
 
-Proceed with a concentrated but risk-managed theme allocation to agent-fintech infrastructure now. The upside is large, but only if we stay disciplined on moat quality: invest in compliance/identity/orchestration control points, and avoid commoditizing transaction plumbing.
+Proceed, but stage capital. Start with a concentrated watchlist and small initial checks, then scale only when data quality and production traction clear the above milestones.
