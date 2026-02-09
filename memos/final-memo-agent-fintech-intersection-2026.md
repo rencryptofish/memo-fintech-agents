@@ -189,6 +189,34 @@ If revenue or funding is not disclosed for a row, it is excluded from the cumula
 
 ---
 
+## Agentic Fintech Intersection: Company Breakdown (Raised vs Revenue)
+
+`Scope:` Core intersection companies repeatedly referenced in this repo for agent payments, wallets/identity, and early A2A commerce rails.  
+`Important:` Most pure-play intersection startups have not publicly disclosed absolute revenue/ARR yet; usage/traction metrics are provided where available.
+
+| Company | Primary Role in Intersection | Amount Raised | Revenue / ARR (Disclosed) | Usage / Traction Metric | Data Confidence |
+|---|---|---|---|---|---|
+| Kite | Agent identity + payments infrastructure (Kite AIR) | $33M Series A | N/A disclosed | Triple-backed by PayPal Ventures, General Catalyst, Coinbase Ventures (strategic signal) | Medium |
+| Catena Labs | Regulated AI-native financial institution + agent identity (ACK-ID) | $18M seed | N/A disclosed | Agent Commerce Kit + ACK-ID released | Medium |
+| Skyfire | Agent payment network (x402-adjacent) | $9.5M seed | N/A disclosed | Reported thousands of daily transactions | Medium |
+| Natural | Agentic payments for real-world workflows | $9.8M seed | N/A disclosed | Backed by operators from Bridge, Mercury, Ramp, Vercel, Unit | Medium |
+| Crossmint | Agent wallet + stablecoin infrastructure | $23.6M | N/A (absolute revenue not disclosed) | 40K+ companies/developers; 150K GOAT SDK downloads; +1,100% subscription revenue growth YoY | Medium |
+| UQPAY | Compliant x402 transaction layer | N/A disclosed | N/A disclosed | First commercial-grade compliant x402 platform (launched Feb 8, 2026) | Medium |
+| PayAI | Third-party x402 facilitator + dispute roadmap | Token-based / not disclosed | N/A disclosed | 10M+ cumulative transactions; ~15% daily facilitator share (repo snapshots) | Medium |
+| Fluora | MonetizedMCP discovery marketplace | N/A disclosed | N/A disclosed | Live marketplace positioning for agent-discoverable paid services | Low |
+
+### Known subtotal (this company set)
+
+| Metric | Value |
+|---|---|
+| Cumulative raised (disclosed subset above) | **$93.9M** |
+| Combined revenue / ARR (disclosed subset above) | **N/A disclosed** |
+| Category-level context from repo (`Agentic Fintech Intersection`, early 2026 estimate) | **~$1.1B cumulative VC; ~$90M combined revenue** |
+
+Interpretation: company-level disclosed funding/revenue is still sparse versus the category-level estimate, which implies a large share of intersection capital and revenue is currently in undisclosed/private or indirectly attributed layers.
+
+---
+
 ## The 3 Strongest Startup Playbooks (2026-2027)
 
 ### 1) Compliance and Policy Control Plane for Agent Transactions
