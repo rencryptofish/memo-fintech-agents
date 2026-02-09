@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-x402 is an open-source payment protocol developed by Coinbase that revives the long-dormant HTTP 402 ("Payment Required") status code to embed native stablecoin payments directly into web traffic. Launched in May 2025 and backed by a foundation co-created with Cloudflare, the protocol has processed **140M+ transactions** and **$600M+ in volume** across Base and Solana. It is purpose-built for the emerging **agentic economy** — where AI agents autonomously transact for data, compute, and services — and enables micropayments as small as $0.001 per request with zero protocol fees.
+x402 is an open-source payment protocol developed by Coinbase that revives the long-dormant HTTP 402 ("Payment Required") status code to embed native stablecoin payments directly into web traffic. Launched in May 2025 and backed by a foundation co-created with Cloudflare, the protocol has processed **157.6M cumulative transactions** and **$600M+ in volume** across Base and Solana. It is purpose-built for the emerging **agentic economy** — where AI agents autonomously transact for data, compute, and services — and enables micropayments as small as $0.001 per request with zero protocol fees.
 
 ---
 
@@ -56,7 +56,7 @@ x402 sits within a broader ecosystem of four complementary agentic payment proto
 | **x402** | Coinbase + Cloudflare | Crypto-native settlement, micropayments, pay-per-use | On-chain stablecoins (USDC) |
 | **AP2** (Agent Payments Protocol) | Google | Authorization, governance, audit, multi-party orchestration | Rail-agnostic (supports x402) |
 | **ACP** (Agentic Commerce Protocol) | Stripe + OpenAI | Conversational commerce, human-in-the-loop checkout | Card/ACH via Stripe |
-| **TAP** (Trusted Agent Protocol) | Visa + Cloudflare | Agent identity verification, merchant trust | Visa network |
+| **TAP** (Trusted Agent Protocol) | Visa + Akamai | Agent identity verification, merchant trust | Visa network |
 
 The emerging consensus is these are **complementary layers**, not direct competitors. Google's AP2 explicitly integrates x402 as its crypto settlement layer. Visa's TAP handles identity/trust. Stripe's ACP handles fiat checkout.
 
@@ -100,7 +100,7 @@ The emerging consensus is these are **complementary layers**, not direct competi
 
 | Metric | Value |
 |---|---|
-| Cumulative transactions | **140M+** (119M Base, 38.6M Solana) |
+| Cumulative transactions | **157.6M** (119M Base, 38.6M Solana) |
 | Cumulative payment volume | **$600M+** |
 | Unique buyers (all time) | ~406,700 |
 | Unique sellers (all time) | ~81,000 |

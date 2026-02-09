@@ -21,7 +21,7 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 
 - `agent-economy-memo.md` — AI agent economy: infrastructure stack, market map across 10 verticals (coding, CX, sales, legal, finance, HR, platforms, security, eval, marketplaces), market sizing ($7-8B 2025 → $47-52B 2030), funding landscape, emerging trends (MCP/A2A protocols, multi-agent systems, autonomy spectrum), and investment thesis
 - `fintech-market-analysis.md` — Comprehensive fintech market analysis: $340B market (2024), geographic founding patterns, cohort analysis from pre-2008 through 2026, success/failure patterns, unit economics, hottest segments (AI-native fintech, stablecoins, embedded finance, real-time payments, B2B/SMB)
-- `x402-research-memo.md` — x402 protocol deep dive: Coinbase's HTTP-native stablecoin payment protocol, 140M+ transactions, $600M+ volume, technical architecture (ERC-3009, facilitator model), SDK ecosystem, comparative advantage for agent micropayments, analyst sentiment
+- `x402-research-memo.md` — x402 protocol deep dive: Coinbase's HTTP-native stablecoin payment protocol, 157.6M cumulative transactions, $600M+ volume, technical architecture (ERC-3009, facilitator model), SDK ecosystem, comparative advantage for agent micropayments, analyst sentiment
 - `x402-value-capture-analysis.md` — First-principles value capture analysis of x402 stack: raw adoption data (157M tx, $600M+ volume, facilitator market share shifts), full value chain map (8 layers from protocol to discovery), 9 historical analogies with revenue data (HTTP/Stripe/Lightning/DNS/SSL), seven-force framework applied to each layer, Coinbase vertical integration thesis, three investable opportunities (marketplace, compliance, differentiated apps)
 - `x402-value-accrual-deep-dive.md` — Deep dive on buyer-seller dynamics and value accrual: ratio compression from 53:1 → 5:1 with projections, seller pricing power analysis (why it exists, why it erodes), 7-layer stack with revenue per $1B volume ($45M to Circle, $10M to Base, $880M to sellers, $100M to facilitators), Coinbase flywheel thesis ($35-38M revenue per $1B volume), facilitator layer as value trap (Dexter 5%→50% in 3 months), discovery layer as biggest whitespace
 - `fintech-agents-intersection.md` — The convergence of fintech and AI agents: four agentic payment protocols (x402, ACP, AP2, TAP), agent wallets and financial identity (Kite, Catena Labs, Crossmint, Skyfire), DeFAI movement, agent-to-agent commerce, KYA framework, "Stripe moment" analysis, regulatory landscape
@@ -105,6 +105,14 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - Always rewrite the memo after receiving all agent findings — the first draft compiled before all agents finish will have stale/incomplete data
 - AI agent market data changes rapidly — always search for the latest numbers rather than relying on cached knowledge
 - Valuation and ARR figures can differ significantly across sources — note the source and date for each data point
+
+### Memo Consistency & Canonical Facts
+- Maintain a canonical fact table for cross-memo anchor data (protocol volumes, company ARR, key funding totals, protocol launch dates, and partner attributions) before drafting or revising multiple memos.
+- Use one x402 anchor across all docs: `157.6M cumulative transactions` with supporting split `(119M Base, 38.6M Solana)` and keep `$600M+ volume` as a separate metric.
+- Keep protocol timeline wording precise: four major payment protocols launched in 2025 (`x402`, `ACP`, `AP2`, `TAP`), while `UCP` launched in January 2026.
+- Keep partner attribution stable for TAP (`Visa + Akamai`) and avoid alternate pairings in derivative memos unless explicitly sourced and date-scoped.
+- Normalize repeated company metrics before publishing (for example, `Salesforce Agentforce` and `Noma Security`) to prevent internal contradictions across synthesis docs.
+- Run a final repo-wide consistency grep for stale values/phrases before commit (old numbers, outdated ARR/customer counts, alternate partner attributions).
 
 ### Fintech Domain Insights
 - The recurring fintech pattern: crisis/platform shift → infrastructure companies → application companies → mania → correction → survivors become platforms → next cycle. We are at the AI platform shift stage.

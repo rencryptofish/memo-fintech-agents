@@ -41,7 +41,7 @@ We identified **15 high-conviction investment opportunities** across three domai
 ---
 
 ### 2. Agent Payment Infrastructure (The Intersection)
-**Why now:** Four major protocols (x402, ACP, AP2, TAP) launched in 2025, backed by Coinbase, Stripe/OpenAI, Google, and Visa. 140M+ transactions already processed via x402 alone. a16z projects agents could drive $30T in purchases by 2030.
+**Why now:** Four major protocols (x402, ACP, AP2, TAP) launched in 2025, backed by Coinbase, Stripe/OpenAI, Google, and Visa. 157.6M cumulative transactions have already been processed via x402. a16z projects agents could drive $30T in purchases by 2030.
 
 | Company | Raised | Key Metric | Thesis |
 |---------|--------|------------|--------|
@@ -304,7 +304,7 @@ The 2025-2026 M&A wave reveals exactly where incumbents perceive strategic value
 ## What Could Go Wrong
 
 ### Risk 1: Big Tech Platform Capture
-OpenAI Frontier (launched Feb 5, 2026), Salesforce Agentforce (~$540M ARR, 18.5K customers), and Microsoft Copilot (160K+ orgs) are all launching agent platforms. If they bundle infrastructure features (observability, security, memory, identity), standalone startups get squeezed.
+OpenAI Frontier (launched Feb 5, 2026), Salesforce Agentforce (8,000+ customers, ~$1.2B ARR, 18,500 use cases), and Microsoft Copilot (160K+ orgs) are all launching agent platforms. If they bundle infrastructure features (observability, security, memory, identity), standalone startups get squeezed.
 
 **Mitigation:** Invest in companies with moats big tech won't replicate — regulatory compliance, deep vertical expertise, protocol positioning.
 

@@ -14,8 +14,8 @@ The AI agent economy has emerged as the most consequential technology shift sinc
 - The global AI agent market is **~$7-8B in 2025**, projected to reach **$47–$52B by 2030** (CAGR ~44–46%), with broader estimates reaching $200B by the early 2030s (Grand View Research, MarketsandMarkets, Precedence Research)
 - Enterprise GenAI investment hit **$37B in 2025**, tripling from $11.5B in 2024 (Menlo Ventures). AI captured **52.7% of all global VC** ($270B of $513B) in 2025
 - **Gartner predicts** 33% of enterprise software will include agentic AI by 2028 (up from <1% in 2024), and 15% of day-to-day work decisions will be made autonomously
-- Agent companies are growing at unprecedented rates: Cursor ($500M+ ARR), Claude Code ($0 to $400M ARR in 5 months), Harvey ($195M ARR, 3.9x YoY), Sierra ($104M ARR, 4x YoY), Devin ($73M ARR, 73x YoY)
-- AI agent companies trade at **25-50x revenue** vs. 5-7x for traditional SaaS — a ~5x premium
+- Agent companies are growing at unprecedented rates: Cursor ($1B+ ARR, Nov 2025), Claude Code ($0 to $400M ARR in ~5 months, now $1B+ — The Information/Anthropic), Harvey ($195M ARR, 3.9x YoY), Sierra ($104M ARR, 4x YoY), Devin ($73M ARR, 73x YoY)
+- AI agent companies trade at **25-50x revenue** vs. ~7.6x median for traditional SaaS — a ~3-5x premium (Finro Financial Consulting, Aventis Advisors)
 - Both MCP (Anthropic) and A2A (Google) protocols were donated to the **Linux Foundation's Agentic AI Foundation** in December 2025, marking a "TCP/IP moment" for agents
 - The most compelling opportunities lie in **agent infrastructure** (identity, memory, observability), **vertical agents** in regulated industries, and **agent security/governance**
 
@@ -50,7 +50,7 @@ The base layer is dominated by a small number of frontier labs providing the rea
 | **Meta** | Llama 3/4 | Open-source agent foundation, enabling edge/local agents | Scout: 17B active params from 109B total |
 | **Mistral** | Mistral Large, Codestral | European alternative, function calling support | Apache 2.0 licensed Small 3 (24B params) |
 
-**Key dynamic:** The foundation model layer is commoditizing rapidly. DeepSeek-R1 trained for ~$6M matching top proprietary reasoning models, triggering a $600B single-day NVIDIA market cap loss (Jan 27, 2025) and forcing the industry pivot from "bigger is better" to "smarter is cheaper." This commoditization pushes value up the stack to orchestration, tooling, and applications. Anthropic has notably unseated OpenAI as the enterprise leader: 40% enterprise LLM spend share (up from 24%), while OpenAI fell to 27% (from 50%) (Menlo Ventures).
+**Key dynamic:** The foundation model layer is commoditizing rapidly. DeepSeek-R1 trained for ~$6M matching top proprietary reasoning models, triggering a $600B single-day NVIDIA market cap loss (Jan 27, 2025) and forcing the industry pivot from "bigger is better" to "smarter is cheaper." This commoditization pushes value up the stack to orchestration, tooling, and applications. Anthropic has notably unseated OpenAI as the enterprise leader: 40% enterprise LLM spend share (up from 24%), while OpenAI fell to 27% (from 50%) (Menlo Ventures, "2025 State of Generative AI in the Enterprise," Dec 2025).
 
 ### 1.2 Agent Frameworks & SDKs
 
@@ -58,9 +58,9 @@ The framework layer has seen explosive growth, with multiple competing approache
 
 **Tier 1: Dominant / Widely Adopted**
 
-- **LangChain / LangGraph** — The most widely adopted agent framework ecosystem. **90M combined monthly downloads.** 35% of Fortune 500 use their services; production deployments at LinkedIn, Uber, and 400+ companies. Raised **$260M total** ($125M Series B, Oct 2025, led by IVP/Sequoia/Benchmark) at **$1.25B valuation** (unicorn status). Revenue: $12-16M ARR. LangGraph is now the recommended path for building agents (stateful, graph-based orchestration with cycles and conditional logic).
+- **LangChain / LangGraph** — The most widely adopted agent framework ecosystem. **90M combined monthly downloads** (LangChain Series B blog, Oct 2025). 35% of Fortune 500 use their services; production deployments at LinkedIn, Uber, and 400+ companies. Raised **$260M total** ($125M Series B, Oct 2025, led by IVP/Sequoia/Benchmark) at **$1.25B valuation** (unicorn status). Revenue: $12-16M ARR. LangGraph is now the recommended path for building agents (stateful, graph-based orchestration with cycles and conditional logic).
 
-- **CrewAI** — Role-based multi-agent framework. 20K+ GitHub stars. Powers agents for **60% of Fortune 500**; 150 enterprise customers within 6 months. 1.4B agentic automations across enterprises including PwC, IBM, Capgemini, NVIDIA. 100K groups of multi-agent executions per day. Raised **$24.5M total** ($18M Series A, Oct 2024, led by Insight Partners; angels include Andrew Ng, Dharmesh Shah). Revenue: $3.2M with a 29-person team.
+- **CrewAI** — Role-based multi-agent framework. 20K+ GitHub stars. Powers agents for **60% of Fortune 500** (CrewAI claims, self-reported); 150 enterprise customers within 6 months. 1.4B agentic automations across enterprises including PwC, IBM, Capgemini, NVIDIA. 100K groups of multi-agent executions per day. Raised **$24.5M total** ($18M Series A, Oct 2024, led by Insight Partners; angels include Andrew Ng, Dharmesh Shah). Revenue: $3.2M with a 29-person team.
 
 - **Microsoft Agent Framework** — Microsoft merged AutoGen (multi-agent conversations from MSR) with Semantic Kernel (enterprise orchestration) into a unified open-source framework (announced Oct 2025). GA targeted Q1 2026. Both Python and .NET support. Unique differentiator: deep Azure and Microsoft 365 Copilot integration.
 
@@ -89,7 +89,7 @@ Two complementary protocols have emerged as de facto standards — and both were
 
 **Model Context Protocol (MCP) — Anthropic**
 - Open standard for connecting AI agents to external tools and data sources (**vertical integration**)
-- Launched November 2024. Growth: 100K downloads → **97M monthly SDK downloads** (late 2025)
+- Launched November 2024. Growth: 100K downloads → **97M monthly SDK downloads** (npm + PyPI combined, late 2025; PyPI `mcp` package alone ~57M/month)
 - Functions as a "USB-C for AI" — universal connector between agents and tools
 - Adopted by OpenAI, Google DeepMind, Microsoft, Cursor, Windsurf, Replit, Sourcegraph, Block, and thousands of developers
 - Donated to the **Agentic AI Foundation (AAIF)** under the Linux Foundation (Dec 2025), co-founded by Anthropic, Block, and OpenAI
@@ -134,7 +134,7 @@ This is an **early-stage but mission-critical emerging category**:
 - **Astrix Security** — Agent identity governance, least-privilege access, audit trails
 - **Strata (Maverics)** — Agentic identity orchestration
 
-**Key stat:** 80% of IT pros have seen AI agents act unexpectedly or perform unauthorized actions (Sailpoint survey). By 2026, 30% of enterprises will rely on agents acting independently and triggering transactions. Agent identity is one of the biggest gaps in the infrastructure stack and a massive greenfield opportunity.
+**Key stat:** 80% of companies encountered AI agents executing unintended tasks (SailPoint/Dimensional Research, "AI agents: The new attack surface," May 2025, n=353 enterprise IT professionals across 5 continents). By 2026, 30% of enterprises will rely on agents acting independently and triggering transactions. Agent identity is one of the biggest gaps in the infrastructure stack and a massive greenfield opportunity.
 
 ### 1.5 Agent DevTools & Observability
 
@@ -160,7 +160,7 @@ The observability layer is critical as agents move to production. Over 20 platfo
 
 ### 2.1 Coding Agents
 
-The most mature and fastest-growing vertical. AI coding assistants market valued at ~$360M in 2025. 90% of dev teams now use AI in workflows (up from 61% a year ago). Coding is the single largest AI application category at **$4.0B** (55% of departmental AI spend). 7 companies have crossed $100M ARR.
+The most mature and fastest-growing vertical. AI coding assistants market valued at ~$360M in 2025. 90% of dev teams now use AI in workflows (up from 61% a year ago; Jellyfish, "2025 State of Engineering Management Report"). Coding is the single largest AI application category at **$4.0B** (55% of departmental AI spend). 7 companies have crossed $100M ARR.
 
 | Company | Funding | Valuation | ARR / Metrics | Key Differentiator |
 |---------|---------|-----------|---------------|-------------------|
@@ -259,7 +259,7 @@ AI cybersecurity market forecast to double by 2026, reaching **$134B by 2030**. 
 | **Robust Intelligence** | **Acquired by Cisco** | AI Validation (testing/guardrails) + AI Protection (AI Firewall). Continuous automated red teaming. |
 | **Prompt Security** | $18M | MCP security. Risk scoring for 13,000+ MCP servers. Policy enforcement for Custom GPTs. |
 | **CalypsoAI** | $50M+ | AI security and enablement platform. |
-| **Noma Security** | $32M Series A | AI supply chain security. |
+| **Noma Security** | $132M total ($100M Series B) | AI supply chain security. |
 
 **Key trend:** All three major standalone AI security startups (Lakera, Protect AI, Robust Intelligence) have been acquired by cybersecurity incumbents, signaling that **agent security is being consolidated into existing security platforms** rather than remaining standalone.
 
@@ -335,7 +335,7 @@ A critical reframing from Bessemer Venture Partners:
 | 82% of tech executives plan to integrate AI agents within 1-3 years | Capgemini |
 | 160,000+ organizations created 400,000+ custom agents via Copilot Studio (in 3 months) | Microsoft |
 | Salesforce Agentforce: 330% ARR growth YoY; 18,500 use cases; 1M+ support requests at 93% accuracy | Salesforce |
-| Organizations currently average 12 agents each; multi-agent adoption expected to surge 67% by 2027 | Various |
+| Organizations currently average 12 agents each; multi-agent adoption expected to surge 67% by 2027 | Salesforce/Vanson Bourne/Deloitte, Connectivity Benchmark Report (Feb 2026) |
 
 **Key caveat:** Only 16% of deployments are true agents (Menlo Ventures) and fewer than 1 in 4 organizations have scaled agents to production. The adoption gap between experimentation and production is 2026's central enterprise challenge.
 
@@ -364,7 +364,7 @@ A critical reframing from Bessemer Venture Partners:
 | AI agent companies (late-stage private) | **25-30x** (median ~25.8x) |
 | Top-tier AI companies | **40-50x** (rare outliers clear 100x) |
 | AI private market average | **37.5x** |
-| Traditional SaaS | **5-7x** (median 7.6x) |
+| Traditional SaaS | **~7.6x median** (range 5-12x) |
 | **Premium:** AI vs. SaaS | **~5x premium** |
 
 AI agent companies at Series B peak at **41x revenue** multiples. Series A median AI valuation: $60M (vs $44.5M non-AI).
@@ -465,7 +465,7 @@ The consolidation wave is accelerating:
 
 The industry is shifting from single all-purpose agents to orchestrated teams of specialized agents — analogous to the **microservices revolution** in software.
 
-- Multi-agent system inquiries surged **1,445%** from Q1 2024 to Q2 2025
+- Multi-agent system inquiries surged **1,445%** from Q1 2024 to Q2 2025 (Gartner, "Multiagent Systems in Enterprise AI," Dec 2025)
 - Gartner projects 40% of enterprise apps will include task-specific agents by end of 2026
 - By 2027, one-third of agentic AI implementations will combine agents with different skills
 - Organizations currently average 12 agents each; multi-agent adoption expected to surge 67% by 2027
@@ -522,10 +522,10 @@ Agent deployment is disrupting traditional SaaS pricing:
 
 - **Outcome-based pricing** expected to reach ~30% adoption
 - **Hybrid pricing** surged from 27% to 41% in 12 months
-- Companies using traditional per-seat pricing for AI see **40% lower gross margins** and **2.3x higher churn**
+- Companies using traditional per-seat pricing for AI reportedly see **40% lower gross margins** and **2.3x higher churn** (industry estimates via Pilot.com; no primary study identified)
 - Salesforce moved from per-conversation to per-action ($0.10/action)
 - Sierra/Decagon charge per resolution
-- **Warning:** Pilot-to-production scaling routinely reveals **500-1,000% cost underestimation**
+- **Warning:** Pilot-to-production scaling routinely reveals **significant cost underestimation (IDC: 30%+ on average; individual projects report far higher overruns)**
 
 ### 5.7 Agent Safety & Alignment
 
@@ -615,7 +615,7 @@ Agent deployment is disrupting traditional SaaS pricing:
 |------|----------|----------|
 | **High failure rate** | High | Gartner: 40%+ of agentic AI projects will be canceled by 2027 due to escalating costs and unclear ROI |
 | **Implementation gap** | High | Only 14% of organizations have solutions ready for deployment; 11% in production. Only 16% of AI deployments are true agents (Menlo Ventures) |
-| **Cost underestimation** | High | Pilot-to-production scaling reveals **500-1,000% cost overruns** |
+| **Cost underestimation** | High | Pilot-to-production scaling reveals **significant cost overruns (IDC predicts organizations will underestimate AI infra costs by 30%+)** |
 | **ROI uncertainty** | Medium-High | Only 15% of AI decision-makers report EBITDA lift (Forrester). 25% of planned AI spend will be deferred by 2027 |
 | **Big tech platform risk** | Medium-High | Microsoft, Google, Salesforce bundling agent features into existing platforms with massive distribution |
 | **Valuation excess** | Medium | AI companies at 37.5x revenue vs. 7.6x SaaS. Clear signs of excess in early-stage companies where valuations outpace traction |

@@ -54,7 +54,7 @@ The agentic payments landscape crystallized in 2025 with four complementary prot
 
 | Protocol | Production Status | Transaction Volume | Ecosystem Partners |
 |----------|------------------|-------------------|-------------------|
-| **x402** | Live (V2 Dec 2025) | 140M+ txns, $600M+ volume | Coinbase, Cloudflare, Google, 10+ chains |
+| **x402** | Live (V2 Dec 2025) | 157.6M txns, $600M+ volume | Coinbase, Cloudflare, Google, 10+ chains |
 | **ACP** | Live in ChatGPT | Not disclosed | Stripe, OpenAI, Salesforce, Shopify, BigCommerce, PwC; retailers URBN, Etsy, Coach |
 | **AP2** | Early adoption | Not disclosed | 60+ partners: Mastercard, Amex, PayPal, Adyen, Worldpay, Salesforce, Intuit |
 | **TAP** | Pilot stage | Hundreds of transactions | 100+ partners; 30+ building in sandbox; 20+ agent integrations |
@@ -197,7 +197,7 @@ DeFAI is **high-upside, high-risk**. The infrastructure plays (Almanak, CoW Prot
 Agent-to-agent (A2A) commerce -- where AI agents autonomously discover, negotiate with, and pay each other -- is the most futuristic but also the most infrastructure-dependent segment.
 
 **What exists today:**
-- x402 enables stateless, HTTP-native payments between agents (140M+ transactions)
+- x402 enables stateless, HTTP-native payments between agents (157.6M cumulative transactions)
 - Google's A2A protocol enables agent-to-agent discovery and communication
 - Fluora's MonetizedMCP marketplace enables agents to discover and purchase services
 - PayAI facilitates agent payments as the largest third-party x402 facilitator
@@ -326,7 +326,7 @@ The agentic finance ecosystem is at an analogous moment. Agent payments are too 
 
 | Company | "Stripe Moment" Thesis | Strength | Weakness |
 |---------|----------------------|----------|----------|
-| **Coinbase (x402 + AgentKit + CDP)** | Already has the protocol (x402), the wallet infra (AgentKit), and institutional backing (Cloudflare, Google). Could become the default payments backbone for agent-to-agent commerce. | Largest ecosystem; live at scale (140M+ txns); Google/Visa integration. | Crypto-only (requires stablecoin wallet); centralization risk (most traffic through Coinbase facilitator); regulatory gaps. |
+| **Coinbase (x402 + AgentKit + CDP)** | Already has the protocol (x402), the wallet infra (AgentKit), and institutional backing (Cloudflare, Google). Could become the default payments backbone for agent-to-agent commerce. | Largest ecosystem; live at scale (157.6M txns); Google/Visa integration. | Crypto-only (requires stablecoin wallet); centralization risk (most traffic through Coinbase facilitator); regulatory gaps. |
 | **Stripe (ACP + Agentic Commerce Suite)** | Extending its existing dominance in internet payments to agent commerce. ACP in production inside ChatGPT. Massive merchant base. | Already the payments backbone of the internet; existing merchant relationships; production deployment; fiat-native. | Fiat-only (higher costs, slower settlement); not designed for micropayments or A2A; subscription model, not usage-based. |
 | **Google (AP2 + UCP + A2A)** | Protocol layer play: AP2 for payments, UCP for commerce, A2A for communication. Rail-agnostic -- bridges x402 and fiat. | 60+ partners; rail-agnostic; bridges crypto and fiat; massive distribution. | Not a payments company; protocols without implementation; depends on others for execution. |
 | **Visa (TAP + Intelligent Commerce)** | Trust and identity layer for agent commerce. 100+ partners. Millions of merchants already on Visa network. | Largest payment network globally; trust/brand; existing merchant relationships. | Traditional infrastructure (slow, expensive); not built for micropayments; agent identity only, not payments execution. |
