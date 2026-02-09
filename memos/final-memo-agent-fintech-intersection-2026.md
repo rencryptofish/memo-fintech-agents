@@ -167,6 +167,28 @@ Confidence legend:
 
 ---
 
+## Cumulative VC and Combined Revenue Breakdown (Known Subset)
+
+`Method:` Aggregates below use only figures explicitly stated in this repo for the companies/protocols listed above.  
+If revenue or funding is not disclosed for a row, it is excluded from the cumulative subtotal and called out in coverage notes.
+
+| Promising Area | Included Entities | Cumulative VC Raised (Known) | Combined Revenue / ARR (Known) | Coverage Notes |
+|---|---|---|---|---|
+| Compliance + Audit Infrastructure | Sardine, Duna, Vouched, UQPAY | **~$199M** | **$10M+ ARR** | Revenue disclosed for Vouched only; Sardine ARR base not disclosed in repo. |
+| Vertical Agentic Finance Workflows (CFO/AP/AR/Treasury) | Ramp, Mercury, Truewind, FurtherAI | **$1.9475B+** | **$1.65B+ annualized revenue** | Revenue disclosed for Ramp and Mercury; Truewind/FurtherAI revenue not disclosed. |
+| Agent Identity + Authorization (KYA) | Descope, Keycard, Composio, Kite, Catena Labs | **~$206M** | **N/A disclosed** | Funding available; no comparable revenue/ARR totals disclosed across this group. |
+| Cross-Protocol / Cross-Rail Orchestration | x402, ACP, AP2, TAP | **N/A (protocol/incumbent-funded)** | **N/A comparable startup revenue** | Protocol traction exists (for x402: 75.41M tx, $24.24M volume) but not startup-revenue comparable. |
+| Discovery + Reputation for Agent Services | Fluora, Payman AI, x402 Bazaar | **N/A disclosed** | **N/A disclosed** | Early-stage and mostly undisclosed funding/revenue. |
+| Dispute Resolution + Recovery | PayAI, PayPal Agent Ready | **N/A disclosed** | **N/A comparable startup revenue** | PayAI is token-based/undisclosed; PayPal Agent Ready is a product line inside an incumbent. |
+
+### Quick interpretation
+
+1. The largest *known* funded and monetized wedge is vertical CFO workflow software (`$1.9475B+` raised, `$1.65B+` annualized revenue in disclosed subset).
+2. Compliance appears under-capitalized relative to strategic importance (`~$199M` known funding) and may still be early in revenue disclosure.
+3. Identity and orchestration remain high-potential but data-light for direct revenue benchmarking at this stage.
+
+---
+
 ## The 3 Strongest Startup Playbooks (2026-2027)
 
 ### 1) Compliance and Policy Control Plane for Agent Transactions
