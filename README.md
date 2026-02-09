@@ -18,9 +18,10 @@ Research memos analyzing fintech market opportunities, AI agent economy infrastr
 
 Generated from sourced data in `data/`. Run scripts with `uv run python scripts/<script>.py` (or `uv run python gen_x402_value_accrual.py` for x402 charts 9-11).
 
-- **`charts/fintech/`** - 4 charts: stacked bar, market map, heatmap, and funding-vs-revenue trajectory scatter
+- **`charts/fintech/`** - 7 charts: stacked bar, market map, heatmap, funding-vs-revenue trajectory, cohort outcome split, market size projection, VC-vs-deals trend
 - **`charts/agent-economy/`** - 13 charts: market sizing, ARR race, growth rates, valuation multiples, market map, funding rounds, M&A, Gartner timeline, autonomy spectrum, infrastructure gaps, and funding-vs-revenue trajectory scatter
-- **`charts/x402/`** - 11 charts: daily transactions, cumulative growth, chain split, facilitator share, value chain, ecosystem mcap, developer adoption, buyer/seller ratio, deep buyer/seller dynamics, value accrual stack, Coinbase flywheel
+- **`charts/intersection/`** - 4 charts: protocol launch timeline, protocol capability matrix, layer funding heatmap, and agent-commerce readiness roadmap
+- **`charts/x402/`** - 14 charts: core adoption/economics set plus layer-revenue sensitivity, Coinbase revenue scenarios, and risk matrix
 
 ## Structure
 
@@ -28,6 +29,7 @@ Generated from sourced data in `data/`. Run scripts with `uv run python scripts/
 memos/          Research memos (markdown)
 charts/         Generated visualizations (PNG)
   agent-economy/
+  intersection/
   x402/
   fintech/
 data/           Structured datasets with source attribution

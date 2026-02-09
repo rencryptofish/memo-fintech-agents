@@ -10,8 +10,9 @@ This repository contains research memos on fintech, AI agents, and the intersect
 memos/           — Research memos (markdown)
 charts/          — Generated visualizations (PNG)
   agent-economy/ — 13 agent economy charts
-  fintech/       — 4 fintech charts
-  x402/          — 11 x402 protocol charts
+  fintech/       — 7 fintech charts
+  intersection/  — 4 fintech-agent intersection charts
+  x402/          — 14 x402 protocol charts
 scripts/         — Python chart generation scripts
 data/            — Structured data modules (Python)
 pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
@@ -50,13 +51,22 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `12_infrastructure_gap_analysis.png` — Infrastructure gap analysis
 - `agent_economy_funding_vs_revenue.png` — Funding vs revenue trajectory scatter by category (2023-2026)
 
-### Fintech (`charts/fintech/`) — 4 charts
+### Fintech (`charts/fintech/`) — 7 charts
 - `fintech_funding_by_category.png` — Stacked bar: VC funding by 10 categories (2015-2025) with VC-total reference line and event annotations
 - `fintech_market_map.png` — Market map: categories as tiles with 2025 funding, status, and key players/valuations
 - `fintech_funding_heatmap.png` — Heatmap: funding intensity by category and year, black borders on peak years
 - `fintech_funding_vs_revenue.png` — Funding vs revenue trajectory scatter by category (2019-2026 snapshots)
+- `fintech_cohort_outcome_split_estimated.png` — Estimated winner/survivor/failed split by fintech founding cohort
+- `fintech_market_size_projection.png` — Global fintech market size trajectory from 2024 anchors through 2033 projection
+- `fintech_vc_vs_deals_trend.png` — Dual-axis trend of annual fintech VC funding vs deal count (2020-2025)
 
-### x402 (`charts/x402/`) — 11 charts
+### Intersection (`charts/intersection/`) — 4 charts
+- `01_protocol_launch_timeline.png` — Launch chronology of major agentic payment protocols and platforms (2025-Q1 2026)
+- `02_protocol_capability_matrix.png` — Capability coverage matrix across x402/ACP/AP2/TAP/UCP
+- `03_layer_funding_heatmap.png` — Funding concentration by stack layer (L0-L7), highlighting discovery/orchestration whitespace
+- `04_agent_commerce_readiness_roadmap.png` — Readiness timeline from live micropayments to complex multi-party transactions
+
+### x402 (`charts/x402/`) — 14 charts
 - `x402_01_daily_tx_trajectory.png` — Log-scale daily tx with event annotations
 - `x402_02_cumulative_growth.png` — Dual-axis cumulative tx + volume hockey stick
 - `x402_03_chain_split.png` — Base vs Solana stacked area (97% → 75%)
@@ -68,12 +78,19 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `x402_09_buyer_seller_ratio_deep.png` — Two-panel: buyer vs seller growth (log) + ratio compression from 53:1 → 5:1 → 2.5:1 projected, with Uber/Amazon marketplace comparisons
 - `x402_10_value_accrual_stack.png` — Full 8-layer market stack diagram: every layer back-to-back with revenue per $1B volume, moat rating, and investment verdict (BUY/AVOID/WATCH)
 - `x402_11_coinbase_flywheel.png` — Circular flywheel: how Coinbase's $0-fee protocol generates ~$35-38M per $1B volume across USDC float, Base fees, facilitator, and commerce
+- `x402_12_layer_revenue_sensitivity.png` — Layer revenue sensitivity under volume scaling scenarios
+- `x402_13_coinbase_revenue_scenarios.png` — Coinbase direct revenue decomposition across $1B/$5B/$10B volume scenarios
+- `x402_14_risk_matrix.png` — Impact-probability matrix for core x402 value-accrual risks
 
 ## Scripts
 
 - `generate_charts.py` — Fintech funding charts (stacked bar, market map, heatmap)
 - `generate_agent_scatter.py` — Agent economy funding vs revenue trajectory scatter plot
 - `generate_fintech_scatter.py` — Fintech funding vs revenue trajectory scatter plot
+- `generate_fintech_cohort_outcome_split.py` — Fintech cohort outcome split visualization from data CSV anchors
+- `generate_fintech_macro_charts.py` — Fintech market size projection + VC-vs-deals trend charts
+- `generate_intersection_charts.py` — Fintech-agent intersection protocol/layer/readiness chart pack
+- `generate_x402_sensitivity_charts.py` — x402 sensitivity/scenario/risk chart pack
 - `gen_x402_charts_1_2.py` — x402 daily tx trajectory + cumulative growth
 - `gen_x402_charts_3_4.py` — x402 chain split + facilitator share
 - `gen_x402_charts_5_6.py` — x402 value chain + ecosystem mcap
@@ -182,7 +199,7 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Dark theme style recipe:** `plt.style.use('dark_background')`, `fig.patch.set_facecolor('#1a1a2e')`, `ax.set_facecolor('#1a1a2e')`, grid color `#333355`, figure size `(16, 9)`, dpi=150. Produces clean, presentation-ready charts.
 - **Best chart types by data story:** Log-scale line for adoption S-curves (orders of magnitude growth), stacked area for market share evolution (shows zero-sum dynamics), horizontal bars for value chain waterfalls (easy to label), proportional circles for ratio comparisons (53:1 buyer/seller).
 - **Annotation is critical for adoption data.** Raw line charts are meaningless without event labels (launch, Foundation, V2 release, etc.). Always annotate with arrows and labeled boxes for key inflection points.
-- **Chart inventory:** 28 total charts across 3 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/x402/`.
+- **Chart inventory:** 38 total charts across 4 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/intersection/`, `charts/x402/`.
 - **Generator scripts** in `scripts/` — all run with `uv run python scripts/<script>.py`
 
 ### x402 Buyer-Seller Dynamics & Value Accrual Insights
@@ -199,7 +216,7 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 
 ### Repo Organization Learnings
 - **Organize by type, not by topic, at the top level.** Flat repos with 30+ files become unnavigable. Subdirectories by file type (`memos/`, `charts/`, `scripts/`, `data/`) keep the root clean and make it obvious where to add new files.
-- **Charts subdirectories by domain** (`charts/agent-economy/`, `charts/fintech/`, `charts/x402/`) prevent a single folder with 24+ PNGs. Group by research domain, not by chart type.
+- **Charts subdirectories by domain** (`charts/agent-economy/`, `charts/fintech/`, `charts/intersection/`, `charts/x402/`) prevent a single folder with dozens of PNGs. Group by research domain, not by chart type.
 - **Declare deps in `pyproject.toml`** rather than using `uv run --with` flags on every invocation. Simpler commands (`uv run python scripts/foo.py`) and ensures all scripts use consistent dependency versions.
 - **Data modules in `data/`** separate sourced data from visualization logic in `scripts/`. Chart scripts import from `data/` — makes it easy to update numbers without touching chart code.
 - **Keep CLAUDE.md in sync with repo structure.** When reorganizing files, update CLAUDE.md immediately — stale paths cause confusion for both humans and agents.
