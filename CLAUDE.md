@@ -166,3 +166,10 @@ All scripts run with `uv run python scripts/<script>.py` (deps declared in `pypr
 - **Annotation is critical for adoption data.** Raw line charts are meaningless without event labels (launch, Foundation, V2 release, etc.). Always annotate with arrows and labeled boxes for key inflection points.
 - **Chart inventory:** 24 total charts across 3 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/x402/`.
 - **Generator scripts** in `scripts/` — all run with `uv run python scripts/<script>.py`
+
+### Repo Organization Learnings
+- **Organize by type, not by topic, at the top level.** Flat repos with 30+ files become unnavigable. Subdirectories by file type (`memos/`, `charts/`, `scripts/`, `data/`) keep the root clean and make it obvious where to add new files.
+- **Charts subdirectories by domain** (`charts/agent-economy/`, `charts/fintech/`, `charts/x402/`) prevent a single folder with 24+ PNGs. Group by research domain, not by chart type.
+- **Declare deps in `pyproject.toml`** rather than using `uv run --with` flags on every invocation. Simpler commands (`uv run python scripts/foo.py`) and ensures all scripts use consistent dependency versions.
+- **Data modules in `data/`** separate sourced data from visualization logic in `scripts/`. Chart scripts import from `data/` — makes it easy to update numbers without touching chart code.
+- **Keep CLAUDE.md in sync with repo structure.** When reorganizing files, update CLAUDE.md immediately — stale paths cause confusion for both humans and agents.
