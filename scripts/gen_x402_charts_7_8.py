@@ -5,6 +5,12 @@ for the x402 protocol adoption analysis.
 Usage: uv run python gen_x402_charts_7_8.py
 """
 
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "data"))
+
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import matplotlib.patches as mpatches
@@ -89,7 +95,7 @@ def build_chart_7():
             bbox=dict(boxstyle="round,pad=0.5", fc=BG, ec="#4fc3f7", alpha=0.9))
 
     fig.tight_layout()
-    fig.savefig("/Users/cat/memo-fintech-agents/charts/x402_07_developer_adoption.png",
+    fig.savefig(str(ROOT / "charts/x402/x402_07_developer_adoption.png"),
                 facecolor=fig.get_facecolor(), edgecolor="none")
     plt.close(fig)
     print("Saved charts/x402_07_developer_adoption.png")
@@ -154,7 +160,7 @@ def build_chart_8():
                  fontsize=18, fontweight="bold", color="white", pad=16)
 
     fig.tight_layout()
-    fig.savefig("/Users/cat/memo-fintech-agents/charts/x402_08_buyer_seller_ratio.png",
+    fig.savefig(str(ROOT / "charts/x402/x402_08_buyer_seller_ratio.png"),
                 facecolor=fig.get_facecolor(), edgecolor="none")
     plt.close(fig)
     print("Saved charts/x402_08_buyer_seller_ratio.png")

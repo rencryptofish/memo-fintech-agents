@@ -432,6 +432,56 @@ This vertical integration is Coinbase's true strategic moat. Even if the facilit
 
 ---
 
+## Part VII: What the Charts Reveal
+
+Eight visualizations of x402 adoption data surface patterns that tables alone obscure. Charts are in `charts/x402/`.
+
+### Chart 1: Daily Tx Trajectory — Classic speculative overshoot, not collapse
+The log-scale chart tells the real story: x402 grew steadily from 50 tx/day to ~5K over 5 months of quiet adoption, then exploded 600x in 3 weeks to a 3M/day ATH. The 93% crash to 200K looks catastrophic on a linear scale, but on log scale it stabilized at 600K-1M/day — still **4 orders of magnitude above launch**. The protocol found a sustainable floor after the hype dissipated.
+
+![Daily Transaction Trajectory](charts/x402/x402_01_daily_tx_trajectory.png)
+
+### Chart 2: Cumulative Growth — The volume spike is suspicious
+Transactions grew steadily (0 → 75M → 158M), but cumulative volume jumped from $35M to $600M in a single month (Dec 2025 → Jan 2026). That's a 17x volume increase while tx count only doubled. Either average payment sizes spiked dramatically or the $600M figure includes speculative/wash activity. Worth scrutinizing.
+
+![Cumulative Growth](charts/x402/x402_02_cumulative_growth.png)
+
+### Chart 3: Chain Split — Solana is eating Base's lunch
+Base went from 97% to 75% of cumulative transactions in just 3 months, and Solana already flipped Base on daily volume (Jan 11). The driver is simple economics: Solana gas is 4x cheaper ($0.00025 vs $0.001). This undermines Coinbase's vertical integration thesis — if volume migrates to Solana, Coinbase loses the sequencer revenue layer.
+
+![Chain Split](charts/x402/x402_03_chain_split.png)
+
+### Chart 4: Facilitator Share — Zero switching costs confirmed visually
+This is the most important chart for the value capture thesis. Coinbase went from 70% to 25% in 3.5 months. Dexter came from nowhere to 50%. This is empirical proof that **facilitator switching costs are near-zero** — the layer is commoditizing in real time. Building a standalone facilitator business is a losing game.
+
+![Facilitator Market Share](charts/x402/x402_04_facilitator_share.png)
+
+### Chart 5: Value Chain — Infrastructure is a rounding error
+The waterfall makes the economics visceral: the application (seller) captures 88 cents of every dollar. The facilitator gets 10 cents. Everything else is less than 2 cents combined. The protocol itself captures literally zero. If you're building in x402, **build the application, not the infrastructure**.
+
+![Value Chain](charts/x402/x402_05_value_chain.png)
+
+### Chart 6: Ecosystem Token Mcap — Speculation, not fundamentals
+$100M → $12B in 2 weeks is pure memecoin mania, not protocol adoption. The recovery to $10.5B still has no fundamental support — the entire protocol has only processed $600M in volume with zero protocol fees. This chart is a warning about conflating token speculation with real traction.
+
+![Ecosystem Token Market Cap](charts/x402/x402_06_ecosystem_mcap.png)
+
+### Chart 7: Developer Funnel — 0.6% conversion to production
+5,400 GitHub stars but only 31 live services. That's a 0.6% stars-to-production conversion rate. The funnel narrows dramatically: 117 ecosystem projects → 48 infra/tooling → 31 live services → 19 facilitators. **The supply side (services accepting x402) is the bottleneck**, not demand or developer interest.
+
+![Developer Adoption Funnel](charts/x402/x402_07_developer_adoption.png)
+
+### Chart 8: Buyer/Seller Ratio — The supply-side opportunity
+The proportional circles make it impossible to miss: 74,000 buyers dwarfing 1,405 sellers. This 53:1 ratio is the single most actionable data point in the entire set. It means: **(a)** sellers have extreme pricing power today, **(b)** the biggest opportunity is building services that accept x402, not building infrastructure, and **(c)** the ecosystem won't grow until the supply side catches up.
+
+![Buyer vs Seller Ratio](charts/x402/x402_08_buyer_seller_ratio.png)
+
+### The Meta-Takeaway
+
+Across all 8 charts, one conclusion dominates: **x402 has real adoption (158M tx, 850K/day steady state) but the value capture story heavily favors the application layer and disfavors infrastructure.** Facilitators are commoditizing, chains are competing on cost, and the protocol captures nothing. The money is in being a seller in a market starved for sellers.
+
+---
+
 ## Appendix: Key Data Sources
 
 - Dune Analytics (hashed_official dashboard) — on-chain transaction data

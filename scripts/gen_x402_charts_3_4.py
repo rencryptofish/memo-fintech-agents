@@ -4,15 +4,17 @@ Generate x402 Charts 3 & 4:
   - Chart 4: Facilitator Market Share Evolution (stacked area)
 """
 
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "data"))
+
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.ticker as mticker
 import numpy as np
 import pandas as pd
-import sys
-import os
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from x402_data import CHAIN_DATA, FACILITATOR_SHARE
 
 
@@ -81,7 +83,7 @@ def make_chart3():
         text.set_color("white")
 
     fig.tight_layout()
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "charts", "x402_03_chain_split.png")
+    out = str(ROOT / "charts/x402/x402_03_chain_split.png")
     fig.savefig(out, facecolor=fig.get_facecolor(), edgecolor="none")
     plt.close(fig)
     print(f"Saved: {out}")
@@ -163,7 +165,7 @@ def make_chart4():
         text.set_color("white")
 
     fig.tight_layout()
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "charts", "x402_04_facilitator_share.png")
+    out = str(ROOT / "charts/x402/x402_04_facilitator_share.png")
     fig.savefig(out, facecolor=fig.get_facecolor(), edgecolor="none")
     plt.close(fig)
     print(f"Saved: {out}")

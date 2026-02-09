@@ -5,7 +5,10 @@ Generate x402 Charts 5 & 6:
 """
 
 import sys
-sys.path.insert(0, "/Users/cat/memo-fintech-agents")
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "data"))
 
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
@@ -112,7 +115,7 @@ for spine in ax.spines.values():
     spine.set_color("#333355")
 
 plt.tight_layout(rect=[0, 0, 1, 0.90])
-fig.savefig("/Users/cat/memo-fintech-agents/charts/x402_05_value_chain.png",
+fig.savefig(str(ROOT / "charts/x402/x402_05_value_chain.png"),
             facecolor=fig.get_facecolor(), bbox_inches="tight")
 plt.close(fig)
 print("Saved charts/x402_05_value_chain.png")
@@ -209,7 +212,7 @@ for spine in ax.spines.values():
     spine.set_color("#333355")
 
 plt.tight_layout(rect=[0, 0, 1, 0.90])
-fig.savefig("/Users/cat/memo-fintech-agents/charts/x402_06_ecosystem_mcap.png",
+fig.savefig(str(ROOT / "charts/x402/x402_06_ecosystem_mcap.png"),
             facecolor=fig.get_facecolor(), bbox_inches="tight")
 plt.close(fig)
 print("Saved charts/x402_06_ecosystem_mcap.png")

@@ -5,6 +5,12 @@ for the x402 protocol adoption analysis.
 Usage: uv run python gen_x402_charts_1_2.py
 """
 
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "data"))
+
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.ticker as ticker
@@ -102,7 +108,7 @@ def build_chart_1():
 
     ax.set_ylim(bottom=30)
     fig.tight_layout()
-    fig.savefig("/Users/cat/memo-fintech-agents/charts/x402_01_daily_tx_trajectory.png",
+    fig.savefig(str(ROOT / "charts/x402/x402_01_daily_tx_trajectory.png"),
                 facecolor=fig.get_facecolor(), edgecolor="none")
     plt.close(fig)
     print("Saved charts/x402_01_daily_tx_trajectory.png")
@@ -203,7 +209,7 @@ def build_chart_2():
                facecolor=BG, edgecolor=GRID_COLOR, labelcolor="white")
 
     fig.tight_layout()
-    fig.savefig("/Users/cat/memo-fintech-agents/charts/x402_02_cumulative_growth.png",
+    fig.savefig(str(ROOT / "charts/x402/x402_02_cumulative_growth.png"),
                 facecolor=fig.get_facecolor(), edgecolor="none")
     plt.close(fig)
     print("Saved charts/x402_02_cumulative_growth.png")

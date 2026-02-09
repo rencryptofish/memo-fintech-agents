@@ -271,10 +271,10 @@ def generate_scatter():
 
 
 if __name__ == "__main__":
-    out = Path("/Users/cat/memo-fintech-agents")
+    out = Path(__file__).resolve().parent.parent
     print("Generating Agent Economy Scatter: Funding vs Revenue Trajectory...")
     fig = generate_scatter()
-    save_path = out / "agent_economy_funding_vs_revenue.png"
+    save_path = out / "charts/agent-economy/agent_economy_funding_vs_revenue.png"
     fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
     print(f"  Saved: {save_path}")
     plt.close("all")

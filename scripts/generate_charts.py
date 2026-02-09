@@ -344,7 +344,7 @@ def chart3_heatmap():
 
 
 if __name__ == "__main__":
-    out = Path("/Users/cat/memo-fintech-agents")
+    out = Path(__file__).resolve().parent.parent / "charts" / "fintech"
 
     print("Generating Chart 1: Stacked Bar Chart...")
     fig1 = chart1_stacked_bar()
