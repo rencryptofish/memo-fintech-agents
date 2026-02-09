@@ -75,6 +75,8 @@ The clearest historical lesson: **B2B infrastructure plays that become embedded 
 | Latin America | Brazil = 58.7% of all LatAm fintechs; Nubank serving 118.6M customers |
 | Africa | Lagos: 503 active fintechs, $6.03B raised; Nairobi: 210 firms, $4.64B in funding |
 
+![Fintech Geographic Opportunity Dashboard](../charts/fintech/fintech_geographic_opportunity_dashboard.png)
+
 ### Funding Trends
 
 | Year | Global Fintech VC | Deals | Context |
@@ -156,6 +158,10 @@ The clearest historical lesson: **B2B infrastructure plays that become embedded 
 | **Cross-Border Payments** | 2010-2013 | Wise (2011), Remitly (2011), Nium (Singapore), Payoneer (2005) | Fintechs significantly cheaper than banks/Western Union |
 | **Payroll / HR Fintech** | 2011+ | Gusto (2011), Deel (2019), Finch | Growing rapidly with remote work trends |
 | **Financial Data / Analytics** | 1999+ | Plaid, MX (2010), Yodlee (1999) | AI-driven analytics becoming standard |
+
+![Fintech Category Company Map](../charts/fintech/fintech_category_company_map.png)
+
+![Fintech Funding Mix by Category](../charts/fintech/fintech_funding_mix_percent_by_category.png)
 
 ---
 
@@ -348,6 +354,10 @@ The clearest historical lesson: **B2B infrastructure plays that become embedded 
 | **7. Correction** | 2022-2023 | **$88.8B (2022) → $46.3B (2023)** — massive contraction; down rounds common; focus shifted to profitability | Stripe internal round at $50B (Mar 2023, down from $95B); few mega-rounds; M&A and consolidation dominated | Survival funding, bridge rounds, profitability-focused companies, AI early investments | Companies that cut costs and reached profitability survived: Monzo (£113.9M profit, 8x increase), Revolut (turned profitable), Robinhood (recovered to $2.95B revenue, $1.4B profit), SoFi (GAAP profitable, bank charter crucial) | FTX/crypto contagion (Three Arrows, Terra/Luna, Voyager, BlockFi, Celsius — all failed), Synapse bankruptcy ($265M+ frozen, 100K+ affected), Simple shut down, Daylight closed, SVB collapse shook ecosystem, public fintech stocks down 70-90% from peaks |
 | **8. New Era** | 2024-2026 | **$40.8B (2024) → $51.8B (2025)** — recovery; record median deal sizes; fewer deals, bigger checks; $67.6B in exits (2025) | Klarna IPO ($14B), Chime IPO ($18.4B), Circle IPO; Stripe valued at $106.7B; stablecoin VC exceeded $1.5B (2025) | AI-native fintech, stablecoin infrastructure, CFO stack ($1.8B/90 deals), B2B/SMB fintech, embedded finance 2.0 | AI-native companies (88% of top fintechs adopting AI), stablecoin infrastructure (GENIUS Act catalyst, Visa settling in USDC), B2B infrastructure focus, companies with proven unit economics getting premium valuations | Too early to fully assess; early AI-fintech hype risk; stablecoin regulatory fragmentation outside US; some "AI wrapper" companies without real moats; B2C still struggling (only 5% of digital banks profitable) |
 
+![Fintech Funding vs Revenue by Cohort](../charts/fintech/fintech_funding_vs_revenue_by_cohort.png)
+
+![Fintech Category Maturity (Late-Stage Share)](../charts/fintech/fintech_category_maturity_heatmap_late_stage_share.png)
+
 ### Timing Pattern Summary
 
 ```
@@ -428,6 +438,8 @@ AI (2024+)           → AI-native fintech, agentic finance
 | **Fintech SPACs** | Average 67% value loss; 90%+ below $10 | Went public with projections, not proven financials | MoneyLion down 90% from SPAC price |
 | **Crypto collapses** | $2T market cap destroyed in 2022 | Three Arrows, Terra/Luna, Voyager, BlockFi, Celsius all failed | Contagion across entire crypto ecosystem |
 
+![Fintech Value Creation vs Destruction Cases](../charts/fintech/fintech_value_creation_vs_destruction_cases.png)
+
 ### Common Failure Patterns
 
 1. **Unsustainable Unit Economics Masked by Cheap Capital**
@@ -468,6 +480,8 @@ AI (2024+)           → AI-native fintech, agentic finance
    - LendingClub's P2P model collapsed when retail investors left
    - Diversified revenue/funding is essential
 
+![Fintech Failure Risk KPI Dashboard](../charts/fintech/fintech_failure_risk_kpi_dashboard.png)
+
 ---
 
 ## Unit Economics That Actually Work
@@ -487,6 +501,8 @@ AI (2024+)           → AI-native fintech, agentic finance
 - BNPL subsidized by cheap capital (funding cost sensitivity)
 - B2C neobanks without cross-sell engines (<$30 ARPU)
 - Any model dependent on sustained low interest rates
+
+![Fintech VC vs Revenue Breakdown (2026 Snapshot)](../charts/fintech/fintech_vc_vs_revenue_breakdown_2026.png)
 
 ---
 
