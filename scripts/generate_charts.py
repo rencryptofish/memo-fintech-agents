@@ -343,6 +343,102 @@ def chart3_heatmap():
     return fig
 
 
+def chart4_stacked_percent_mix():
+    """
+    100% stacked bar chart:
+    fintech funding mix by category by year (category-share shift over time).
+
+    Note: each year is normalized to 100% of the summed category bucket values.
+    This shows composition shift, not absolute market size.
+    """
+    fig, ax = plt.subplots(figsize=(18, 10))
+
+    # Add AI-native / agentic slice to make the recent mix-shift visible.
+    # Conservative estimates based on memo references (emerging through 2023,
+    # then accelerating in 2024-2025).
+    ai_native_agentic = {
+        2015: 0.0, 2016: 0.0, 2017: 0.05, 2018: 0.08, 2019: 0.10,
+        2020: 0.20, 2021: 0.45, 2022: 0.60, 2023: 0.80, 2024: 1.20, 2025: 2.00,
+    }
+
+    mix_categories = list(CATEGORIES.keys()) + ["AI-Native / Agentic Fintech"]
+    mix_colors = {**COLORS, "AI-Native / Agentic Fintech": "#111827"}
+    mix_values = {**CATEGORIES, "AI-Native / Agentic Fintech": ai_native_agentic}
+
+    # Build matrix: rows=categories, cols=years
+    raw = np.array([[mix_values[cat][y] for y in YEARS] for cat in mix_categories], dtype=float)
+    year_sums = raw.sum(axis=0)
+    pct = np.divide(raw, year_sums, out=np.zeros_like(raw), where=year_sums > 0) * 100.0
+
+    bottom = np.zeros(len(YEARS))
+    for i, cat in enumerate(mix_categories):
+        vals = pct[i]
+        ax.bar(
+            YEARS, vals, bottom=bottom, width=0.72,
+            color=mix_colors[cat], label=cat,
+            edgecolor="white", linewidth=0.25,
+        )
+        bottom += vals
+
+    # Styling
+    ax.set_ylim(0, 100)
+    ax.set_xlim(2014.4, 2025.6)
+    ax.set_xticks(YEARS)
+    ax.set_xticklabels(YEARS, fontsize=11)
+    ax.yaxis.set_major_formatter(mticker.PercentFormatter(xmax=100))
+    ax.tick_params(axis="y", labelsize=11)
+    ax.set_xlabel("Year", fontsize=14, labelpad=10)
+    ax.set_ylabel("Share of Category Funding Mix (%)", fontsize=14, labelpad=10)
+    ax.set_title(
+        "Fintech Funding Mix Shift by Category (100% Stacked, 2015-2025)",
+        fontsize=20, fontweight="bold", pad=20, color="#1a1a2e",
+    )
+
+    ax.text(
+        0.5, 1.02,
+        "Each year normalized to 100% of summed category buckets; labels above bars show VC-only total for scale context",
+        transform=ax.transAxes, ha="center", fontsize=10, color="#666",
+    )
+
+    # Add VC-only total labels on top for context (absolute scale).
+    for y in YEARS:
+        total = VC_TOTALS[y]
+        ax.annotate(
+            f"${total:.0f}B",
+            xy=(y, 100), xytext=(0, 5), textcoords="offset points",
+            ha="center", va="bottom", fontsize=8, color="#333", fontweight="bold",
+        )
+
+    # Key regime markers
+    ax.axvline(2021, color="#555", linestyle="--", linewidth=1.1, alpha=0.6)
+    ax.axvline(2023, color="#555", linestyle="--", linewidth=1.1, alpha=0.6)
+    ax.text(2021, 3, "Peak", fontsize=8, color="#555", ha="center", va="bottom")
+    ax.text(2023, 3, "Trough", fontsize=8, color="#555", ha="center", va="bottom")
+
+    # Legend
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(
+        handles[::-1], labels[::-1],
+        loc="upper left", bbox_to_anchor=(1.01, 1.0),
+        fontsize=9, framealpha=0.95, edgecolor="#ddd",
+        title="Category", title_fontsize=10,
+    )
+
+    ax.grid(axis="y", alpha=0.18, linestyle="--")
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    fig.text(
+        0.5, 0.01,
+        "Sources: KPMG Pulse, CB Insights, Crunchbase, fintech-market-analysis.md  |  "
+        "AI-Native / Agentic slice is an estimated emerging bucket for mix-shift readability",
+        ha="center", fontsize=8, color="#888", style="italic",
+    )
+
+    plt.tight_layout(rect=[0, 0.03, 0.86, 1])
+    return fig
+
+
 if __name__ == "__main__":
     out = Path(__file__).resolve().parent.parent / "charts" / "fintech"
 
@@ -363,6 +459,12 @@ if __name__ == "__main__":
     fig3.savefig(out / "fintech_funding_heatmap.png", dpi=200, bbox_inches="tight",
                  facecolor="white")
     print(f"  Saved: {out / 'fintech_funding_heatmap.png'}")
+
+    print("Generating Chart 4: 100% Stacked Mix Shift...")
+    fig4 = chart4_stacked_percent_mix()
+    fig4.savefig(out / "fintech_funding_mix_percent_by_category.png", dpi=200,
+                 bbox_inches="tight", facecolor="white")
+    print(f"  Saved: {out / 'fintech_funding_mix_percent_by_category.png'}")
 
     print("\nAll charts generated successfully!")
     plt.close("all")

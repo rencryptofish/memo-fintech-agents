@@ -125,6 +125,18 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - For high-impact M&A claims (acquisitions, pending deals, rumored bids), require at least one primary source and one corroborating source before elevating to "signal" status in synthesis memos.
 - Treat rumor-based deal narratives as unverified until confirmed; never let unverified M&A claims drive top-level recommendations.
 
+### Fresh-Read Synthesis Learnings (Feb 9, 2026)
+- Directional conviction and underwriting confidence should be separated explicitly; estimated metrics can support thesis direction but should not be treated as precision anchors.
+- Control points (identity, compliance, policy, routing) consistently screen as stronger value-capture layers than commodity payment transport.
+- Recovery narratives should be baseline-scoped; when multiple accepted baselines exist, show each implied growth rate instead of one headline figure.
+- Protocol traction metrics are necessary but insufficient for moat claims; require quality-of-volume tests (organic vs speculative, repeat utility, payer diversity).
+- Keep raw transfer and adjusted/economic stablecoin volume separate in tables and takeaways to avoid overstating monetizable activity.
+- Hybrid fiat-plus-stablecoin rails should be treated as the base case through the medium term; model displacement as gradual, not binary.
+- Default sequencing remains B2B before B2C for agent-finance use cases due to trust, liability, and auditability constraints.
+- Cross-rail orchestration opportunity is real but should be discounted for incumbent bundling risk; distribution and workflow depth matter as much as protocol coverage.
+- Facilitator-only models remain low-defensibility unless bundled with compliance/policy/workflow moats.
+- Capital deployment should stay milestone-gated: scale only after measured improvement in organic usage quality, paid production adoption, and enterprise auditability demand.
+
 ### Memo Consistency & Canonical Facts
 - Maintain a canonical fact table for cross-memo anchor data (protocol volumes, company ARR, key funding totals, protocol launch dates, and partner attributions) before drafting or revising multiple memos.
 - Use one x402 anchor across all docs: `157.6M cumulative transactions` with supporting split `(119M Base, 38.6M Solana)` and keep `$600M+ volume` as a separate metric.
@@ -200,6 +212,14 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - For funding data by category, KPMG Pulse of Fintech has the best sector-level breakdowns (2019-2024 confirmed figures). For earlier years (2015-2018), derive from percentage shares. Always attach confidence ratings (H/M/L) per datapoint.
 - **Three complementary chart types for funding data:** (1) Stacked bar — shows composition and total over time, (2) Market map / treemap — shows current landscape with key players, (3) Heatmap — shows exact values + peak identification. Together they tell the full story.
 - Agent teams work best when the research agent also produces the structured data file (with sources and confidence), and the leader builds the visualization from it. Separation of data sourcing from visualization prevents hallucinated numbers.
+
+### Cohort & Mix Visualization Learnings
+- For crowded trajectory charts, use **both** views: one all-category overview and one cohort small-multiples chart with shared axes. This preserves macro context while making start points and path direction readable.
+- Encode time snapshots with distinct marker shapes (for example `o/s/D/^`) and optionally inline year labels (`2019/2021/2023/2026`) to reduce ambiguity.
+- Add explicit `start YYYY` annotations near first points when the goal is to compare when category/company groups began.
+- If adding very early-stage categories (for example, agent-fintech intersection), lower log-scale axis floors so early movement is visible rather than clipped.
+- Use a **100% stacked bar** for funding composition shift by year; pair with top-of-bar absolute totals so share changes are not misread as absolute growth.
+- When introducing a synthetic/emerging category slice (for readability), label it clearly as an estimate in chart footnotes.
 
 ### Chart Team Workflow Learnings
 - **Shared data module pattern works well for chart teams.** Create a `*_data.py` file with all raw data in pandas DataFrames, then have each chart agent import from it. Prevents data duplication and ensures consistency across all charts.

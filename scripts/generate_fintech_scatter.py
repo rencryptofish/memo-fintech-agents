@@ -11,6 +11,7 @@ Lines connect each category across 4 time snapshots.
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as pe
 import numpy as np
+from matplotlib.lines import Line2D
 from pathlib import Path
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -24,6 +25,8 @@ from pathlib import Path
 # ─────────────────────────────────────────────────────────────────────────────
 
 TIME_POINTS = ["End 2019", "End 2021", "End 2023", "Early 2026"]
+TIME_POINT_SHORT = ["2019", "2021", "2023", "2026"]
+TIME_POINT_MARKERS = ["o", "s", "D", "^"]
 
 # {category: [(funding_B, revenue_M), ...]} — one tuple per time point
 CATEGORIES = {
@@ -165,6 +168,17 @@ CATEGORIES = {
         #   $300B+ stablecoin circulation
         (1.0, 3000),
     ],
+    "Agentic Fintech Intersection\n(Payments, Wallets, Identity)": [
+        # 2019: effectively pre-category; minimal investment and revenue
+        (0.005, 1),
+        # 2021: early pilots and tooling; still tiny compared with core fintech
+        (0.020, 3),
+        # 2023: pre-inflection, category taking shape but still early
+        (0.090, 12),
+        # 2026: meaningful funding velocity with still-early revenue base
+        # (memo estimate: ~$1.1B+ startup funding across intersection layers)
+        (1.100, 90),
+    ],
 }
 
 # Colors
@@ -181,119 +195,231 @@ COLORS = {
     "Embedded Finance\n(Marqeta, Lithic, Unit)":     "#14B8A6",
     "Regtech\n(Chainalysis, ComplyAdv)":             "#6366F1",
     "Stablecoin Infra\n(Circle, Bridge, BVNK)":     "#0F172A",
+    "Agentic Fintech Intersection\n(Payments, Wallets, Identity)": "#334155",
 }
 
 MARKER_SIZES = [30, 60, 100, 180]
 
+# Category metadata used for clearer cohort and start-year context
+CATEGORY_META = {
+    "B2B Payments\n(Stripe, Adyen, Checkout)": {
+        "cohort": "Early Internet (1998-2007)",
+        "start_year": 1998,
+        "short": "B2B Payments",
+    },
+    "Neobanks\n(Nubank, Revolut, Chime)": {
+        "cohort": "Neobank Wave (2013-2016)",
+        "start_year": 2013,
+        "short": "Neobanks",
+    },
+    "Crypto / Blockchain\n(Coinbase, Circle, Chainalysis)": {
+        "cohort": "Post-Crisis + Crypto (2009-2013)",
+        "start_year": 2012,
+        "short": "Crypto / Blockchain",
+    },
+    "BNPL\n(Klarna, Affirm)": {
+        "cohort": "Early Internet (1998-2007)",
+        "start_year": 2005,
+        "short": "BNPL",
+    },
+    "CFO Stack\n(Ramp, Brex, Mercury)": {
+        "cohort": "CFO Platform Wave (2017-2020)",
+        "start_year": 2017,
+        "short": "CFO Stack",
+    },
+    "Insurtech\n(Lemonade, Root, Oscar)": {
+        "cohort": "Neobank Wave (2013-2016)",
+        "start_year": 2015,
+        "short": "Insurtech",
+    },
+    "Lending / Credit\n(SoFi, Upstart)": {
+        "cohort": "Early Internet (1998-2007)",
+        "start_year": 2006,
+        "short": "Lending / Credit",
+    },
+    "Wealthtech\n(Robinhood, eToro)": {
+        "cohort": "Post-Crisis + Crypto (2009-2013)",
+        "start_year": 2013,
+        "short": "Wealthtech",
+    },
+    "Cross-Border\n(Wise, Remitly)": {
+        "cohort": "Post-Crisis + Crypto (2009-2013)",
+        "start_year": 2011,
+        "short": "Cross-Border",
+    },
+    "Embedded Finance\n(Marqeta, Lithic, Unit)": {
+        "cohort": "API / Open Banking (2016-2019)",
+        "start_year": 2016,
+        "short": "Embedded Finance",
+    },
+    "Regtech\n(Chainalysis, ComplyAdv)": {
+        "cohort": "API / Open Banking (2016-2019)",
+        "start_year": 2014,
+        "short": "Regtech",
+    },
+    "Stablecoin Infra\n(Circle, Bridge, BVNK)": {
+        "cohort": "CFO Platform Wave (2017-2020)",
+        "start_year": 2018,
+        "short": "Stablecoin Infra",
+    },
+    "Agentic Fintech Intersection\n(Payments, Wallets, Identity)": {
+        "cohort": "AI x Fintech (2024+)",
+        "start_year": 2024,
+        "short": "Agentic Fintech Intersection",
+    },
+}
 
-def generate_scatter():
-    fig, ax = plt.subplots(figsize=(18, 11))
+COHORT_ORDER = [
+    "Early Internet (1998-2007)",
+    "Post-Crisis + Crypto (2009-2013)",
+    "Neobank Wave (2013-2016)",
+    "API / Open Banking (2016-2019)",
+    "CFO Platform Wave (2017-2020)",
+    "AI x Fintech (2024+)",
+]
 
-    for cat_name, points in CATEGORIES.items():
-        color = COLORS[cat_name]
-        xs = [p[0] for p in points]
-        ys = [p[1] for p in points]
 
-        # Draw connecting line
-        ax.plot(xs, ys, color=color, linewidth=2, alpha=0.45, zorder=1)
+def _format_axes(ax):
+    ax.set_xscale("log")
+    ax.set_yscale("log")
 
-        # Arrows between points
-        for i in range(len(xs) - 1):
-            ax.annotate(
-                "", xy=(xs[i + 1], ys[i + 1]), xytext=(xs[i], ys[i]),
-                arrowprops=dict(
-                    arrowstyle="-|>", color=color, lw=1.8,
-                    mutation_scale=12, alpha=0.45,
-                ),
-                zorder=1,
-            )
+    x_ticks = [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 15]
+    ax.set_xticks(x_ticks)
+    ax.set_xticklabels([f"${v}B" if v >= 1 else f"${int(v*1000)}M" for v in x_ticks],
+                       fontsize=9)
 
-        # Scatter points (larger = more recent)
-        for i, (x, y) in enumerate(points):
-            ax.scatter(
-                x, y, s=MARKER_SIZES[i], color=color,
-                edgecolors="white", linewidth=1, zorder=3,
-            )
+    y_ticks = [1, 2, 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000, 20000]
+    ax.set_yticks(y_ticks)
+    ax.set_yticklabels(
+        [f"${v}M" if v < 1000 else f"${v/1000:.0f}B" for v in y_ticks],
+        fontsize=9,
+    )
 
-        # Label at final point
-        final_x, final_y = xs[-1], ys[-1]
-        label = cat_name.replace("\n", " ")
+    ax.set_xlim(0.004, 20)
+    ax.set_ylim(0.8, 30000)
+    ax.grid(True, alpha=0.16, which="both", linestyle="--")
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
 
-        # Custom offsets to minimize overlap
-        offsets = {
-            "B2B Payments\n(Stripe, Adyen, Checkout)":      (12, 8),
-            "Neobanks\n(Nubank, Revolut, Chime)":            (-15, 12),
-            "Crypto / Blockchain\n(Coinbase, Circle, Chainalysis)": (12, 8),
-            "BNPL\n(Klarna, Affirm)":                        (12, -10),
-            "CFO Stack\n(Ramp, Brex, Mercury)":              (12, 8),
-            "Insurtech\n(Lemonade, Root, Oscar)":            (12, -10),
-            "Lending / Credit\n(SoFi, Upstart)":             (-15, -12),
-            "Wealthtech\n(Robinhood, eToro)":                (12, -10),
-            "Cross-Border\n(Wise, Remitly)":                 (-15, 8),
-            "Embedded Finance\n(Marqeta, Lithic, Unit)":     (12, 8),
-            "Regtech\n(Chainalysis, ComplyAdv)":             (10, -12),
-            "Stablecoin Infra\n(Circle, Bridge, BVNK)":     (-15, -12),
-        }
-        dx, dy = offsets.get(cat_name, (10, 5))
 
+def _draw_category_series(ax, cat_name, points, label_final=True, label_years=False):
+    color = COLORS[cat_name]
+    xs = [p[0] for p in points]
+    ys = [p[1] for p in points]
+
+    # Trajectory line
+    line_width = 2.8 if "Agentic Fintech Intersection" in cat_name else 2
+    line_alpha = 0.9 if "Agentic Fintech Intersection" in cat_name else 0.55
+    ax.plot(xs, ys, color=color, linewidth=line_width, alpha=line_alpha, zorder=1)
+
+    # Arrowed flow between snapshots
+    for i in range(len(xs) - 1):
         ax.annotate(
-            label, xy=(final_x, final_y),
+            "", xy=(xs[i + 1], ys[i + 1]), xytext=(xs[i], ys[i]),
+            arrowprops=dict(
+                arrowstyle="-|>", color=color, lw=1.4,
+                mutation_scale=10, alpha=0.45,
+            ),
+            zorder=1,
+        )
+
+    # Year markers
+    for i, (x, y) in enumerate(points):
+        ax.scatter(
+            x, y, s=MARKER_SIZES[i], color=color,
+            edgecolors="white", linewidth=1, zorder=3,
+            marker=TIME_POINT_MARKERS[i],
+        )
+        if label_years:
+            ax.annotate(
+                TIME_POINT_SHORT[i],
+                xy=(x, y), xytext=(0, 7), textcoords="offset points",
+                ha="center", fontsize=7, color="#555", zorder=4,
+            )
+
+    # Start-year label at first point
+    start_year = CATEGORY_META[cat_name]["start_year"]
+    ax.annotate(
+        f"start {start_year}",
+        xy=(xs[0], ys[0]), xytext=(-8, -10), textcoords="offset points",
+        fontsize=7, color="#666", style="italic", zorder=4,
+    )
+
+    # Final label
+    if label_final:
+        label = CATEGORY_META[cat_name]["short"]
+        offsets = {
+            "B2B Payments\n(Stripe, Adyen, Checkout)":      (10, 6),
+            "Neobanks\n(Nubank, Revolut, Chime)":            (-14, 10),
+            "Crypto / Blockchain\n(Coinbase, Circle, Chainalysis)": (10, 6),
+            "BNPL\n(Klarna, Affirm)":                        (10, -10),
+            "CFO Stack\n(Ramp, Brex, Mercury)":              (10, 6),
+            "Insurtech\n(Lemonade, Root, Oscar)":            (10, -10),
+            "Lending / Credit\n(SoFi, Upstart)":             (-14, -11),
+            "Wealthtech\n(Robinhood, eToro)":                (10, -10),
+            "Cross-Border\n(Wise, Remitly)":                 (-14, 6),
+            "Embedded Finance\n(Marqeta, Lithic, Unit)":     (10, 6),
+            "Regtech\n(Chainalysis, ComplyAdv)":             (8, -11),
+            "Stablecoin Infra\n(Circle, Bridge, BVNK)":      (-14, -11),
+            "Agentic Fintech Intersection\n(Payments, Wallets, Identity)": (10, 10),
+        }
+        dx, dy = offsets.get(cat_name, (9, 5))
+        ax.annotate(
+            label, xy=(xs[-1], ys[-1]),
             xytext=(dx, dy), textcoords="offset points",
             fontsize=8.5, fontweight="bold", color=color,
             path_effects=[pe.withStroke(linewidth=3, foreground="white")],
             zorder=5,
         )
 
-    # Log scale for readability
-    ax.set_xscale("log")
-    ax.set_yscale("log")
+
+def _add_time_legend(ax, loc="lower right"):
+    handles = [
+        Line2D([0], [0], marker=TIME_POINT_MARKERS[i], color="#666", linestyle="",
+               markerfacecolor="#888", markeredgecolor="white", markersize=7 + i,
+               label=f"{TIME_POINTS[i]} ({TIME_POINT_SHORT[i]})")
+        for i in range(len(TIME_POINTS))
+    ]
+    legend = ax.legend(
+        handles=handles, loc=loc, fontsize=9, title="Snapshot Markers",
+        title_fontsize=10, framealpha=0.95, edgecolor="#ddd",
+    )
+    ax.add_artist(legend)
+
+
+def generate_scatter():
+    fig, ax = plt.subplots(figsize=(18, 11))
+
+    for cat_name, points in CATEGORIES.items():
+        _draw_category_series(ax, cat_name, points, label_final=True, label_years=False)
 
     # Axis formatting
+    _format_axes(ax)
     ax.set_xlabel("Cumulative VC Raised by Top Companies ($ Billions)", fontsize=14, labelpad=12)
     ax.set_ylabel("Combined Revenue of Top Companies ($ Millions)", fontsize=14, labelpad=12)
 
-    x_ticks = [0.1, 0.2, 0.5, 1, 2, 5, 10, 15]
-    ax.set_xticks(x_ticks)
-    ax.set_xticklabels([f"${v}B" if v >= 1 else f"${int(v*1000)}M" for v in x_ticks],
-                       fontsize=10)
-
-    y_ticks = [25, 50, 100, 250, 500, 1000, 2500, 5000, 10000, 20000]
-    ax.set_yticks(y_ticks)
-    ax.set_yticklabels(
-        [f"${v}M" if v < 1000 else f"${v/1000:.0f}B" for v in y_ticks],
-        fontsize=10,
-    )
-
-    ax.set_xlim(0.08, 20)
-    ax.set_ylim(20, 30000)
-
     # Title
     ax.set_title(
-        "Fintech: Funding vs Revenue Trajectory by Category (2019-2026)",
+        "Fintech + Agentic Intersection: Funding vs Revenue Trajectory (2019-2026)",
         fontsize=20, fontweight="bold", pad=20, color="#1a1a2e",
     )
 
     # Subtitle
     ax.text(
         0.5, 1.02,
-        "Each dot = time snapshot (End 2019 → End 2021 → End 2023 → Early 2026)  •  "
-        "Tracks top 3-5 companies per category",
+        "Year markers show 2019/2021/2023/2026 snapshots; italic tags mark category start year; "
+        "highlighted line tracks early agent-fintech intersection movement",
         transform=ax.transAxes, ha="center", fontsize=10, color="#666",
     )
-
-    # Grid
-    ax.grid(True, alpha=0.15, which="both", linestyle="--")
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
 
     # Efficiency reference lines (revenue/funding ratio)
     for ratio, label_text in [
         (1000, "1x efficiency\n($1B rev / $1B funding)"),
         (5000, "5x efficiency"),
     ]:
-        xs_ref = np.linspace(0.08, 20, 200)
+        xs_ref = np.linspace(0.004, 20, 200)
         ys_ref = xs_ref * ratio
-        mask = (ys_ref >= 20) & (ys_ref <= 30000)
+        mask = (ys_ref >= 0.8) & (ys_ref <= 30000)
         ax.plot(xs_ref[mask], ys_ref[mask], ":", color="#ccc", linewidth=1.5,
                 alpha=0.6, zorder=0)
         mid = len(xs_ref[mask]) // 2
@@ -304,15 +430,7 @@ def generate_scatter():
                 ha="center", va="bottom", style="italic",
             )
 
-    # Time point legend
-    for i, (label, size) in enumerate(zip(TIME_POINTS, MARKER_SIZES)):
-        ax.scatter([], [], s=size, c="#888", edgecolors="white",
-                   linewidth=1, label=label)
-    legend1 = ax.legend(
-        loc="lower right", fontsize=10, title="Time Snapshot",
-        title_fontsize=11, framealpha=0.95, edgecolor="#ddd",
-    )
-    ax.add_artist(legend1)
+    _add_time_legend(ax, loc="lower right")
 
     # Annotation boxes for key events
     events = [
@@ -332,12 +450,91 @@ def generate_scatter():
     # Source note
     fig.text(
         0.5, 0.01,
-        "Sources: SEC filings, Crunchbase, PitchBook, company earnings, fintech-market-analysis.md  |  "
+        "Sources: SEC filings, Crunchbase, PitchBook, company earnings, fintech-market-analysis.md, "
+        "fintech-agents-intersection.md  |  "
         "Revenue = estimates for top 3-5 VC-backed companies per category  |  Feb 2026",
         ha="center", fontsize=8, color="#888", style="italic",
     )
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.97])
+    return fig
+
+
+def generate_cohort_subplots():
+    cohort_to_categories = {c: [] for c in COHORT_ORDER}
+    for category_name in CATEGORIES:
+        cohort = CATEGORY_META[category_name]["cohort"]
+        cohort_to_categories[cohort].append(category_name)
+
+    nrows, ncols = 2, 3
+    fig, axes = plt.subplots(nrows, ncols, figsize=(20, 12), sharex=True, sharey=True)
+    flat_axes = axes.flatten()
+
+    for idx, cohort in enumerate(COHORT_ORDER):
+        ax = flat_axes[idx]
+        members = cohort_to_categories[cohort]
+
+        for cat_name in members:
+            _draw_category_series(
+                ax,
+                cat_name,
+                CATEGORIES[cat_name],
+                label_final=True,
+                label_years=True,
+            )
+
+        _format_axes(ax)
+        ax.set_title(
+            f"{cohort}\n{len(members)} categories",
+            fontsize=12, fontweight="bold", color="#1a1a2e",
+        )
+
+    # Hide empty panel
+    for idx in range(len(COHORT_ORDER), len(flat_axes)):
+        flat_axes[idx].axis("off")
+
+    # Global labels and title
+    fig.suptitle(
+        "Fintech Funding vs Revenue Trajectories by Cohort",
+        fontsize=20, fontweight="bold", color="#1a1a2e", y=0.98,
+    )
+    fig.text(
+        0.5, 0.955,
+        "Shared log-log axes across subplots; inline year labels (2019/2021/2023/2026) and start-year tags",
+        ha="center", fontsize=10, color="#666",
+    )
+    fig.text(0.5, 0.03, "Cumulative VC Raised by Top Companies ($ Billions)",
+             ha="center", fontsize=12)
+    fig.text(0.01, 0.5, "Combined Revenue of Top Companies ($ Millions)",
+             va="center", rotation="vertical", fontsize=12)
+
+    # Figure-level time marker legend
+    handles = [
+        Line2D([0], [0], marker=TIME_POINT_MARKERS[i], color="#666", linestyle="",
+               markerfacecolor="#888", markeredgecolor="white", markersize=7 + i,
+               label=TIME_POINT_SHORT[i])
+        for i in range(len(TIME_POINTS))
+    ]
+    fig.legend(
+        handles=handles,
+        loc="lower center",
+        ncol=4,
+        frameon=True,
+        framealpha=0.95,
+        title="Year Marker",
+        title_fontsize=10,
+        fontsize=9,
+        bbox_to_anchor=(0.5, 0.0),
+    )
+
+    fig.text(
+        0.5, 0.01,
+        "Sources: SEC filings, Crunchbase, PitchBook, company earnings, fintech-market-analysis.md  |  "
+        "Revenue = estimates for top 3-5 VC-backed companies per category  |  Feb 2026",
+        ha="center", fontsize=8, color="#888", style="italic",
+    )
+
+    plt.tight_layout(rect=[0.03, 0.06, 1, 0.93])
     return fig
 
 
@@ -348,6 +545,13 @@ if __name__ == "__main__":
     print("Generating Fintech Scatter: Funding vs Revenue Trajectory...")
     fig = generate_scatter()
     save_path = out / "fintech_funding_vs_revenue.png"
+    fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
+    print(f"  Saved: {save_path}")
+    plt.close(fig)
+
+    print("Generating Fintech Cohort Subplots: Funding vs Revenue Trajectory...")
+    fig = generate_cohort_subplots()
+    save_path = out / "fintech_funding_vs_revenue_by_cohort.png"
     fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
     print(f"  Saved: {save_path}")
     plt.close("all")
