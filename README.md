@@ -16,11 +16,11 @@ Research memos analyzing fintech market opportunities, AI agent economy infrastr
 
 ## Charts
 
-Generated from sourced data in `data/`. Run scripts with `uv run --with matplotlib --with numpy python scripts/<script>.py`.
+Generated from sourced data in `data/`. Run scripts with `uv run python scripts/<script>.py` (or `uv run python gen_x402_value_accrual.py` for x402 charts 9-11).
 
-- **`charts/fintech/`** - Stacked bar chart (funding by category 2015-2025), market map, heatmap
-- **`charts/agent-economy/`** - 12 charts: market sizing, ARR race, growth rates, valuation multiples, market map, funding rounds, M&A, Gartner timeline, autonomy spectrum, infrastructure gaps
-- **`charts/x402/`** - 8 charts: daily transactions, cumulative growth, chain split, facilitator share, value chain, ecosystem mcap, developer adoption, buyer/seller ratio
+- **`charts/fintech/`** - 4 charts: stacked bar, market map, heatmap, and funding-vs-revenue trajectory scatter
+- **`charts/agent-economy/`** - 13 charts: market sizing, ARR race, growth rates, valuation multiples, market map, funding rounds, M&A, Gartner timeline, autonomy spectrum, infrastructure gaps, and funding-vs-revenue trajectory scatter
+- **`charts/x402/`** - 11 charts: daily transactions, cumulative growth, chain split, facilitator share, value chain, ecosystem mcap, developer adoption, buyer/seller ratio, deep buyer/seller dynamics, value accrual stack, Coinbase flywheel
 
 ## Structure
 

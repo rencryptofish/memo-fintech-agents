@@ -117,7 +117,7 @@ Every x402 transaction flows through seven distinct layers. Each captures value 
 │  5. DISCOVERY LAYER                                  │
 │     Fluora (MonetizedMCP) / V2 API discovery         │
 │     "How do agents find sellers?"                    │
-│     Revenue: TBD (nascent)                           │
+│     Revenue: 2-8% blended take (~$20M-$80M/$1B vol)  │
 │     Moat: ████████░░ (network effects if won)        │
 ├─────────────────────────────────────────────────────┤
 │  4. FACILITATOR LAYER                                │
@@ -162,7 +162,7 @@ If x402 processes $1B in annual volume (a plausible 2027 scenario at current gro
 | **Settlement (Base)** | **$10M/yr** | >90% | High | ~1% of volume in gas/sequencer fees. Scales linearly with tx count. |
 | **Application (Sellers)** | **$880M/yr** | 70-90% | Varies | 88% of volume. But split across thousands of sellers. No single seller captures at scale. |
 | **Facilitator** | **$100M/yr** | 50-75% | Low | 10% of volume. But Dexter went 5%→50% share in 3 months. Race to bottom. |
-| **Discovery** | **TBD** | TBD | Potentially high | Whoever builds the "Google for x402 APIs" captures search/matching value. |
+| **Discovery** | **$20-80M/yr** | 60-80% (at scale) | Potentially high | Assumes 2-8% effective take rate once discovery/routing consolidates. |
 | **Agent Orchestration** | **$0** | N/A | N/A | Value captured through model subscriptions, not x402 tx fees. |
 | **Protocol (x402)** | **$0** | N/A | N/A | Open standard. Value captured at adjacent layers. |
 | **Infrastructure** | **$1M/yr** | 60-70% | Moderate | Commodity plumbing. |

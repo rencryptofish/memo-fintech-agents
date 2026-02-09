@@ -1,7 +1,7 @@
 [project]
 name = "memo-fintech-agents"
 version = "0.1.0"
-description = "Add your description here"
+description = "Research memos and chart generators for fintech and AI agent economy analysis"
 requires-python = ">=3.12"
 dependencies = [
     "matplotlib>=3.10.8",

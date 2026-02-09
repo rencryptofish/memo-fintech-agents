@@ -104,8 +104,10 @@ x402 is an open protocol with zero protocol-level fees. This means value capture
 | **Wallet/Identity** | Privy, Dynamic, Coinbase MPC | $0.01/sig (Privy) or $0 | Per-signature or bundled | High |
 | **Stablecoin Issuer** | Circle (USDC) | Float yield (~5% APY on reserves) | Treasury yield | ~95% |
 | **RPC/Infra** | QuickNode, Alchemy | Fractional | Subscription/usage | 60-70% |
-| **Compliance** | UQPAY (only entrant) | Not disclosed | Enterprise SaaS | TBD |
-| **Discovery** | Fluora, x402 Bazaar | TBD | Marketplace cut | TBD |
+| **Compliance** | UQPAY, Sardine-class vendors, FIS KYA stack | ~$0.00002-$0.00010 (0.2-1.0%) | Enterprise SaaS + per-tx screening | 70-80% |
+| **Discovery** | Fluora, x402 Bazaar, new entrants | ~$0.0002-$0.0008 (2-8% blended) | Marketplace take rate + promoted ranking | 60-80% at scale |
+
+*Assumption basis for emerging layers: compliance modeled at 20-100 bps effective take rate; discovery modeled at 2-8% blended take rate once routing consolidates.*
 
 ---
 

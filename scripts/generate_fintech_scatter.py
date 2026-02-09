@@ -342,7 +342,9 @@ def generate_scatter():
 
 
 if __name__ == "__main__":
-    out = Path("/Users/cat/memo-fintech-agents")
+    root = Path(__file__).resolve().parent.parent
+    out = root / "charts" / "fintech"
+    out.mkdir(parents=True, exist_ok=True)
     print("Generating Fintech Scatter: Funding vs Revenue Trajectory...")
     fig = generate_scatter()
     save_path = out / "fintech_funding_vs_revenue.png"

@@ -11,6 +11,7 @@ import matplotlib.patches as mpatches
 from matplotlib.patches import FancyBboxPatch
 import numpy as np
 from datetime import datetime
+from pathlib import Path
 
 # =============================================================================
 # STYLING
@@ -27,6 +28,12 @@ RED = '#ff6b6b'
 PINK = '#ff69b4'
 LIGHT_BLUE = '#87ceeb'
 DARK_CYAN = '#008b8b'
+
+ROOT = Path(__file__).resolve().parent
+if not (ROOT / 'charts').exists():
+    ROOT = ROOT.parent
+X402_CHARTS_DIR = ROOT / 'charts' / 'x402'
+X402_CHARTS_DIR.mkdir(parents=True, exist_ok=True)
 
 plt.rcParams.update({
     'figure.facecolor': BG_COLOR,
@@ -204,7 +211,7 @@ def chart_buyer_seller_ratio():
              bbox=dict(boxstyle='round,pad=0.8', facecolor=BG_COLOR,
                        edgecolor=AMBER, alpha=0.9, linewidth=1.5))
 
-    fig.savefig('/Users/cat/memo-fintech-agents/charts/x402_09_buyer_seller_ratio_deep.png',
+    fig.savefig(str(X402_CHARTS_DIR / 'x402_09_buyer_seller_ratio_deep.png'),
                 dpi=150, bbox_inches='tight', facecolor=BG_COLOR)
     plt.close()
     print("✓ Chart 1: Buyer-Seller Ratio Over Time saved")
@@ -300,14 +307,14 @@ def chart_value_stack():
         {
             'name': 'DISCOVERY LAYER',
             'subtitle': 'Agent service discovery  •  Price comparison  •  Routing',
-            'players': 'Fluora (MonetizedMCP)  •  x402 V2 API Discovery  •  ??? (whitespace)',
-            'rev_pct': 'TBD',
-            'rev_1b': 'TBD',
-            'margin': 'TBD',
+            'players': 'Fluora (MonetizedMCP)  •  x402 Bazaar  •  emerging entrants',
+            'rev_pct': '2-8% (blended take)',
+            'rev_1b': '$20M-$80M',
+            'margin': '60-80%',
             'moat': 4,
             'moat_label': 'High (if won)',
             'color': '#1a3a5e',
-            'accrual': 'BIGGEST WHITESPACE. Whoever builds the\n"Google for agent APIs" owns the chokepoint.',
+            'accrual': 'BIGGEST WHITESPACE. Range assumes\n2-8% effective take rate at scale.',
             'verdict': 'WATCH',
             'verdict_color': AMBER,
         },
@@ -461,7 +468,7 @@ def chart_value_stack():
                       edgecolor=CYAN, linewidth=2, alpha=0.95),
             wrap=True)
 
-    fig.savefig('/Users/cat/memo-fintech-agents/charts/x402_10_value_accrual_stack.png',
+    fig.savefig(str(X402_CHARTS_DIR / 'x402_10_value_accrual_stack.png'),
                 dpi=150, bbox_inches='tight', facecolor=BG_COLOR)
     plt.close()
     print("✓ Chart 2: Value Accrual Stack saved")
@@ -573,7 +580,7 @@ def chart_coinbase_flywheel():
             bbox=dict(boxstyle='round,pad=0.6', facecolor='#0a0a1e',
                       edgecolor=PURPLE, linewidth=2, alpha=0.95))
 
-    fig.savefig('/Users/cat/memo-fintech-agents/charts/x402_11_coinbase_flywheel.png',
+    fig.savefig(str(X402_CHARTS_DIR / 'x402_11_coinbase_flywheel.png'),
                 dpi=150, bbox_inches='tight', facecolor=BG_COLOR)
     plt.close()
     print("✓ Chart 3: Coinbase Flywheel saved")

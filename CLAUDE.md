@@ -10,8 +10,8 @@ This repository contains research memos on fintech, AI agents, and the intersect
 memos/           — Research memos (markdown)
 charts/          — Generated visualizations (PNG)
   agent-economy/ — 13 agent economy charts
-  fintech/       — 3 fintech funding/market charts
-  x402/          — 8 x402 protocol charts
+  fintech/       — 4 fintech charts
+  x402/          — 11 x402 protocol charts
 scripts/         — Python chart generation scripts
 data/            — Structured data modules (Python)
 pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
@@ -50,10 +50,11 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `12_infrastructure_gap_analysis.png` — Infrastructure gap analysis
 - `agent_economy_funding_vs_revenue.png` — Funding vs revenue trajectory scatter by category (2023-2026)
 
-### Fintech (`charts/fintech/`) — 3 charts
+### Fintech (`charts/fintech/`) — 4 charts
 - `fintech_funding_by_category.png` — Stacked bar: VC funding by 10 categories (2015-2025) with VC-total reference line and event annotations
 - `fintech_market_map.png` — Market map: categories as tiles with 2025 funding, status, and key players/valuations
 - `fintech_funding_heatmap.png` — Heatmap: funding intensity by category and year, black borders on peak years
+- `fintech_funding_vs_revenue.png` — Funding vs revenue trajectory scatter by category (2019-2026 snapshots)
 
 ### x402 (`charts/x402/`) — 11 charts
 - `x402_01_daily_tx_trajectory.png` — Log-scale daily tx with event annotations
@@ -68,17 +69,18 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `x402_10_value_accrual_stack.png` — Full 8-layer market stack diagram: every layer back-to-back with revenue per $1B volume, moat rating, and investment verdict (BUY/AVOID/WATCH)
 - `x402_11_coinbase_flywheel.png` — Circular flywheel: how Coinbase's $0-fee protocol generates ~$35-38M per $1B volume across USDC float, Base fees, facilitator, and commerce
 
-## Scripts (`scripts/`)
+## Scripts
 
 - `generate_charts.py` — Fintech funding charts (stacked bar, market map, heatmap)
 - `generate_agent_scatter.py` — Agent economy funding vs revenue trajectory scatter plot
+- `generate_fintech_scatter.py` — Fintech funding vs revenue trajectory scatter plot
 - `gen_x402_charts_1_2.py` — x402 daily tx trajectory + cumulative growth
 - `gen_x402_charts_3_4.py` — x402 chain split + facilitator share
 - `gen_x402_charts_5_6.py` — x402 value chain + ecosystem mcap
 - `gen_x402_charts_7_8.py` — x402 developer adoption + buyer/seller ratio
-- `gen_x402_value_accrual.py` — x402 buyer-seller ratio deep dive, value accrual stack diagram, Coinbase flywheel
+- `gen_x402_value_accrual.py` (repo root) — x402 buyer-seller ratio deep dive, value accrual stack diagram, Coinbase flywheel
 
-All scripts run with `uv run python scripts/<script>.py` (deps declared in `pyproject.toml`).
+Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyproject.toml`). For charts 9-11, run `uv run python gen_x402_value_accrual.py`.
 
 ## Conventions
 
@@ -169,7 +171,7 @@ All scripts run with `uv run python scripts/<script>.py` (deps declared in `pypr
 - **Dark theme style recipe:** `plt.style.use('dark_background')`, `fig.patch.set_facecolor('#1a1a2e')`, `ax.set_facecolor('#1a1a2e')`, grid color `#333355`, figure size `(16, 9)`, dpi=150. Produces clean, presentation-ready charts.
 - **Best chart types by data story:** Log-scale line for adoption S-curves (orders of magnitude growth), stacked area for market share evolution (shows zero-sum dynamics), horizontal bars for value chain waterfalls (easy to label), proportional circles for ratio comparisons (53:1 buyer/seller).
 - **Annotation is critical for adoption data.** Raw line charts are meaningless without event labels (launch, Foundation, V2 release, etc.). Always annotate with arrows and labeled boxes for key inflection points.
-- **Chart inventory:** 27 total charts across 3 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/x402/`.
+- **Chart inventory:** 28 total charts across 3 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/x402/`.
 - **Generator scripts** in `scripts/` — all run with `uv run python scripts/<script>.py`
 
 ### x402 Buyer-Seller Dynamics & Value Accrual Insights
