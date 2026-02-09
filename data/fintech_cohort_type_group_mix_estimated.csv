@@ -1,0 +1,49 @@
+cohort_order,cohort,era,type_group,share_pct,funding_b,method
+1,1. Pre-2008,1982-2007,AI-Native / Stablecoin / CFO,0.0,0.0,estimated_mix
+1,1. Pre-2008,1982-2007,Consumer Banking & Wealth,20.0,1.0,estimated_mix
+1,1. Pre-2008,1982-2007,Crypto & Web3,0.0,0.0,estimated_mix
+1,1. Pre-2008,1982-2007,Insurtech,0.0,0.0,estimated_mix
+1,1. Pre-2008,1982-2007,Lending & BNPL,35.0,1.75,estimated_mix
+1,1. Pre-2008,1982-2007,Payments & Infrastructure,45.0,2.25,estimated_mix
+2,2. Post-Crisis,2008-2012,AI-Native / Stablecoin / CFO,0.0,0.0,estimated_mix
+2,2. Post-Crisis,2008-2012,Consumer Banking & Wealth,25.0,5.0,estimated_mix
+2,2. Post-Crisis,2008-2012,Crypto & Web3,15.0,3.0,estimated_mix
+2,2. Post-Crisis,2008-2012,Insurtech,0.0,0.0,estimated_mix
+2,2. Post-Crisis,2008-2012,Lending & BNPL,15.0,3.0,estimated_mix
+2,2. Post-Crisis,2008-2012,Payments & Infrastructure,45.0,9.0,estimated_mix
+3,3. Boom,2013-2015,AI-Native / Stablecoin / CFO,0.0,0.0,estimated_mix
+3,3. Boom,2013-2015,Consumer Banking & Wealth,45.0,21.78,estimated_mix
+3,3. Boom,2013-2015,Crypto & Web3,0.0,0.0,estimated_mix
+3,3. Boom,2013-2015,Insurtech,20.0,9.68,estimated_mix
+3,3. Boom,2013-2015,Lending & BNPL,25.0,12.1,estimated_mix
+3,3. Boom,2013-2015,Payments & Infrastructure,10.0,4.84,estimated_mix
+4,4. Maturation,2016-2018,AI-Native / Stablecoin / CFO,0.0,0.0,estimated_mix
+4,4. Maturation,2016-2018,Consumer Banking & Wealth,10.0,9.15,estimated_mix
+4,4. Maturation,2016-2018,Crypto & Web3,60.0,54.9,estimated_mix
+4,4. Maturation,2016-2018,Insurtech,0.0,0.0,estimated_mix
+4,4. Maturation,2016-2018,Lending & BNPL,5.0,4.58,estimated_mix
+4,4. Maturation,2016-2018,Payments & Infrastructure,25.0,22.88,estimated_mix
+5,5. COVID,2019-2020,AI-Native / Stablecoin / CFO,0.0,0.0,estimated_mix
+5,5. COVID,2019-2020,Consumer Banking & Wealth,35.0,29.26,estimated_mix
+5,5. COVID,2019-2020,Crypto & Web3,2.0,1.67,estimated_mix
+5,5. COVID,2019-2020,Insurtech,3.0,2.51,estimated_mix
+5,5. COVID,2019-2020,Lending & BNPL,25.0,20.9,estimated_mix
+5,5. COVID,2019-2020,Payments & Infrastructure,35.0,29.26,estimated_mix
+6,6. Peak Mania,2021,AI-Native / Stablecoin / CFO,0.0,0.0,estimated_mix
+6,6. Peak Mania,2021,Consumer Banking & Wealth,25.0,32.88,estimated_mix
+6,6. Peak Mania,2021,Crypto & Web3,25.0,32.88,estimated_mix
+6,6. Peak Mania,2021,Insurtech,10.0,13.15,estimated_mix
+6,6. Peak Mania,2021,Lending & BNPL,20.0,26.3,estimated_mix
+6,6. Peak Mania,2021,Payments & Infrastructure,20.0,26.3,estimated_mix
+7,7. Correction,2022-2023,AI-Native / Stablecoin / CFO,10.0,13.51,estimated_mix
+7,7. Correction,2022-2023,Consumer Banking & Wealth,20.0,27.02,estimated_mix
+7,7. Correction,2022-2023,Crypto & Web3,20.0,27.02,estimated_mix
+7,7. Correction,2022-2023,Insurtech,10.0,13.51,estimated_mix
+7,7. Correction,2022-2023,Lending & BNPL,15.0,20.26,estimated_mix
+7,7. Correction,2022-2023,Payments & Infrastructure,25.0,33.78,estimated_mix
+8,8. New Era,2024-2026 est,AI-Native / Stablecoin / CFO,35.0,52.01,estimated_mix
+8,8. New Era,2024-2026 est,Consumer Banking & Wealth,10.0,14.86,estimated_mix
+8,8. New Era,2024-2026 est,Crypto & Web3,20.0,29.72,estimated_mix
+8,8. New Era,2024-2026 est,Insurtech,5.0,7.43,estimated_mix
+8,8. New Era,2024-2026 est,Lending & BNPL,10.0,14.86,estimated_mix
+8,8. New Era,2024-2026 est,Payments & Infrastructure,20.0,29.72,estimated_mix

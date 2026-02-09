@@ -130,6 +130,135 @@ DRIVER_ANCHOR_ROWS = [
 ]
 
 
+COHORT_TYPE_CLASSIFICATION_ROWS = [
+    {
+        "cohort_order": 1,
+        "cohort": "1. Pre-2008",
+        "era": "1982-2007",
+        "company_type": "Internet-native transaction rails",
+        "type_group": "Payments / Brokerage / Early Lending",
+        "examples": "PayPal, E*Trade, Adyen, LendingClub, Klarna",
+        "profile": "Early digitization of core financial transactions on web and e-commerce rails.",
+    },
+    {
+        "cohort_order": 2,
+        "cohort": "2. Post-Crisis",
+        "era": "2008-2012",
+        "company_type": "API-first fintech infrastructure",
+        "type_group": "Payments infra / Data APIs / Neobanks / Crypto exchanges",
+        "examples": "Stripe, Plaid, Square, Wise, Coinbase, Chime, SoFi",
+        "profile": "Smartphone + post-crisis trust reset favored developer tools and modern financial interfaces.",
+    },
+    {
+        "cohort_order": 3,
+        "cohort": "3. Boom",
+        "era": "2013-2015",
+        "company_type": "Consumer growth fintech",
+        "type_group": "Neobanks / BNPL / Insurtech / Commission-free investing",
+        "examples": "Nubank, Revolut, Robinhood, Monzo, N26, Afterpay, Lemonade, Root",
+        "profile": "Mobile adoption and abundant capital favored rapid user-growth consumer models.",
+    },
+    {
+        "cohort_order": 4,
+        "cohort": "4. Maturation",
+        "era": "2016-2018",
+        "company_type": "Open-banking and startup-finance infrastructure",
+        "type_group": "Corporate cards / Startup banking / Open banking APIs / BaaS",
+        "examples": "Brex, Mercury, TrueLayer (+ broader ICO and embedded finance buildout)",
+        "profile": "Regulatory openings (PSD2/Open Banking) and API maturity shifted focus back to rails and infra.",
+    },
+    {
+        "cohort_order": 5,
+        "cohort": "5. COVID",
+        "era": "2019-2020",
+        "company_type": "Digital-first scale-up cohort",
+        "type_group": "Neobanks / Digital payments / Vertical SaaS + fintech / BNPL acceleration",
+        "examples": "Chime, Stripe, Robinhood, Cash App ecosystem, Klarna/Afterpay acceleration",
+        "profile": "Pandemic behavior shifts accelerated usage and funding for already-launched digital platforms.",
+    },
+    {
+        "cohort_order": 6,
+        "cohort": "6. Peak Mania",
+        "era": "2021",
+        "company_type": "Mega-round, valuation-expansion cohort",
+        "type_group": "Cross-category megadeals (Payments / Crypto / BNPL / Neobanks / SPACs)",
+        "examples": "Nubank, Chime, Klarna, FTX, Generate",
+        "profile": "Low rates and risk-on capital favored large financings across both durable and speculative models.",
+    },
+    {
+        "cohort_order": 7,
+        "cohort": "7. Correction",
+        "era": "2022-2023",
+        "company_type": "Profitability and resilience cohort",
+        "type_group": "Cost-disciplined survivors / Consolidators / Compliance-first operators",
+        "examples": "Monzo, Revolut, SoFi, Robinhood survivors; Synapse/FTX-style failures on weak models",
+        "profile": "Rate shock and fraud unwind re-priced growth models and selected for unit economics quality.",
+    },
+    {
+        "cohort_order": 8,
+        "cohort": "8. New Era",
+        "era": "2024-2026 est",
+        "company_type": "AI-native and programmable-money infrastructure",
+        "type_group": "AI-native fintech / Stablecoin infra / CFO stack / Embedded finance 2.0",
+        "examples": "Ramp, Circle, stablecoin infra stack, AI-first accounting/treasury/payroll startups",
+        "profile": "AI platform shift plus stablecoin regulatory clarity is driving a new infrastructure-heavy wave.",
+    },
+]
+
+
+TYPE_GROUP_MIX_SHARES = [
+    # Shares are estimated composition of each cohort's funding pool by company type group.
+    {"cohort_order": 1, "type_group": "Payments & Infrastructure", "share": 0.45},
+    {"cohort_order": 1, "type_group": "Consumer Banking & Wealth", "share": 0.20},
+    {"cohort_order": 1, "type_group": "Lending & BNPL", "share": 0.35},
+    {"cohort_order": 1, "type_group": "Insurtech", "share": 0.00},
+    {"cohort_order": 1, "type_group": "Crypto & Web3", "share": 0.00},
+    {"cohort_order": 1, "type_group": "AI-Native / Stablecoin / CFO", "share": 0.00},
+    {"cohort_order": 2, "type_group": "Payments & Infrastructure", "share": 0.45},
+    {"cohort_order": 2, "type_group": "Consumer Banking & Wealth", "share": 0.25},
+    {"cohort_order": 2, "type_group": "Lending & BNPL", "share": 0.15},
+    {"cohort_order": 2, "type_group": "Insurtech", "share": 0.00},
+    {"cohort_order": 2, "type_group": "Crypto & Web3", "share": 0.15},
+    {"cohort_order": 2, "type_group": "AI-Native / Stablecoin / CFO", "share": 0.00},
+    {"cohort_order": 3, "type_group": "Payments & Infrastructure", "share": 0.10},
+    {"cohort_order": 3, "type_group": "Consumer Banking & Wealth", "share": 0.45},
+    {"cohort_order": 3, "type_group": "Lending & BNPL", "share": 0.25},
+    {"cohort_order": 3, "type_group": "Insurtech", "share": 0.20},
+    {"cohort_order": 3, "type_group": "Crypto & Web3", "share": 0.00},
+    {"cohort_order": 3, "type_group": "AI-Native / Stablecoin / CFO", "share": 0.00},
+    {"cohort_order": 4, "type_group": "Payments & Infrastructure", "share": 0.25},
+    {"cohort_order": 4, "type_group": "Consumer Banking & Wealth", "share": 0.10},
+    {"cohort_order": 4, "type_group": "Lending & BNPL", "share": 0.05},
+    {"cohort_order": 4, "type_group": "Insurtech", "share": 0.00},
+    {"cohort_order": 4, "type_group": "Crypto & Web3", "share": 0.60},
+    {"cohort_order": 4, "type_group": "AI-Native / Stablecoin / CFO", "share": 0.00},
+    {"cohort_order": 5, "type_group": "Payments & Infrastructure", "share": 0.35},
+    {"cohort_order": 5, "type_group": "Consumer Banking & Wealth", "share": 0.35},
+    {"cohort_order": 5, "type_group": "Lending & BNPL", "share": 0.25},
+    {"cohort_order": 5, "type_group": "Insurtech", "share": 0.03},
+    {"cohort_order": 5, "type_group": "Crypto & Web3", "share": 0.02},
+    {"cohort_order": 5, "type_group": "AI-Native / Stablecoin / CFO", "share": 0.00},
+    {"cohort_order": 6, "type_group": "Payments & Infrastructure", "share": 0.20},
+    {"cohort_order": 6, "type_group": "Consumer Banking & Wealth", "share": 0.25},
+    {"cohort_order": 6, "type_group": "Lending & BNPL", "share": 0.20},
+    {"cohort_order": 6, "type_group": "Insurtech", "share": 0.10},
+    {"cohort_order": 6, "type_group": "Crypto & Web3", "share": 0.25},
+    {"cohort_order": 6, "type_group": "AI-Native / Stablecoin / CFO", "share": 0.00},
+    {"cohort_order": 7, "type_group": "Payments & Infrastructure", "share": 0.25},
+    {"cohort_order": 7, "type_group": "Consumer Banking & Wealth", "share": 0.20},
+    {"cohort_order": 7, "type_group": "Lending & BNPL", "share": 0.15},
+    {"cohort_order": 7, "type_group": "Insurtech", "share": 0.10},
+    {"cohort_order": 7, "type_group": "Crypto & Web3", "share": 0.20},
+    {"cohort_order": 7, "type_group": "AI-Native / Stablecoin / CFO", "share": 0.10},
+    {"cohort_order": 8, "type_group": "Payments & Infrastructure", "share": 0.20},
+    {"cohort_order": 8, "type_group": "Consumer Banking & Wealth", "share": 0.10},
+    {"cohort_order": 8, "type_group": "Lending & BNPL", "share": 0.10},
+    {"cohort_order": 8, "type_group": "Insurtech", "share": 0.05},
+    {"cohort_order": 8, "type_group": "Crypto & Web3", "share": 0.20},
+    {"cohort_order": 8, "type_group": "AI-Native / Stablecoin / CFO", "share": 0.35},
+]
+
+
 def build_cohort_dataframe() -> pd.DataFrame:
     """Compute did-well and not-well amounts from cohort pools and shares."""
     df = pd.DataFrame(COHORT_SPLIT_ROWS).sort_values("cohort_order").reset_index(drop=True)
@@ -153,16 +282,47 @@ def build_cohort_dataframe() -> pd.DataFrame:
     ]
 
 
-def write_csvs(cohort_df: pd.DataFrame) -> None:
+def build_type_group_mix_dataframe(cohort_df: pd.DataFrame) -> pd.DataFrame:
+    """Build estimated type-group composition by cohort."""
+    mix = pd.DataFrame(TYPE_GROUP_MIX_SHARES)
+    merged = mix.merge(
+        cohort_df[["cohort_order", "cohort", "era", "funding_pool_b"]],
+        on="cohort_order",
+        how="left",
+    )
+    merged["share_pct"] = (merged["share"] * 100).round(1)
+    merged["funding_b"] = (merged["funding_pool_b"] * merged["share"]).round(2)
+    merged["method"] = "estimated_mix"
+
+    return merged[
+        [
+            "cohort_order",
+            "cohort",
+            "era",
+            "type_group",
+            "share_pct",
+            "funding_b",
+            "method",
+        ]
+    ].sort_values(["cohort_order", "type_group"])
+
+
+def write_csvs(cohort_df: pd.DataFrame, type_mix_df: pd.DataFrame) -> None:
     """Write cohort split and anchor driver CSV files."""
     cohort_path = DATA_DIR / "fintech_cohort_outcome_split_estimated.csv"
     anchors_path = DATA_DIR / "fintech_cohort_outcome_driver_anchors.csv"
+    cohort_types_path = DATA_DIR / "fintech_cohort_company_type_classification.csv"
+    type_mix_path = DATA_DIR / "fintech_cohort_type_group_mix_estimated.csv"
 
     cohort_df.to_csv(cohort_path, index=False)
     pd.DataFrame(DRIVER_ANCHOR_ROWS).to_csv(anchors_path, index=False)
+    pd.DataFrame(COHORT_TYPE_CLASSIFICATION_ROWS).sort_values("cohort_order").to_csv(cohort_types_path, index=False)
+    type_mix_df.to_csv(type_mix_path, index=False)
 
     print(f"Saved: {cohort_path}")
     print(f"Saved: {anchors_path}")
+    print(f"Saved: {cohort_types_path}")
+    print(f"Saved: {type_mix_path}")
 
 
 def plot_chart(cohort_df: pd.DataFrame) -> None:
@@ -261,9 +421,99 @@ def plot_chart(cohort_df: pd.DataFrame) -> None:
     print(f"Saved: {out_path}")
 
 
+def plot_type_group_mix_chart(type_mix_df: pd.DataFrame) -> None:
+    """Stacked chart of estimated type-group composition by cohort."""
+    chart_df = type_mix_df.copy()
+    chart_df["label"] = chart_df["cohort"] + "\n" + chart_df["era"]
+
+    pivot = chart_df.pivot_table(
+        index=["cohort_order", "label"],
+        columns="type_group",
+        values="funding_b",
+        aggfunc="sum",
+        fill_value=0.0,
+    ).sort_index()
+
+    labels = [idx[1] for idx in pivot.index]
+    x = np.arange(len(labels))
+
+    colors = {
+        "Payments & Infrastructure": "#2563EB",
+        "Consumer Banking & Wealth": "#06B6D4",
+        "Lending & BNPL": "#F59E0B",
+        "Insurtech": "#10B981",
+        "Crypto & Web3": "#7C3AED",
+        "AI-Native / Stablecoin / CFO": "#111827",
+    }
+
+    fig, ax = plt.subplots(figsize=(16, 9), dpi=180)
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor("white")
+
+    bottom = np.zeros(len(labels))
+    order = list(colors.keys())
+    for group in order:
+        vals = pivot[group].to_numpy() if group in pivot.columns else np.zeros(len(labels))
+        ax.bar(
+            x,
+            vals,
+            bottom=bottom,
+            width=0.72,
+            label=group,
+            color=colors[group],
+            edgecolor="white",
+            linewidth=0.7,
+        )
+        bottom += vals
+
+    ax.set_title("Estimated Company-Type Mix by Fintech Cohort", fontsize=20, fontweight="bold", pad=16)
+    ax.text(
+        0.5,
+        1.02,
+        "Stacked by estimated type-group funding contribution within each cohort pool.",
+        transform=ax.transAxes,
+        ha="center",
+        fontsize=10,
+        color="#6B7280",
+    )
+    ax.set_ylabel("Funding (USD Billions)", fontsize=12)
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=9)
+    ax.grid(axis="y", alpha=0.2, linestyle="--")
+    ax.set_axisbelow(True)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    ax.legend(
+        ncol=3,
+        loc="upper left",
+        bbox_to_anchor=(0.0, 1.0),
+        frameon=False,
+        fontsize=10,
+    )
+
+    fig.text(
+        0.5,
+        0.01,
+        "Source basis: memos/fintech-market-analysis.md cohort taxonomy; mix is an estimated decomposition.",
+        ha="center",
+        fontsize=9,
+        color="#6B7280",
+        style="italic",
+    )
+    fig.tight_layout(rect=[0.02, 0.05, 0.98, 0.95])
+
+    out_path = CHART_DIR / "fintech_cohort_type_group_mix_estimated.png"
+    fig.savefig(out_path, dpi=200, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+    print(f"Saved: {out_path}")
+
+
 if __name__ == "__main__":
     print("Generating fintech cohort outcome split artifacts...")
     cohort_df = build_cohort_dataframe()
-    write_csvs(cohort_df)
+    type_mix_df = build_type_group_mix_dataframe(cohort_df)
+    write_csvs(cohort_df, type_mix_df)
     plot_chart(cohort_df)
+    plot_type_group_mix_chart(type_mix_df)
     print("Done.")
