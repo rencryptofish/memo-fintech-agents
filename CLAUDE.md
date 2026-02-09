@@ -13,7 +13,11 @@ This repository contains research memos on fintech, AI agents, and the intersect
 - `fintech-agents-intersection.md` — The convergence of fintech and AI agents: four agentic payment protocols (x402, ACP, AP2, TAP), agent wallets and financial identity (Kite, Catena Labs, Crossmint, Skyfire), DeFAI movement, agent-to-agent commerce, KYA framework, "Stripe moment" analysis, regulatory landscape
 - `fintech-investment-opportunities-2026.md` — Specific investable opportunities: AI-native fintech startups (Sardine, FurtherAI, Catena Labs), stablecoin infrastructure (Circle, BVNK, Zero Hash, Crossmint), real-time payments (Column, Orum/Stripe), CFO stack (Ramp $32B, Mercury $3.5B, Brex/Capital One), embedded finance post-Synapse, pre-Series B breakouts (Duna, Hyperbots)
 - `investment-opportunities.md` — **Final synthesized memo**: Top 15 ranked investment opportunities across fintech, AI agent layer, and their intersection. Includes evaluation framework (moat, TAM, timing, risk, capital efficiency), M&A signal analysis, risk assessment, and 6-12 month watchlist
-- `fintech_funding_data.py` — Structured funding data (2015-2025) by fintech category with KPMG/CB Insights/Crunchbase sources, confidence ratings, and matplotlib visualization helpers (stacked area, heatmap, grouped bar charts)
+- `fintech_funding_data.py` — Structured funding data (2015-2025) by 10 fintech categories with KPMG/CB Insights/Crunchbase sources, confidence ratings (H/M/L per datapoint), and matplotlib visualization helpers
+- `generate_charts.py` — Python chart generation script; run with `uv run --with matplotlib --with numpy generate_charts.py`
+- `fintech_funding_by_category.png` — Stacked bar chart: VC funding by 10 fintech categories (2015-2025) with VC-total reference line and event annotations
+- `fintech_market_map.png` — Visual market map: categories as tiles with 2025 funding, status, and key players/valuations
+- `fintech_funding_heatmap.png` — Heatmap: funding intensity by category and year, black borders on peak years
 
 ## Conventions
 
@@ -45,6 +49,16 @@ This repository contains research memos on fintech, AI agents, and the intersect
 - Regulation is a moat, not just a cost. Wise (41-country licenses), Revolut (banking licenses), Harvey (legal domain expertise) — regulatory and domain complexity create 10x barriers.
 - Unit economics that work: interchange-based (Chime: $251 ARPU), SaaS + payments (Stripe: Billing >$500M ARR), infrastructure/API fees (Plaid: $390M ARR), transparent spread (Wise), enterprise payments (Adyen). What doesn't: free B2C services, BNPL subsidized by cheap capital, marketplace lending with concentrated funding.
 - The GENIUS Act (July 2025) is the most important fintech legislation since Dodd-Frank — creates massive compliance infrastructure opportunity for stablecoins.
+
+### Fintech Cohort & Funding Patterns
+- **8 cohorts identified**: Pre-2008, 2008-2012 (best cohort), 2013-2015, 2016-2018, 2019-2020, 2021 (peak), 2022-2023 (correction), 2024-2026 (AI era). The 2008-2012 post-crisis cohort produced the most enduring companies (Stripe, Square, Wise, Coinbase, Plaid).
+- **Funding cycle**: $19.4B (2015) → steady growth → $131.5B peak (2021, 21% of all VC) → $46.3B trough (2023) → $51.8B recovery (2025). Clear boom-bust with ~4 year cycles.
+- **Almost all categories peaked in 2021** (Payments $29B, Crypto $30.2B, Lending $18.5B, B2B Infra $18B, Neobanks $14B, Insurtech $14.4B, Embedded Finance $11.2B). Exception: Regtech peaked in 2022 at $18.6B.
+- **Crisis-driven founding produces best outcomes.** The 2008-2012 cohort benefited from: (1) loss of trust in banks, (2) smartphone adoption, (3) low interest rates, (4) light competition for talent. 7-10 year maturation cycle from founding to dominance.
+- **Platform shifts create founding windows**: internet (1990s) → smartphones (2007+) → APIs/open banking (2016-2018) → AI (2024+). Each shift spawns a new generation of category-defining companies.
+- **BNPL was "the purest example of ZIRP-enabled financial engineering"** — funding costs were 8-12% during ZIRP, then rose with rates. Klarna crashed 85% ($45.6B → $6.7B). 41% of BNPL users late on payments by 2025.
+- **Geographic diversification accelerating**: 60% of funded fintechs now outside the US (2024-2026). India $111B→$421B by 2029; Lagos 503 fintechs; Singapore 40% of ASEAN fintech.
+- **Cohort comparison table format** works well for side-by-side analysis: columns for era, VC environment, biggest rounds, top categories, what worked, what didn't work. Added to fintech-market-analysis.md.
 
 ### AI Agent Domain Insights
 - AI agent market: ~$7-8B (2025), 44-46% CAGR to $47-52B by 2030. Broader estimates reach $200B by early 2030s.
