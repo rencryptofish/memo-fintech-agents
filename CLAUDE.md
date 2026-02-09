@@ -96,8 +96,25 @@ This repository contains research memos on fintech, AI agents, and the intersect
 - **Timing risk is the primary risk, not directional risk.** The direction (agents will transact autonomously and need financial infrastructure) is clear. Whether the market develops in 2026-2027 or 2028-2030 determines which companies survive. Capital-efficient companies that can survive either timeline are the best investments.
 
 ### Visualization & Tooling Learnings
-- Use `uv run --with matplotlib --with numpy script.py` for chart generation — avoids managing venvs or installing packages permanently.
+- Use `uv run --with matplotlib --with numpy script.py` for chart generation — avoids managing venvs or installing packages permanently. For projects with a `pyproject.toml`, just use `uv run python script.py` (deps already declared).
 - **Matplotlib color gotcha:** Use tuples `(1, 1, 1, 0.9)` for RGBA colors, NOT CSS-style `rgba(255,255,255,0.9)` strings. Matplotlib only accepts 0-1 float tuples, hex strings, or named colors.
 - For funding data by category, KPMG Pulse of Fintech has the best sector-level breakdowns (2019-2024 confirmed figures). For earlier years (2015-2018), derive from percentage shares. Always attach confidence ratings (H/M/L) per datapoint.
 - **Three complementary chart types for funding data:** (1) Stacked bar — shows composition and total over time, (2) Market map / treemap — shows current landscape with key players, (3) Heatmap — shows exact values + peak identification. Together they tell the full story.
 - Agent teams work best when the research agent also produces the structured data file (with sources and confidence), and the leader builds the visualization from it. Separation of data sourcing from visualization prevents hallucinated numbers.
+
+### Chart Team Workflow Learnings
+- **Shared data module pattern works well for chart teams.** Create a `*_data.py` file with all raw data in pandas DataFrames, then have each chart agent import from it. Prevents data duplication and ensures consistency across all charts.
+- **Parallel chart agents scale linearly.** 4 agents each producing 2 charts = 8 charts in the time it takes one agent to make 2. Assign chart pairs by theme (growth metrics, market structure, economics, developer adoption) so each agent has coherent context.
+- **Dark theme style recipe:** `plt.style.use('dark_background')`, `fig.patch.set_facecolor('#1a1a2e')`, `ax.set_facecolor('#1a1a2e')`, grid color `#333355`, figure size `(16, 9)`, dpi=150. Produces clean, presentation-ready charts.
+- **Best chart types by data story:** Log-scale line for adoption S-curves (orders of magnitude growth), stacked area for market share evolution (shows zero-sum dynamics), horizontal bars for value chain waterfalls (easy to label), proportional circles for ratio comparisons (53:1 buyer/seller).
+- **Annotation is critical for adoption data.** Raw line charts are meaningless without event labels (launch, Foundation, V2 release, etc.). Always annotate with arrows and labeled boxes for key inflection points.
+- **x402 chart inventory (8 charts in `charts/`):**
+  - `x402_01_daily_tx_trajectory.png` — Log-scale daily tx with event annotations
+  - `x402_02_cumulative_growth.png` — Dual-axis cumulative tx + volume hockey stick
+  - `x402_03_chain_split.png` — Base vs Solana stacked area (97% → 75%)
+  - `x402_04_facilitator_share.png` — Facilitator market share shift (Coinbase → Dexter)
+  - `x402_05_value_chain.png` — Value capture waterfall per $0.01 payment
+  - `x402_06_ecosystem_mcap.png` — Token mcap ($100M → $12B → $10.5B)
+  - `x402_07_developer_adoption.png` — Adoption funnel (5.4K stars → 31 live services)
+  - `x402_08_buyer_seller_ratio.png` — Proportional circles (74K buyers vs 1.4K sellers)
+- **Generator scripts:** `gen_x402_charts_1_2.py`, `gen_x402_charts_3_4.py`, `gen_x402_charts_5_6.py`, `gen_x402_charts_7_8.py` — all run with `uv run python <script>.py`
