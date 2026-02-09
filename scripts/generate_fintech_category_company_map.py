@@ -113,7 +113,7 @@ def generate_chart():
     )
 
     plt.tight_layout(rect=[0.01, 0.03, 0.99, 0.93])
-    fig.savefig(out_path, dpi=220, bbox_inches="tight", facecolor="white")
+    fig.savefig(out_path, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     return out_path
 

@@ -229,7 +229,7 @@ def chart_stage_over_time(df: pd.DataFrame) -> None:
     )
     fig.tight_layout(rect=[0, 0.03, 1, 1])
     out = CHART_OUT / "fintech_funding_by_stage_over_time.png"
-    fig.savefig(out, dpi=220, bbox_inches="tight", facecolor="white")
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -302,7 +302,7 @@ def chart_category_maturity_heatmap(df: pd.DataFrame) -> None:
     )
     fig.tight_layout(rect=[0, 0.03, 1, 1])
     out = CHART_OUT / "fintech_category_maturity_heatmap_late_stage_share.png"
-    fig.savefig(out, dpi=220, bbox_inches="tight", facecolor="white")
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -381,7 +381,7 @@ def chart_stage_mix_latest_year(df: pd.DataFrame, year: int = 2025) -> None:
     )
     fig.tight_layout(rect=[0, 0.03, 1, 1])
     out = CHART_OUT / "fintech_stage_mix_by_category_2025.png"
-    fig.savefig(out, dpi=220, bbox_inches="tight", facecolor="white")
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out}")
 

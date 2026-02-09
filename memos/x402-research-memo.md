@@ -14,7 +14,7 @@
 
 ## Executive Summary
 
-x402 is an open-source payment protocol developed by Coinbase that revives the long-dormant HTTP 402 ("Payment Required") status code to embed native stablecoin payments directly into web traffic. Launched in May 2025 and backed by a foundation co-created with Cloudflare, the protocol has processed **157.6M cumulative transactions** and **$600M+ in volume** across Base and Solana. It is purpose-built for the emerging **agentic economy** — where AI agents autonomously transact for data, compute, and services — and enables micropayments as small as $0.001 per request with zero protocol fees.
+x402 is an open-source payment protocol developed by Coinbase that revives the long-dormant HTTP 402 ("Payment Required") status code to embed native stablecoin payments directly into web traffic. Launched in May 2025 and backed by a foundation co-created with Cloudflare, current public homepage counters (as of February 9, 2026) show **75.41M transactions** and **$24.24M volume**. Legacy memo-era claims of **157.6M cumulative transactions** and **$600M+ volume** still appear across prior analyses, but are now treated as low-confidence until reconciled against reproducible primary time-series pulls. The protocol remains purpose-built for the emerging **agentic economy** — where AI agents autonomously transact for data, compute, and services — and enables micropayments as small as $0.001 per request with zero protocol fees.
 
 ## Key Charts
 
@@ -113,19 +113,21 @@ The emerging consensus is these are **complementary layers**, not direct competi
 
 ## 4. Traction Data
 
-### 4.1 Headline Metrics (as of early 2026)
+### 4.1 Headline Metrics (canonical snapshot as of 2026-02-09)
 
-| Metric | Value |
-|---|---|
-| Cumulative transactions | **157.6M** (119M Base, 38.6M Solana) |
-| Cumulative payment volume | **$600M+** |
-| Unique buyers (all time) | ~406,700 |
-| Unique sellers (all time) | ~81,000 |
-| Peak daily Base network share | 19% of all Base transactions (Nov 2025) |
-| Peak daily transactions | 600,000+/day (Dec 2025) |
-| GitHub stars | 5,400+ |
-| GitHub forks | 1,000+ |
-| npm downloads (@coinbase/x402) | 7,500+ |
+| Metric | Value | Confidence | Source |
+|---|---|---|---|
+| Homepage transactions counter | **75.41M** | High | `data/x402_kpi_canonical.csv` (`homepage_counter`) |
+| Homepage volume counter | **$24.24M** | High | `data/x402_kpi_canonical.csv` (`homepage_counter`) |
+| Homepage buyers counter | **94.06K** | High | `data/x402_kpi_canonical.csv` (`homepage_counter`) |
+| Homepage sellers counter | **22K** | High | `data/x402_kpi_canonical.csv` (`homepage_counter`) |
+| Legacy cumulative transactions claim | **157.6M** | Low (conflict) | `data/x402_kpi_canonical.csv` (`legacy_memo_claim`) |
+| Legacy cumulative volume claim | **$600M+** | Low (conflict) | `data/x402_kpi_canonical.csv` (`legacy_memo_claim`) |
+| GitHub stars | 5,400+ | Medium | GitHub (`coinbase/x402`) |
+| GitHub forks | 1,000+ | Medium | GitHub (`coinbase/x402`) |
+| npm weekly downloads (@coinbase/x402) | 2,826 | Medium | npm stats snapshot |
+
+**Data confidence note:** This memo uses canonical counters for current-state interpretation and keeps legacy peak claims as historical context only. Do not mix these confidence tiers in underwriting without explicit weighting.
 
 ### 4.2 Timeline
 
@@ -142,7 +144,7 @@ The emerging consensus is these are **complementary layers**, not direct competi
 
 ### 4.3 Volume Volatility
 
-The protocol experienced a **90% drop in 30-day trading volume** after its initial spike, and Google Trends interest fell from 100 to 10. Analysts note this is common for new protocols. Ecosystem development (V2 launch, multi-chain expansion, hackathons) continued through the trough.
+The protocol experienced a large post-spike retrace in legacy time-series views and Google Trends interest fell from 100 to 10. Analysts note this is common for new protocols. Ecosystem development (V2 launch, multi-chain expansion, hackathons) continued through the trough. Given current counter conflicts, treat specific drawdown percentages as directional until fully reconciled in canonical time-series data.
 
 ### 4.4 Hackathon Activity
 
@@ -283,4 +285,4 @@ The main risks are execution-related: bootstrapping adoption, broadening token/c
 
 ---
 
-*Sources: x402.org, Coinbase Developer Docs, Cloudflare Blog, The Block, LongHash Ventures, DWF Labs, InfoQ, CoinGecko, Solana.com, GitHub (coinbase/x402), QuickNode, thirdweb, PANews, BeInCrypto, ainvest.com, PRNewswire*
+*Sources: `data/x402_kpi_canonical.csv`, `research/protocol-scoreboard-2026Q1.md`, x402.org, Coinbase Developer Docs, Cloudflare Blog, The Block, LongHash Ventures, DWF Labs, InfoQ, CoinGecko, Solana.com, GitHub (coinbase/x402), QuickNode, thirdweb, PANews, BeInCrypto, ainvest.com, PRNewswire*

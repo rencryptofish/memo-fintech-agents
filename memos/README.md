@@ -15,6 +15,7 @@ Use this index to navigate the memo set in a structured order.
 
 1. [Agent-Fintech Intersection: Deep Dive](agent-fintech-intersection-deep-dive.md)
 2. [Fintech x AI Agents Intersection](fintech-agents-intersection.md)
+3. [Agent-Fintech Mental Models and End States](agent-fintech-mental-models-end-states.md)
 
 ## Level 3: Domain Layer
 

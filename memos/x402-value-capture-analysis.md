@@ -14,11 +14,22 @@
 
 ## Executive Summary
 
-x402 is an open protocol with zero protocol-level fees. This means value capture is entirely a function of which **layers above the protocol** can sustain pricing power. After analyzing raw adoption data, mapping the full value chain, and studying 9 historical analogies, we identify **three layers with durable value capture potential** and **three that will commoditize**. The single most important insight: **Coinbase has architected a vertical stack where they capture value at 4+ layers simultaneously** — facilitator, chain sequencer, wallet, and USDC float — making them the primary beneficiary regardless of which layer "wins."
+x402 is an open protocol with zero protocol-level fees. This means value capture is entirely a function of which **layers above the protocol** can sustain pricing power. After analyzing raw adoption data, mapping the full value chain, and studying 9 historical analogies, we identify **three layers with durable value capture potential** and **three that will commoditize**. The single most important insight: **Coinbase has architected a vertical stack where they capture value at 4+ layers simultaneously** — facilitator, chain sequencer, wallet, and USDC float — making them the primary beneficiary regardless of which layer "wins." Current counter reconciliation now requires confidence-weighting: live homepage counters and legacy peak claims diverge and should not be treated as equivalent evidence quality.
 
 ---
 
 ## Part I: Raw Adoption Data
+
+### Canonical Reconciliation Snapshot (Do Not Skip)
+
+| Metric | Value | Confidence | Canonical Source |
+|------|-------|------------|------------------|
+| Homepage transactions counter (2026-02-09) | 75.41M | High | `data/x402_kpi_canonical.csv` |
+| Homepage volume counter (2026-02-09) | $24.24M | High | `data/x402_kpi_canonical.csv` |
+| Legacy cumulative transactions claim | 157.6M | Low (conflict) | `data/x402_kpi_canonical.csv` |
+| Legacy cumulative volume claim | $600M+ | Low (conflict) | `data/x402_kpi_canonical.csv` |
+
+Use the high-confidence canonical rows for base-case underwriting. Treat legacy rows as historical-context hypotheses pending reproducible reconciliation.
 
 ### Transaction Growth Trajectory
 
@@ -30,7 +41,7 @@ x402 is an open protocol with zero protocol-level fees. This means value capture
 | Late Nov 2025 | ~200,000 (trough) | — | — |
 | Dec 2025 | 600,000+ | 75M-100M | $24M |
 | Jan 11, 2026 | ~1,023,400 | ~157M | — |
-| Late Jan 2026 | — | 157.6M | $600M+ (annualized) |
+| Late Jan 2026 | — | 157.6M (legacy claim) | $600M+ (legacy claim, annualized framing) |
 
 **Key observation:** The protocol went from hundreds of daily transactions to 3M/day in ~6 months, crashed 93%, then stabilized at 600K-1M/day. This is a classic adoption S-curve with a speculative overshoot, not a collapse.
 
@@ -516,4 +527,4 @@ Across all 8 charts, one conclusion dominates: **x402 has real adoption (158M tx
 
 ---
 
-*This analysis is based on publicly available data as of February 9, 2026. All projections are the author's estimates based on historical analogies and first-principles reasoning, not financial advice.*
+*This analysis is based on publicly available data as of February 9, 2026. Canonical metric reconciliation is tracked in `data/x402_kpi_canonical.csv`. All projections are the author's estimates based on historical analogies and first-principles reasoning, not financial advice.*

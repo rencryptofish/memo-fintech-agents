@@ -86,11 +86,11 @@ We identified **15 high-conviction investment opportunities** across three domai
 ---
 
 ### 4. Stablecoin Infrastructure
-**Why now:** M&A signal is deafening — Stripe/Bridge ($1.1B), Mastercard/Zero Hash ($1.5-2B pending), Coinbase tried BVNK ($2B). GENIUS Act (effective Jan 2027) creates massive compliance infrastructure demand. The investment window for independent stablecoin companies is closing.
+**Why now:** Confirmed M&A plus credible report-level activity is accelerating in stablecoin infrastructure. Stripe/Bridge ($1.1B) is confirmed; Mastercard/Zero Hash ($1.5-2B) and Coinbase/BVNK (~$2B) remain unconfirmed report-level items as of Feb 9, 2026. GENIUS Act (effective Jan 2027) creates massive compliance infrastructure demand. The investment window for independent stablecoin companies is closing.
 
 | Company | Raised/Valuation | Key Metric | Thesis |
 |---------|-----------------|------------|--------|
-| **BVNK** | $50M Series B, $750M val | Coinbase tried to acquire for $2B | Enterprise stablecoin APIs. Abstracts blockchain complexity for enterprises. M&A interest validates massive premium. |
+| **BVNK** | $50M Series B, $750M val | Reported Coinbase acquisition exploration at ~$2B (unconfirmed) | Enterprise stablecoin APIs. Abstracts blockchain complexity for enterprises. Reported strategic interest still signals category importance. |
 | **Crossmint** | $23.6M (Ribbit, Franklin Templeton) | 1,100% subscription revenue growth; 40K+ companies; 150K GOAT SDK downloads | At the intersection of stablecoins + AI agents. MiCA authorized. If agent economy materializes, Crossmint has early infra positioning. |
 | **Circle** | Public (CRCL) | $2.6B projected 2025 revenue; $9.6T on-chain volume Q3 (580% YoY) | USDC issuer. Bull case: Circle Payment Network becomes SWIFT for stablecoins. Risk: 99%+ revenue from interest income. |
 | **Duna** | EUR 30M Series A (CapitalG, Index) | 10.6x faster onboarding; Adyen founder + ex-Stripe COO as advisors | "Stripe of identity" (KYB/KYC/AML). Stripe alumni founders. Every stablecoin issuer needs compliance infra post-GENIUS Act. |
@@ -300,19 +300,19 @@ Weaker Moats (Avoid Unless Other Factors Compensate)
 
 The 2025-2026 M&A wave reveals exactly where incumbents perceive strategic value:
 
-| Acquirer | Target | Price | Signal |
-|----------|--------|-------|--------|
-| Stripe | Bridge | $1.1B | Payments giants need stablecoin rails |
-| Stripe | Orum | Undisclosed | Real-time multi-rail orchestration is critical |
-| Capital One | Brex | $5.15B (down from $12.3B) | Banks buying fintech capabilities; second-place penalty is severe |
-| Xero | Melio | $2.5-3.1B | Accounting + payments convergence |
-| Mastercard | Zero Hash | $1.5-2B (pending) | Card networks racing for stablecoin access |
-| ClickHouse | Langfuse | Undisclosed ($15B acquirer) | Agent observability validated as a category |
-| Coinbase | BVNK | $2B (fell through) | Crypto exchanges want infrastructure layer |
-| Check Point | Lakera | Undisclosed | AI security is a cybersecurity imperative |
-| Cognition | Windsurf | Undisclosed (post-Google acqui-hire) | Coding agent consolidation |
+| Acquirer | Target | Price | Signal | Verification Status |
+|----------|--------|-------|--------|---------------------|
+| Stripe | Bridge | $1.1B | Payments giants need stablecoin rails | Official |
+| Stripe | Orum | Undisclosed | Real-time multi-rail orchestration is critical | Official |
+| Capital One | Brex | $5.15B (down from $12.3B) | Banks buying fintech capabilities; second-place penalty is severe | Official (pending close) |
+| Xero | Melio | $2.5-3.1B | Accounting + payments convergence | Official |
+| Mastercard | Zero Hash | $1.5-2B (reported talks) | Card networks racing for stablecoin access | Credible report; not confirmed |
+| ClickHouse | Langfuse | Undisclosed ($15B acquirer) | Agent observability validated as a category | Official |
+| Coinbase | BVNK | ~$2B (reported exploration) | Crypto exchanges want infrastructure layer | Rumor-level; not confirmed |
+| Check Point | Lakera | Undisclosed | AI security is a cybersecurity imperative | Official |
+| Cognition | Windsurf | Undisclosed (post-Google acqui-hire) | Coding agent consolidation | Official |
 
-**Pattern:** Large incumbents are acquiring infrastructure companies at premium valuations. The window for independent stablecoin infra and agent infrastructure companies is narrowing.
+**Pattern:** Large incumbents are acquiring infrastructure companies at premium valuations. Keep rumored or report-level transactions in watchlists until primary confirmation; do not use them as base-case valuation anchors.
 
 ---
 

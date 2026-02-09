@@ -21,6 +21,12 @@
 
 ---
 
+## Executive Summary
+
+This memo prioritizes investable fintech opportunities in 2026 with an explicit confidence split between confirmed data and rumor-level signals. The highest-conviction themes remain AI-native fintech workflows, compliance infrastructure for stablecoins, and multi-rail enterprise payments. M&A signals are useful, but only definitive/official transactions are treated as base-case evidence; reported talks (for example, Mastercard/Zero Hash, Coinbase/BVNK) are maintained as watchlist signals only until primary confirmation.
+
+---
+
 ## 1. AI-Native Fintech Startups
 
 The AI-native fintech category is the single most compelling investment theme for 2026. Unlike the prior wave of "AI-enhanced" financial products (adding ML scoring to existing workflows), this cohort is building AI-first from the ground up -- companies where AI is the product, not a feature.
@@ -102,8 +108,8 @@ The GENIUS Act creates a massive compliance infrastructure opportunity. Every st
 #### Zero Hash (approaching $1B valuation)
 - **What:** Crypto and stablecoin infrastructure enabling any platform to offer digital assets
 - **Funding:** Raised ~$100M in 2025 at nearly $1B valuation
-- **M&A interest:** Mastercard reportedly in late-stage talks to acquire for $1.5-2B
-- **Why it matters:** If Mastercard completes this acquisition, it would be the largest traditional payments company stablecoin deal ever, signaling that card networks view stablecoins as existential infrastructure
+- **M&A interest:** Mastercard reportedly in late-stage talks for a $1.5-2B transaction (credible report, not confirmed by primary filing/press release as of Feb 9, 2026)
+- **Why it matters:** Reported buyer interest still signals strategic urgency around stablecoin infrastructure, but should be treated as a watchlist indicator, not a completed-deal anchor
 
 #### Crossmint ($23.6M raised)
 - **What:** Stablecoin and blockchain infrastructure for enterprises and AI agents
@@ -113,7 +119,7 @@ The GENIUS Act creates a massive compliance infrastructure opportunity. Every st
 
 ### Stablecoin Infrastructure Investment Thesis
 
-The M&A signal is deafening: Stripe acquired Bridge ($1.1B), Mastercard is acquiring Zero Hash ($1.5-2B), Coinbase tried to buy BVNK ($2B). Major payment networks are racing to acquire stablecoin infrastructure. The window to invest in independent stablecoin infrastructure companies is narrowing as acquirers scoop them up. The biggest remaining opportunity is **compliance infrastructure** for the GENIUS Act -- the picks-and-shovels play for stablecoin regulation.
+The M&A signal is strong but mixed-confidence: Stripe acquired Bridge ($1.1B, official), while Mastercard/Zero Hash ($1.5-2B) and Coinbase/BVNK (~$2B) remain report-level narratives without definitive primary confirmation as of Feb 9, 2026. Major payment networks are still clearly pursuing stablecoin infrastructure. The biggest remaining opportunity is **compliance infrastructure** for the GENIUS Act -- the picks-and-shovels play for stablecoin regulation.
 
 ---
 
@@ -125,7 +131,7 @@ The M&A signal is deafening: Stripe acquired Bridge ($1.1B), Mastercard is acqui
 - **Volume:** Exceeded 1M payments in Q1 2025, 2M in Q2 2025 ($2.7B average daily volume)
 - **Transaction limits:** Rapidly escalated from $500K to $10M by November 2025
 - **Use cases emerging:** A2A transfers, bill pay, merchant refunds, healthcare payments, B2B commerce
-- **US Treasury now uses FedNow** for FEMA disbursements
+- **US Treasury/FEMA disbursement usage claim** remains low-confidence until a stable primary citation is attached
 
 ### Key Companies
 
@@ -291,7 +297,7 @@ The embedded finance market is projected at $228B by 2028 (23.8% CAGR). The winn
 | **Mercury** | Series C | $3.5B | Startup Banking | High | Bank charter approval uncertainty |
 | **Sardine** | Series C | $660M | AI Fraud/Compliance | High | Competitive market |
 | **Column** | Bootstrapped | N/A (not raising) | Banking Infra | Very High (if investable) | No fundraising pathway |
-| **BVNK** | Series B | $750M ($2B M&A interest) | Stablecoin Infra | High | May get acquired before upside captured |
+| **BVNK** | Series B | $750M (reported ~$2B acquisition interest, unverified) | Stablecoin Infra | High | May get acquired before upside captured |
 | **Duna** | Series A | ~EUR 200M est. | Identity/KYC/KYB | High | Early; needs to prove enterprise scale |
 | **FurtherAI** | Series A | Early | Insurance AI | Medium-High | Very early; insurance sales cycles long |
 | **Crossmint** | Series A | ~$200M est. | Stablecoin + Agents | Medium-High | Agent economy timeline uncertain |
@@ -308,16 +314,16 @@ The embedded finance market is projected at $228B by 2028 (23.8% CAGR). The winn
 
 The M&A wave is accelerating and reveals where strategic buyers see value:
 
-| Acquirer | Target | Price | Category | Signal |
-|----------|--------|-------|----------|--------|
-| Stripe | Bridge | $1.1B | Stablecoin infra | Payments giants need stablecoin rails |
-| Stripe | Orum | Undisclosed | Multi-rail payments | Real-time payment orchestration is critical |
-| Capital One | Brex | $5.15B | CFO Stack/Cards | Banks buying fintech capabilities |
-| Xero | Melio | $2.5-3.1B | SMB AP/AR | Accounting + payments convergence |
-| Mastercard | Zero Hash | $1.5-2B (pending) | Stablecoin infra | Card networks racing for stablecoin access |
-| Coinbase | BVNK | $2B (fell through) | Stablecoin infra | Crypto exchanges want infrastructure layer |
+| Acquirer | Target | Price | Category | Signal | Verification Status |
+|----------|--------|-------|----------|--------|---------------------|
+| Stripe | Bridge | $1.1B | Stablecoin infra | Payments giants need stablecoin rails | Official |
+| Stripe | Orum | Undisclosed | Multi-rail payments | Real-time payment orchestration is critical | Official |
+| Capital One | Brex | $5.15B | CFO Stack/Cards | Banks buying fintech capabilities | Official (pending close) |
+| Xero | Melio | $2.5-3.1B | SMB AP/AR | Accounting + payments convergence | Official |
+| Mastercard | Zero Hash | $1.5-2B (reported talks) | Stablecoin infra | Card networks racing for stablecoin access | Credible report; not confirmed |
+| Coinbase | BVNK | ~$2B (reported exploration) | Stablecoin infra | Crypto exchanges want infrastructure layer | Rumor-level; not confirmed |
 
-**Pattern:** Large incumbents (banks, card networks, accounting platforms) are acquiring fintech infrastructure at premium valuations. The window for independent stablecoin infrastructure and CFO stack companies is narrowing.
+**Pattern:** Confirmed deals show large incumbents (banks, card networks, accounting platforms) acquiring fintech infrastructure at premium valuations. Report-level deals should remain watchlist-only until primary confirmation.
 
 ---
 

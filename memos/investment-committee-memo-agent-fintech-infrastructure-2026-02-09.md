@@ -53,6 +53,16 @@ Value is most likely to accrue to control points, not commodity pipes.
 
 ![x402 Risk Matrix](../charts/x402/x402_14_risk_matrix.png)
 
+## Canonical Data References
+
+Use these canonical files for committee updates before changing headline metrics:
+
+1. `../data/x402_kpi_canonical.csv` — reconciled x402 counters with confidence and conflict tags.
+2. `../data/x402_organic_share_weekly.csv` — organic/speculative split baseline and method linkage.
+3. `../research/rails-metrics-pack-2026Q1.md` — ACH/RTP/FedNow comparables used in rail migration framing.
+4. `../research/mna-verification-ledger.md` — official vs report-level deal status.
+5. `../research/memo-citation-backfill-matrix.csv` — claim-level confidence and refresh tracking.
+
 ## Base-Rate Evidence (Added Feb 9, 2026)
 
 1. Market size is large enough for control-point winners: global payments generated ~$2.5T revenue on ~$2.0 quadrillion flows in 2024.
@@ -133,3 +143,7 @@ Priority buckets:
 ## Recommendation
 
 Proceed, but stage capital. Start with a concentrated watchlist and small initial checks, then scale only when data quality and production traction clear the above milestones.
+
+---
+
+*Sources: `../data/x402_kpi_canonical.csv`, `../data/x402_organic_share_weekly.csv`, `../research/rails-metrics-pack-2026Q1.md`, `../research/mna-verification-ledger.md`, `../research/protocol-scoreboard-2026Q1.md`, `../research/source-registry.md`, and referenced primary-source links therein.*

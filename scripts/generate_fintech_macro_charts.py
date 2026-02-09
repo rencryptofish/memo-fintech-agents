@@ -87,7 +87,7 @@ def chart_market_size_projection() -> None:
     )
     fig.tight_layout(rect=[0, 0.03, 1, 0.96])
     out = OUT_DIR / "fintech_market_size_projection.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -156,7 +156,7 @@ def chart_vc_vs_deals_trend() -> None:
     )
     fig.tight_layout(rect=[0, 0.03, 1, 0.96])
     out = OUT_DIR / "fintech_vc_vs_deals_trend.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out}")
 

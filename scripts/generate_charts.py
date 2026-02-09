@@ -7,6 +7,7 @@ Fintech Funding Visualizations
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import matplotlib.patches as mpatches
+import matplotlib.patheffects as pe
 import numpy as np
 from pathlib import Path
 
@@ -85,7 +86,7 @@ COLORS = {
 
 def chart1_stacked_bar():
     """Stacked bar chart: fintech funding by category by year."""
-    fig, ax = plt.subplots(figsize=(18, 10))
+    fig, ax = plt.subplots(figsize=(20, 11))
 
     cat_names = list(CATEGORIES.keys())
     bottom = np.zeros(len(YEARS))
@@ -105,16 +106,16 @@ def chart1_stacked_bar():
             label="VC-Only Total (reference)", zorder=10)
     for y, v in zip(YEARS, vc_vals):
         ax.annotate(f"${v:.0f}B", (y, v), textcoords="offset points",
-                    xytext=(0, 8), ha="center", fontsize=7.5, color="#333",
+                    xytext=(0, 9), ha="center", fontsize=8.8, color="#333",
                     fontweight="bold")
 
     # Styling
     ax.set_title(
         "Global Fintech VC Funding by Category (2015-2025)",
-        fontsize=20, fontweight="bold", pad=20, color="#1a1a2e",
+        fontsize=22, fontweight="bold", pad=22, color="#1a1a2e",
     )
-    ax.set_xlabel("Year", fontsize=14, labelpad=10)
-    ax.set_ylabel("Funding ($ Billions)", fontsize=14, labelpad=10)
+    ax.set_xlabel("Year", fontsize=15, labelpad=10)
+    ax.set_ylabel("Funding ($ Billions)", fontsize=15, labelpad=10)
     ax.set_xticks(YEARS)
     ax.set_xticklabels(YEARS, fontsize=11)
     ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("$%.0fB"))
@@ -130,7 +131,7 @@ def chart1_stacked_bar():
     ]
     for yr, text, y_pos in annotations:
         ax.annotate(
-            text, xy=(yr, y_pos), fontsize=8, ha="center",
+            text, xy=(yr, y_pos), fontsize=9, ha="center",
             color="#555", style="italic",
             bbox=dict(boxstyle="round,pad=0.3", facecolor="#f0f0f0",
                       edgecolor="#ccc", alpha=0.9),
@@ -140,9 +141,9 @@ def chart1_stacked_bar():
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(
         handles[::-1], labels[::-1],
-        loc="upper left", fontsize=9.5, ncol=2,
+        loc="upper left", fontsize=10.5, ncol=2,
         framealpha=0.95, edgecolor="#ddd",
-        title="Fintech Category", title_fontsize=10,
+        title="Fintech Category", title_fontsize=11,
     )
 
     ax.set_xlim(2014.4, 2025.6)
@@ -156,7 +157,7 @@ def chart1_stacked_bar():
         "Sources: KPMG Pulse of Fintech, CB Insights, Crunchbase, The Block, "
         "Gallagher Re, Tracxn, FT Partners, Statista  |  Note: Categories overlap; "
         "sum exceeds VC total",
-        ha="center", fontsize=8, color="#888", style="italic",
+        ha="center", fontsize=9, color="#888", style="italic",
     )
 
     plt.tight_layout(rect=[0, 0.03, 1, 1])
@@ -165,7 +166,7 @@ def chart1_stacked_bar():
 
 def chart2_market_map():
     """Treemap-style market map of the fintech landscape."""
-    fig, ax = plt.subplots(figsize=(20, 12))
+    fig, ax = plt.subplots(figsize=(22, 13))
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 100)
     ax.set_aspect("equal")
@@ -253,23 +254,34 @@ def chart2_market_map():
         cx, cy = x + w / 2, y + h / 2
 
         # Category name
-        ax.text(cx, cy + h * 0.28, seg["name"],
-                ha="center", va="center", fontsize=13, fontweight="bold",
-                color="white", family="sans-serif")
+        ax.text(
+            cx, cy + h * 0.28, seg["name"],
+            ha="center", va="center", fontsize=14.5, fontweight="bold",
+            color="white", family="sans-serif",
+            path_effects=[pe.withStroke(linewidth=2, foreground="#0f172a", alpha=0.6)],
+        )
 
         # Funding amount and status
-        ax.text(cx, cy + h * 0.08, f'{seg["funding"]}  •  {seg["status"]}',
-                ha="center", va="center", fontsize=9,
-                color=(1, 1, 1, 0.9), family="sans-serif")
+        ax.text(
+            cx, cy + h * 0.08, f'{seg["funding"]}  •  {seg["status"]}',
+            ha="center", va="center", fontsize=10,
+            color=(1, 1, 1, 0.95), family="sans-serif",
+            path_effects=[pe.withStroke(linewidth=1.8, foreground="#0f172a", alpha=0.55)],
+        )
 
         # Companies
-        ax.text(cx, cy - h * 0.18, seg["companies"],
-                ha="center", va="center", fontsize=7.5,
-                color=(1, 1, 1, 0.8), family="monospace",
-                linespacing=1.4)
+        company_font = 9.2 if w >= 28 else 8.4
+        ax.text(
+            cx, cy - h * 0.18, seg["companies"],
+            ha="center", va="center", fontsize=company_font,
+            color=(1, 1, 1, 0.95), family="monospace",
+            linespacing=1.45,
+            path_effects=[pe.withStroke(linewidth=1.5, foreground="#0f172a", alpha=0.55)],
+        )
 
-    # Bottom bar with summary stats
-    stats_y = 4
+    # Bottom bar with summary stats (two rows for readability).
+    stats_y_top = 6
+    stats_y_bottom = 2.8
     stats = [
         "Total VC 2025: $51.8B",
         "69% of public fintechs profitable",
@@ -277,17 +289,28 @@ def chart2_market_map():
         "AI adoption: 88% of top fintechs",
         "Stablecoins: $300B+ circulation",
     ]
-    for i, stat in enumerate(stats):
-        ax.text(10 + i * 19, stats_y, stat, ha="center", va="center",
-                fontsize=9, fontweight="bold", color="#333",
-                bbox=dict(boxstyle="round,pad=0.4", facecolor="#f0f4ff",
-                          edgecolor="#ccc", alpha=0.9))
+    top_stats = stats[:3]
+    bottom_stats = stats[3:]
+    for i, stat in enumerate(top_stats):
+        ax.text(
+            17 + i * 33, stats_y_top, stat, ha="center", va="center",
+            fontsize=9.8, fontweight="bold", color="#333",
+            bbox=dict(boxstyle="round,pad=0.42", facecolor="#f0f4ff",
+                      edgecolor="#ccc", alpha=0.92),
+        )
+    for i, stat in enumerate(bottom_stats):
+        ax.text(
+            26 + i * 36, stats_y_bottom, stat, ha="center", va="center",
+            fontsize=9.8, fontweight="bold", color="#333",
+            bbox=dict(boxstyle="round,pad=0.42", facecolor="#f0f4ff",
+                      edgecolor="#ccc", alpha=0.92),
+        )
 
     fig.text(
         0.5, 0.01,
         "Sources: BCG/QED 2025, CB Insights, PitchBook, Crunchbase  |  "
         "Funding figures are 2025 VC estimates  |  Valuations as of latest round",
-        ha="center", fontsize=8, color="#888", style="italic",
+        ha="center", fontsize=9, color="#888", style="italic",
     )
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
@@ -296,7 +319,7 @@ def chart2_market_map():
 
 def chart3_heatmap():
     """Heatmap showing funding intensity by category and year."""
-    fig, ax = plt.subplots(figsize=(18, 9))
+    fig, ax = plt.subplots(figsize=(20, 10))
 
     cat_names = list(CATEGORIES.keys())
     data = np.array([[CATEGORIES[cat][y] for y in YEARS] for cat in cat_names])
@@ -304,9 +327,9 @@ def chart3_heatmap():
     im = ax.imshow(data, cmap="YlOrRd", aspect="auto", interpolation="nearest")
 
     ax.set_xticks(range(len(YEARS)))
-    ax.set_xticklabels(YEARS, fontsize=11)
+    ax.set_xticklabels(YEARS, fontsize=12)
     ax.set_yticks(range(len(cat_names)))
-    ax.set_yticklabels(cat_names, fontsize=11)
+    ax.set_yticklabels(cat_names, fontsize=12)
 
     # Value labels in each cell
     for i in range(len(cat_names)):
@@ -314,14 +337,14 @@ def chart3_heatmap():
             val = data[i, j]
             text_color = "white" if val > 12 else "black"
             ax.text(j, i, f"${val:.1f}B", ha="center", va="center",
-                    fontsize=8, color=text_color, fontweight="bold")
+                    fontsize=8.8, color=text_color, fontweight="bold")
 
     cbar = plt.colorbar(im, ax=ax, shrink=0.8, pad=0.02)
-    cbar.set_label("Funding ($ Billions)", fontsize=11)
+    cbar.set_label("Funding ($ Billions)", fontsize=12)
 
     ax.set_title(
         "Fintech Funding Heatmap by Category & Year (2015-2025)",
-        fontsize=18, fontweight="bold", pad=15, color="#1a1a2e",
+        fontsize=20, fontweight="bold", pad=16, color="#1a1a2e",
     )
 
     # Highlight peak year per category
@@ -336,7 +359,7 @@ def chart3_heatmap():
         0.5, 0.01,
         "Black borders indicate peak funding year per category  |  "
         "Sources: KPMG, CB Insights, Crunchbase, Gallagher Re, Tracxn, The Block",
-        ha="center", fontsize=8, color="#888", style="italic",
+        ha="center", fontsize=9, color="#888", style="italic",
     )
 
     plt.tight_layout(rect=[0, 0.03, 1, 1])
@@ -351,7 +374,7 @@ def chart4_stacked_percent_mix():
     Note: each year is normalized to 100% of the summed category bucket values.
     This shows composition shift, not absolute market size.
     """
-    fig, ax = plt.subplots(figsize=(18, 10))
+    fig, ax = plt.subplots(figsize=(20, 11))
 
     # Add AI-native / agentic slice to make the recent mix-shift visible.
     # Conservative estimates based on memo references (emerging through 2023,
@@ -384,20 +407,20 @@ def chart4_stacked_percent_mix():
     ax.set_ylim(0, 100)
     ax.set_xlim(2014.4, 2025.6)
     ax.set_xticks(YEARS)
-    ax.set_xticklabels(YEARS, fontsize=11)
+    ax.set_xticklabels(YEARS, fontsize=12)
     ax.yaxis.set_major_formatter(mticker.PercentFormatter(xmax=100))
-    ax.tick_params(axis="y", labelsize=11)
-    ax.set_xlabel("Year", fontsize=14, labelpad=10)
-    ax.set_ylabel("Share of Category Funding Mix (%)", fontsize=14, labelpad=10)
+    ax.tick_params(axis="y", labelsize=12)
+    ax.set_xlabel("Year", fontsize=15, labelpad=10)
+    ax.set_ylabel("Share of Category Funding Mix (%)", fontsize=15, labelpad=10)
     ax.set_title(
         "Fintech Funding Mix Shift by Category (100% Stacked, 2015-2025)",
-        fontsize=20, fontweight="bold", pad=20, color="#1a1a2e",
+        fontsize=22, fontweight="bold", pad=20, color="#1a1a2e",
     )
 
     ax.text(
         0.5, 1.02,
         "Each year normalized to 100% of summed category buckets; labels above bars show VC-only total for scale context",
-        transform=ax.transAxes, ha="center", fontsize=10, color="#666",
+        transform=ax.transAxes, ha="center", fontsize=11, color="#666",
     )
 
     # Add VC-only total labels on top for context (absolute scale).
@@ -406,22 +429,22 @@ def chart4_stacked_percent_mix():
         ax.annotate(
             f"${total:.0f}B",
             xy=(y, 100), xytext=(0, 5), textcoords="offset points",
-            ha="center", va="bottom", fontsize=8, color="#333", fontweight="bold",
+            ha="center", va="bottom", fontsize=9, color="#333", fontweight="bold",
         )
 
     # Key regime markers
     ax.axvline(2021, color="#555", linestyle="--", linewidth=1.1, alpha=0.6)
     ax.axvline(2023, color="#555", linestyle="--", linewidth=1.1, alpha=0.6)
-    ax.text(2021, 3, "Peak", fontsize=8, color="#555", ha="center", va="bottom")
-    ax.text(2023, 3, "Trough", fontsize=8, color="#555", ha="center", va="bottom")
+    ax.text(2021, 3, "Peak", fontsize=9, color="#555", ha="center", va="bottom")
+    ax.text(2023, 3, "Trough", fontsize=9, color="#555", ha="center", va="bottom")
 
     # Legend
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(
         handles[::-1], labels[::-1],
         loc="upper left", bbox_to_anchor=(1.01, 1.0),
-        fontsize=9, framealpha=0.95, edgecolor="#ddd",
-        title="Category", title_fontsize=10,
+        fontsize=10, framealpha=0.95, edgecolor="#ddd",
+        title="Category", title_fontsize=11,
     )
 
     ax.grid(axis="y", alpha=0.18, linestyle="--")
@@ -432,7 +455,7 @@ def chart4_stacked_percent_mix():
         0.5, 0.01,
         "Sources: KPMG Pulse, CB Insights, Crunchbase, fintech-market-analysis.md  |  "
         "AI-Native / Agentic slice is an estimated emerging bucket for mix-shift readability",
-        ha="center", fontsize=8, color="#888", style="italic",
+        ha="center", fontsize=9, color="#888", style="italic",
     )
 
     plt.tight_layout(rect=[0, 0.03, 0.86, 1])
@@ -444,25 +467,25 @@ if __name__ == "__main__":
 
     print("Generating Chart 1: Stacked Bar Chart...")
     fig1 = chart1_stacked_bar()
-    fig1.savefig(out / "fintech_funding_by_category.png", dpi=200, bbox_inches="tight",
+    fig1.savefig(out / "fintech_funding_by_category.png", dpi=260, bbox_inches="tight",
                  facecolor="white")
     print(f"  Saved: {out / 'fintech_funding_by_category.png'}")
 
     print("Generating Chart 2: Market Map...")
     fig2 = chart2_market_map()
-    fig2.savefig(out / "fintech_market_map.png", dpi=200, bbox_inches="tight",
+    fig2.savefig(out / "fintech_market_map.png", dpi=260, bbox_inches="tight",
                  facecolor="white")
     print(f"  Saved: {out / 'fintech_market_map.png'}")
 
     print("Generating Chart 3: Heatmap...")
     fig3 = chart3_heatmap()
-    fig3.savefig(out / "fintech_funding_heatmap.png", dpi=200, bbox_inches="tight",
+    fig3.savefig(out / "fintech_funding_heatmap.png", dpi=260, bbox_inches="tight",
                  facecolor="white")
     print(f"  Saved: {out / 'fintech_funding_heatmap.png'}")
 
     print("Generating Chart 4: 100% Stacked Mix Shift...")
     fig4 = chart4_stacked_percent_mix()
-    fig4.savefig(out / "fintech_funding_mix_percent_by_category.png", dpi=200,
+    fig4.savefig(out / "fintech_funding_mix_percent_by_category.png", dpi=260,
                  bbox_inches="tight", facecolor="white")
     print(f"  Saved: {out / 'fintech_funding_mix_percent_by_category.png'}")
 

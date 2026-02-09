@@ -286,13 +286,13 @@ def _format_axes(ax):
     x_ticks = [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 15]
     ax.set_xticks(x_ticks)
     ax.set_xticklabels([f"${v}B" if v >= 1 else f"${int(v*1000)}M" for v in x_ticks],
-                       fontsize=9)
+                       fontsize=10)
 
     y_ticks = [1, 2, 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000, 20000]
     ax.set_yticks(y_ticks)
     ax.set_yticklabels(
         [f"${v}M" if v < 1000 else f"${v/1000:.0f}B" for v in y_ticks],
-        fontsize=9,
+        fontsize=10,
     )
 
     ax.set_xlim(0.004, 20)
@@ -302,7 +302,15 @@ def _format_axes(ax):
     ax.spines["right"].set_visible(False)
 
 
-def _draw_category_series(ax, cat_name, points, label_final=True, label_years=False):
+def _draw_category_series(
+    ax,
+    cat_name,
+    points,
+    label_final=True,
+    label_years=False,
+    show_start_label=True,
+    label_queue=None,
+):
     color = COLORS[cat_name]
     xs = [p[0] for p in points]
     ys = [p[1] for p in points]
@@ -333,44 +341,129 @@ def _draw_category_series(ax, cat_name, points, label_final=True, label_years=Fa
         if label_years:
             ax.annotate(
                 TIME_POINT_SHORT[i],
-                xy=(x, y), xytext=(0, 7), textcoords="offset points",
-                ha="center", fontsize=7, color="#555", zorder=4,
+                xy=(x, y), xytext=(0, 8), textcoords="offset points",
+                ha="center", fontsize=8, color="#4b5563", zorder=4,
+                bbox=dict(boxstyle="round,pad=0.18", facecolor="white", edgecolor="none", alpha=0.72),
             )
 
     # Start-year label at first point
-    start_year = CATEGORY_META[cat_name]["start_year"]
-    ax.annotate(
-        f"start {start_year}",
-        xy=(xs[0], ys[0]), xytext=(-8, -10), textcoords="offset points",
-        fontsize=7, color="#666", style="italic", zorder=4,
-    )
+    if show_start_label:
+        start_year = CATEGORY_META[cat_name]["start_year"]
+        ax.annotate(
+            f"start {start_year}",
+            xy=(xs[0], ys[0]), xytext=(-10, -12), textcoords="offset points",
+            fontsize=7.5, color="#4b5563", style="italic", zorder=4,
+            bbox=dict(boxstyle="round,pad=0.18", facecolor="white", edgecolor="none", alpha=0.72),
+        )
 
     # Final label
     if label_final:
         label = CATEGORY_META[cat_name]["short"]
         offsets = {
-            "B2B Payments\n(Stripe, Adyen, Checkout)":      (10, 6),
-            "Neobanks\n(Nubank, Revolut, Chime)":            (-14, 10),
-            "Crypto / Blockchain\n(Coinbase, Circle, Chainalysis)": (10, 6),
-            "BNPL\n(Klarna, Affirm)":                        (10, -10),
-            "CFO Stack\n(Ramp, Brex, Mercury)":              (10, 6),
-            "Insurtech\n(Lemonade, Root, Oscar)":            (10, -10),
-            "Lending / Credit\n(SoFi, Upstart)":             (-14, -11),
-            "Wealthtech\n(Robinhood, eToro)":                (10, -10),
-            "Cross-Border\n(Wise, Remitly)":                 (-14, 6),
-            "Embedded Finance\n(Marqeta, Lithic, Unit)":     (10, 6),
-            "Regtech\n(Chainalysis, ComplyAdv)":             (8, -11),
-            "Stablecoin Infra\n(Circle, Bridge, BVNK)":      (-14, -11),
-            "Agentic Fintech Intersection\n(Payments, Wallets, Identity)": (10, 10),
+            "B2B Payments\n(Stripe, Adyen, Checkout)":      (18, 12),
+            "Neobanks\n(Nubank, Revolut, Chime)":            (-18, 14),
+            "Crypto / Blockchain\n(Coinbase, Circle, Chainalysis)": (16, 8),
+            "BNPL\n(Klarna, Affirm)":                        (14, -14),
+            "CFO Stack\n(Ramp, Brex, Mercury)":              (14, 2),
+            "Insurtech\n(Lemonade, Root, Oscar)":            (14, 8),
+            "Lending / Credit\n(SoFi, Upstart)":             (14, 16),
+            "Wealthtech\n(Robinhood, eToro)":                (14, -6),
+            "Cross-Border\n(Wise, Remitly)":                 (14, 10),
+            "Embedded Finance\n(Marqeta, Lithic, Unit)":     (14, 4),
+            "Regtech\n(Chainalysis, ComplyAdv)":             (12, -14),
+            "Stablecoin Infra\n(Circle, Bridge, BVNK)":      (12, 12),
+            "Agentic Fintech Intersection\n(Payments, Wallets, Identity)": (14, 12),
         }
         dx, dy = offsets.get(cat_name, (9, 5))
-        ax.annotate(
-            label, xy=(xs[-1], ys[-1]),
-            xytext=(dx, dy), textcoords="offset points",
-            fontsize=8.5, fontweight="bold", color=color,
-            path_effects=[pe.withStroke(linewidth=3, foreground="white")],
-            zorder=5,
-        )
+        if label_queue is not None:
+            label_queue.append(
+                {
+                    "x": xs[-1],
+                    "y": ys[-1],
+                    "label": label,
+                    "color": color,
+                    "dx": dx,
+                    "dy": dy,
+                }
+            )
+        else:
+            ha = "left" if dx >= 0 else "right"
+            ax.annotate(
+                label, xy=(xs[-1], ys[-1]),
+                xytext=(dx, dy), textcoords="offset points",
+                ha=ha,
+                fontsize=9.5, fontweight="bold", color=color,
+                path_effects=[pe.withStroke(linewidth=3, foreground="white")],
+                bbox=dict(
+                    boxstyle="round,pad=0.2",
+                    facecolor="white",
+                    edgecolor="none",
+                    alpha=0.8,
+                ),
+                zorder=5,
+            )
+
+
+def _annotate_non_overlapping_labels(ax, label_queue, min_gap_px=20):
+    if not label_queue:
+        return
+
+    px_per_pt = ax.figure.dpi / 72.0
+    y_min = ax.bbox.y0 + 12
+    y_max = ax.bbox.y1 - 12
+
+    grouped = {"right": [], "left": []}
+    for item in label_queue:
+        x_disp, y_disp = ax.transData.transform((item["x"], item["y"]))
+        target = {
+            **item,
+            "x_disp": x_disp,
+            "y_disp": y_disp,
+            "base_y": y_disp + item["dy"] * px_per_pt,
+        }
+        side = "right" if item["dx"] >= 0 else "left"
+        grouped[side].append(target)
+
+    for side_items in grouped.values():
+        side_items.sort(key=lambda row: row["base_y"])
+        prev_y = -1e9
+        for row in side_items:
+            placed_y = max(row["base_y"], prev_y + min_gap_px)
+            row["placed_y"] = placed_y
+            prev_y = placed_y
+
+        if side_items:
+            overflow = side_items[-1]["placed_y"] - y_max
+            if overflow > 0:
+                for row in side_items:
+                    row["placed_y"] -= overflow
+
+            underflow = y_min - side_items[0]["placed_y"]
+            if underflow > 0:
+                for row in side_items:
+                    row["placed_y"] += underflow
+
+        for row in side_items:
+            dy_points = (row["placed_y"] - row["y_disp"]) / px_per_pt
+            ha = "left" if row["dx"] >= 0 else "right"
+            ax.annotate(
+                row["label"],
+                xy=(row["x"], row["y"]),
+                xytext=(row["dx"], dy_points),
+                textcoords="offset points",
+                ha=ha,
+                fontsize=9.5,
+                fontweight="bold",
+                color=row["color"],
+                path_effects=[pe.withStroke(linewidth=3, foreground="white")],
+                bbox=dict(
+                    boxstyle="round,pad=0.2",
+                    facecolor="white",
+                    edgecolor="none",
+                    alpha=0.82,
+                ),
+                zorder=5,
+            )
 
 
 def _add_time_legend(ax, loc="lower right"):
@@ -388,28 +481,37 @@ def _add_time_legend(ax, loc="lower right"):
 
 
 def generate_scatter():
-    fig, ax = plt.subplots(figsize=(18, 11))
+    fig, ax = plt.subplots(figsize=(20, 12.5))
 
+    final_label_queue = []
     for cat_name, points in CATEGORIES.items():
-        _draw_category_series(ax, cat_name, points, label_final=True, label_years=False)
+        _draw_category_series(
+            ax,
+            cat_name,
+            points,
+            label_final=True,
+            label_years=False,
+            show_start_label=False,
+            label_queue=final_label_queue,
+        )
 
     # Axis formatting
     _format_axes(ax)
+    _annotate_non_overlapping_labels(ax, final_label_queue, min_gap_px=28)
     ax.set_xlabel("Cumulative VC Raised by Top Companies ($ Billions)", fontsize=14, labelpad=12)
     ax.set_ylabel("Combined Revenue of Top Companies ($ Millions)", fontsize=14, labelpad=12)
 
     # Title
     ax.set_title(
         "Fintech + Agentic Intersection: Funding vs Revenue Trajectory (2019-2026)",
-        fontsize=20, fontweight="bold", pad=20, color="#1a1a2e",
+        fontsize=22, fontweight="bold", pad=20, color="#1a1a2e",
     )
 
     # Subtitle
     ax.text(
         0.5, 1.02,
-        "Year markers show 2019/2021/2023/2026 snapshots; italic tags mark category start year; "
-        "highlighted line tracks early agent-fintech intersection movement",
-        transform=ax.transAxes, ha="center", fontsize=10, color="#666",
+        "Year markers show 2019/2021/2023/2026 snapshots; highlighted line tracks early agent-fintech intersection movement",
+        transform=ax.transAxes, ha="center", fontsize=11, color="#666",
     )
 
     # Efficiency reference lines (revenue/funding ratio)
@@ -426,7 +528,7 @@ def generate_scatter():
         if mid > 0:
             ax.text(
                 xs_ref[mask][mid], ys_ref[mask][mid], label_text,
-                fontsize=7.5, color="#aaa", rotation=32,
+                fontsize=8.5, color="#9ca3af", rotation=32,
                 ha="center", va="bottom", style="italic",
             )
 
@@ -440,7 +542,7 @@ def generate_scatter():
     ]
     for x, y, text, color in events:
         ax.text(
-            x, y, text, fontsize=8, color=color, ha="center", va="top",
+            x, y, text, fontsize=9.5, color=color, ha="center", va="top",
             style="italic",
             bbox=dict(boxstyle="round,pad=0.4", facecolor="#fafafa",
                       edgecolor="#ddd", alpha=0.92),
@@ -453,7 +555,7 @@ def generate_scatter():
         "Sources: SEC filings, Crunchbase, PitchBook, company earnings, fintech-market-analysis.md, "
         "fintech-agents-intersection.md  |  "
         "Revenue = estimates for top 3-5 VC-backed companies per category  |  Feb 2026",
-        ha="center", fontsize=8, color="#888", style="italic",
+        ha="center", fontsize=9, color="#888", style="italic",
     )
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.97])
@@ -467,7 +569,7 @@ def generate_cohort_subplots():
         cohort_to_categories[cohort].append(category_name)
 
     nrows, ncols = 2, 3
-    fig, axes = plt.subplots(nrows, ncols, figsize=(20, 12), sharex=True, sharey=True)
+    fig, axes = plt.subplots(nrows, ncols, figsize=(22, 13), sharex=True, sharey=True)
     flat_axes = axes.flatten()
 
     for idx, cohort in enumerate(COHORT_ORDER):
@@ -481,12 +583,13 @@ def generate_cohort_subplots():
                 CATEGORIES[cat_name],
                 label_final=True,
                 label_years=True,
+                show_start_label=True,
             )
 
         _format_axes(ax)
         ax.set_title(
             f"{cohort}\n{len(members)} categories",
-            fontsize=12, fontweight="bold", color="#1a1a2e",
+            fontsize=13, fontweight="bold", color="#1a1a2e",
         )
 
     # Hide empty panel
@@ -496,17 +599,17 @@ def generate_cohort_subplots():
     # Global labels and title
     fig.suptitle(
         "Fintech Funding vs Revenue Trajectories by Cohort",
-        fontsize=20, fontweight="bold", color="#1a1a2e", y=0.98,
+        fontsize=22, fontweight="bold", color="#1a1a2e", y=0.98,
     )
     fig.text(
         0.5, 0.955,
         "Shared log-log axes across subplots; inline year labels (2019/2021/2023/2026) and start-year tags",
-        ha="center", fontsize=10, color="#666",
+        ha="center", fontsize=11, color="#666",
     )
     fig.text(0.5, 0.03, "Cumulative VC Raised by Top Companies ($ Billions)",
-             ha="center", fontsize=12)
+             ha="center", fontsize=13)
     fig.text(0.01, 0.5, "Combined Revenue of Top Companies ($ Millions)",
-             va="center", rotation="vertical", fontsize=12)
+             va="center", rotation="vertical", fontsize=13)
 
     # Figure-level time marker legend
     handles = [
@@ -522,8 +625,8 @@ def generate_cohort_subplots():
         frameon=True,
         framealpha=0.95,
         title="Year Marker",
-        title_fontsize=10,
-        fontsize=9,
+        title_fontsize=11,
+        fontsize=10,
         bbox_to_anchor=(0.5, 0.0),
     )
 
@@ -531,7 +634,7 @@ def generate_cohort_subplots():
         0.5, 0.01,
         "Sources: SEC filings, Crunchbase, PitchBook, company earnings, fintech-market-analysis.md  |  "
         "Revenue = estimates for top 3-5 VC-backed companies per category  |  Feb 2026",
-        ha="center", fontsize=8, color="#888", style="italic",
+        ha="center", fontsize=9, color="#888", style="italic",
     )
 
     plt.tight_layout(rect=[0.03, 0.06, 1, 0.93])
@@ -571,7 +674,7 @@ def generate_latest_breakdown_chart():
     y = np.arange(len(rows))
 
     fig, (ax1, ax2) = plt.subplots(
-        1, 2, figsize=(19, 10), sharey=True, gridspec_kw={"wspace": 0.06}
+        1, 2, figsize=(21, 11), sharey=True, gridspec_kw={"wspace": 0.08}
     )
 
     bars_vc = ax1.barh(y, vc_vals, color=colors, alpha=0.88, edgecolor="white", linewidth=0.8)
@@ -589,13 +692,13 @@ def generate_latest_breakdown_chart():
 
     # Labels and axes
     ax1.set_yticks(y)
-    ax1.set_yticklabels(labels, fontsize=10)
+    ax1.set_yticklabels(labels, fontsize=11)
     ax2.set_yticks(y)
     ax2.tick_params(labelleft=False)
     ax1.invert_yaxis()
 
-    ax1.set_xlabel("Cumulative VC Raised in Snapshot ($B)", fontsize=12)
-    ax2.set_xlabel("Combined Revenue in Snapshot ($B)", fontsize=12)
+    ax1.set_xlabel("Cumulative VC Raised in Snapshot ($B)", fontsize=13)
+    ax2.set_xlabel("Combined Revenue in Snapshot ($B)", fontsize=13)
 
     ax1.set_xlim(0, max(vc_vals) * 1.25)
     ax2.set_xlim(0, max(rev_vals) * 1.25)
@@ -612,7 +715,7 @@ def generate_latest_breakdown_chart():
             i,
             f"${v:.2f}B ({(v / total_vc) * 100:.1f}%)",
             va="center",
-            fontsize=8,
+            fontsize=8.8,
             color="#333",
         )
     for i, r in enumerate(rev_vals):
@@ -621,13 +724,13 @@ def generate_latest_breakdown_chart():
             i,
             f"${r:.2f}B ({(r / total_rev) * 100:.1f}%)",
             va="center",
-            fontsize=8,
+            fontsize=8.8,
             color="#333",
         )
 
     fig.suptitle(
         "2026 Snapshot Breakdown: VC Raised vs Revenue by Fintech Category",
-        fontsize=19,
+        fontsize=21,
         fontweight="bold",
         color="#1a1a2e",
         y=0.98,
@@ -637,7 +740,7 @@ def generate_latest_breakdown_chart():
         0.955,
         "Includes Agentic Fintech Intersection (hatched) for side-by-side comparison with core fintech categories",
         ha="center",
-        fontsize=10,
+        fontsize=11,
         color="#666",
     )
 
@@ -647,7 +750,7 @@ def generate_latest_breakdown_chart():
         "Sources: fintech trajectory inputs in scripts/generate_fintech_scatter.py  |  "
         "Snapshot = Early 2026 point from each category trajectory",
         ha="center",
-        fontsize=8,
+        fontsize=9,
         color="#888",
         style="italic",
     )
@@ -663,19 +766,19 @@ if __name__ == "__main__":
     print("Generating Fintech Scatter: Funding vs Revenue Trajectory...")
     fig = generate_scatter()
     save_path = out / "fintech_funding_vs_revenue.png"
-    fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(save_path, dpi=260, bbox_inches="tight", facecolor="white")
     print(f"  Saved: {save_path}")
     plt.close(fig)
 
     print("Generating Fintech Cohort Subplots: Funding vs Revenue Trajectory...")
     fig = generate_cohort_subplots()
     save_path = out / "fintech_funding_vs_revenue_by_cohort.png"
-    fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(save_path, dpi=260, bbox_inches="tight", facecolor="white")
     print(f"  Saved: {save_path}")
 
     print("Generating Fintech Breakdown: VC vs Revenue by Category (2026 snapshot)...")
     fig = generate_latest_breakdown_chart()
     save_path = out / "fintech_vc_vs_revenue_breakdown_2026.png"
-    fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(save_path, dpi=260, bbox_inches="tight", facecolor="white")
     print(f"  Saved: {save_path}")
     plt.close("all")

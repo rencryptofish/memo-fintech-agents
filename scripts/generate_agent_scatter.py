@@ -132,9 +132,59 @@ COLORS = {
 MARKER_SIZES = [40, 80, 180]
 
 
-def generate_scatter():
-    fig, ax = plt.subplots(figsize=(18, 11))
+def _annotate_non_overlapping_labels(ax, label_queue, min_gap_px=18):
+    if not label_queue:
+        return
 
+    px_per_pt = ax.figure.dpi / 72.0
+    y_min = ax.bbox.y0 + 10
+    y_max = ax.bbox.y1 - 10
+
+    grouped = {"right": [], "left": []}
+    for item in label_queue:
+        _, y_disp = ax.transData.transform((item["x"], item["y"]))
+        row = {**item, "y_disp": y_disp, "base_y": y_disp + item["dy"] * px_per_pt}
+        side = "right" if item["dx"] >= 0 else "left"
+        grouped[side].append(row)
+
+    for side_items in grouped.values():
+        side_items.sort(key=lambda row: row["base_y"])
+        prev_y = -1e9
+        for row in side_items:
+            placed_y = max(row["base_y"], prev_y + min_gap_px)
+            row["placed_y"] = placed_y
+            prev_y = placed_y
+
+        if side_items:
+            overflow = side_items[-1]["placed_y"] - y_max
+            if overflow > 0:
+                for row in side_items:
+                    row["placed_y"] -= overflow
+
+            underflow = y_min - side_items[0]["placed_y"]
+            if underflow > 0:
+                for row in side_items:
+                    row["placed_y"] += underflow
+
+        for row in side_items:
+            dy_points = (row["placed_y"] - row["y_disp"]) / px_per_pt
+            ha = "left" if row["dx"] >= 0 else "right"
+            ax.annotate(
+                row["label"],
+                xy=(row["x"], row["y"]),
+                xytext=(row["dx"], dy_points), textcoords="offset points",
+                ha=ha,
+                fontsize=10, fontweight="bold", color=row["color"],
+                path_effects=[pe.withStroke(linewidth=3, foreground="white")],
+                bbox=dict(boxstyle="round,pad=0.22", facecolor="white", edgecolor="none", alpha=0.78),
+                zorder=5,
+            )
+
+
+def generate_scatter():
+    fig, ax = plt.subplots(figsize=(20, 12))
+
+    final_label_queue = []
     for cat_name, points in CATEGORIES.items():
         color = COLORS[cat_name]
         xs = [p[0] for p in points]
@@ -169,25 +219,27 @@ def generate_scatter():
 
         # Offset labels to avoid overlap
         offsets = {
-            "Coding Agents": (15, -5),
-            "CX / Support Agents": (12, 8),
-            "Legal Agents": (15, -5),
-            "Healthcare Agents": (12, 8),
-            "Agent Security": (12, 8),
-            "Agent Infra\n(Compute/Memory/Obs)": (12, -12),
-            "Agent Platforms\n& Frameworks": (10, 8),
-            "HR / Recruiting\nAgents": (12, -10),
-            "Sales / Marketing\nAgents": (10, -12),
-            "Agentic Payments\n(Intersection)": (10, -12),
+            "Coding Agents": (20, -8),
+            "CX / Support Agents": (14, 12),
+            "Legal Agents": (16, 10),
+            "Healthcare Agents": (14, 8),
+            "Agent Security": (14, 10),
+            "Agent Infra\n(Compute/Memory/Obs)": (14, -14),
+            "Agent Platforms\n& Frameworks": (12, 10),
+            "HR / Recruiting\nAgents": (14, -12),
+            "Sales / Marketing\nAgents": (12, -14),
+            "Agentic Payments\n(Intersection)": (12, -14),
         }
         dx, dy = offsets.get(cat_name, (10, 5))
-
-        ax.annotate(
-            label, xy=(final_x, final_y),
-            xytext=(dx, dy), textcoords="offset points",
-            fontsize=9, fontweight="bold", color=color,
-            path_effects=[pe.withStroke(linewidth=3, foreground="white")],
-            zorder=5,
+        final_label_queue.append(
+            {
+                "x": final_x,
+                "y": final_y,
+                "label": label,
+                "color": color,
+                "dx": dx,
+                "dy": dy,
+            }
         )
 
     # Log scale on both axes for readability (funding spans 0.01-7.5B, ARR 0.5-2200M)
@@ -211,11 +263,12 @@ def generate_scatter():
 
     ax.set_xlim(0.008, 12)
     ax.set_ylim(0.3, 4000)
+    _annotate_non_overlapping_labels(ax, final_label_queue, min_gap_px=22)
 
     # Title
     ax.set_title(
         "AI Agent Economy: Funding vs Revenue Trajectory by Category",
-        fontsize=20, fontweight="bold", pad=20, color="#1a1a2e",
+        fontsize=22, fontweight="bold", pad=22, color="#1a1a2e",
     )
 
     # Subtitle
@@ -223,7 +276,7 @@ def generate_scatter():
         0.5, 1.02,
         "Each dot = time snapshot (End 2023 → End 2024 → Early 2026)  •  "
         "Arrows show direction  •  Larger dots = more recent",
-        transform=ax.transAxes, ha="center", fontsize=10, color="#666",
+        transform=ax.transAxes, ha="center", fontsize=11, color="#666",
     )
 
     # Grid
@@ -236,8 +289,8 @@ def generate_scatter():
         ax.scatter([], [], s=size, c="#888", edgecolors="white",
                    linewidth=1, label=label)
     legend1 = ax.legend(
-        loc="lower right", fontsize=10, title="Time Snapshot",
-        title_fontsize=11, framealpha=0.95, edgecolor="#ddd",
+        loc="lower right", fontsize=11, title="Time Snapshot",
+        title_fontsize=12, framealpha=0.95, edgecolor="#ddd",
     )
     ax.add_artist(legend1)
 
@@ -254,7 +307,7 @@ def generate_scatter():
         if mid > 0:
             ax.text(
                 xs_ref[mask][mid], ys_ref[mask][mid], label_text,
-                fontsize=7.5, color="#aaa", rotation=30,
+                fontsize=8.5, color="#aaa", rotation=30,
                 ha="center", va="bottom", style="italic",
             )
 
@@ -263,7 +316,7 @@ def generate_scatter():
         0.5, 0.01,
         "Sources: Crunchbase, PitchBook, TechCrunch, Bessemer, company press releases  |  "
         "Revenue figures are estimates based on publicly available data  |  Feb 2026",
-        ha="center", fontsize=8, color="#888", style="italic",
+        ha="center", fontsize=9, color="#888", style="italic",
     )
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.97])
@@ -275,6 +328,6 @@ if __name__ == "__main__":
     print("Generating Agent Economy Scatter: Funding vs Revenue Trajectory...")
     fig = generate_scatter()
     save_path = out / "charts/agent-economy/agent_economy_funding_vs_revenue.png"
-    fig.savefig(save_path, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(save_path, dpi=260, bbox_inches="tight", facecolor="white")
     print(f"  Saved: {save_path}")
     plt.close("all")

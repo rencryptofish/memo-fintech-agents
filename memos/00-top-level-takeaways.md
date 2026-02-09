@@ -44,3 +44,8 @@
 
 1. [Agent-Fintech Market Map](../research/market-map.md)
 2. [x402 Value Accrual Deep Dive](../x402-value-accrual-deep-dive.md)
+3. [Research Appendix Index](../research/README.md)
+
+---
+
+*Sources: synthesized from memo set in `memos/`, canonical reconciliation files `../data/x402_kpi_canonical.csv` and `../data/x402_organic_share_weekly.csv`, and supporting trackers in `../research/`.*

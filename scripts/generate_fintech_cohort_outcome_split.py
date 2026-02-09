@@ -416,7 +416,7 @@ def plot_chart(cohort_df: pd.DataFrame) -> None:
     fig.tight_layout(rect=[0.02, 0.05, 0.98, 0.95])
 
     out_path = CHART_DIR / "fintech_cohort_outcome_split_estimated.png"
-    fig.savefig(out_path, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(out_path, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out_path}")
 
@@ -504,7 +504,7 @@ def plot_type_group_mix_chart(type_mix_df: pd.DataFrame) -> None:
     fig.tight_layout(rect=[0.02, 0.05, 0.98, 0.95])
 
     out_path = CHART_DIR / "fintech_cohort_type_group_mix_estimated.png"
-    fig.savefig(out_path, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(out_path, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out_path}")
 

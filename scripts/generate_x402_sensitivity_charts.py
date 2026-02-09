@@ -96,7 +96,7 @@ def chart_layer_revenue_sensitivity() -> None:
              ha="center", fontsize=9, color="#94a3b8", style="italic")
     fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     out = OUT_DIR / "x402_12_layer_revenue_sensitivity.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=BG)
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -155,7 +155,7 @@ def chart_coinbase_revenue_scenarios() -> None:
              ha="center", fontsize=9, color="#94a3b8", style="italic")
     fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     out = OUT_DIR / "x402_13_coinbase_revenue_scenarios.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=BG)
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -213,7 +213,7 @@ def chart_risk_matrix() -> None:
              ha="center", fontsize=8.5, color="#94a3b8", style="italic")
     fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     out = OUT_DIR / "x402_14_risk_matrix.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=BG)
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"Saved: {out}")
 

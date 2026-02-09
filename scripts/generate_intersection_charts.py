@@ -94,7 +94,7 @@ def chart_protocol_launch_timeline() -> None:
              ha="center", color=MUTED, fontsize=9, style="italic")
     fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     out = OUT_DIR / "01_protocol_launch_timeline.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=BG)
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -155,7 +155,7 @@ def chart_protocol_capability_matrix() -> None:
              ha="center", color=MUTED, fontsize=9, style="italic")
     fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     out = OUT_DIR / "02_protocol_capability_matrix.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=BG)
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -210,7 +210,7 @@ def chart_layer_funding_heatmap() -> None:
              ha="center", color=MUTED, fontsize=9, style="italic")
     fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     out = OUT_DIR / "03_layer_funding_heatmap.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=BG)
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -258,7 +258,7 @@ def chart_agent_commerce_readiness_roadmap() -> None:
              ha="center", color=MUTED, fontsize=9, style="italic")
     fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     out = OUT_DIR / "04_agent_commerce_readiness_roadmap.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor=BG)
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"Saved: {out}")
 

@@ -109,7 +109,7 @@ def chart_geography_dashboard(df: pd.DataFrame) -> None:
     )
     fig.tight_layout(rect=[0.02, 0.04, 0.98, 0.94])
     out = CHART_DIR / "fintech_geographic_opportunity_dashboard.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -174,7 +174,7 @@ def chart_failure_risk_dashboard(df: pd.DataFrame) -> None:
     )
     fig.tight_layout(rect=[0.02, 0.04, 0.98, 0.94])
     out = CHART_DIR / "fintech_failure_risk_kpi_dashboard.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out}")
 
@@ -239,7 +239,7 @@ def chart_value_creation_vs_destruction(df: pd.DataFrame) -> None:
     )
     fig.tight_layout(rect=[0.02, 0.04, 0.98, 0.94])
     out = CHART_DIR / "fintech_value_creation_vs_destruction_cases.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight", facecolor="white")
+    fig.savefig(out, dpi=260, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"Saved: {out}")
 
