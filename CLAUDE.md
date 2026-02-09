@@ -127,6 +127,7 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 
 ### Fresh-Read Synthesis Learnings (Feb 9, 2026)
 - Directional conviction and underwriting confidence should be separated explicitly; estimated metrics can support thesis direction but should not be treated as precision anchors.
+- Keep one canonical synthesis artifact (`memos/00-top-level-takeaways.md`) and link downstream decision memos to it, rather than duplicating drifting summary blocks.
 - Control points (identity, compliance, policy, routing) consistently screen as stronger value-capture layers than commodity payment transport.
 - Recovery narratives should be baseline-scoped; when multiple accepted baselines exist, show each implied growth rate instead of one headline figure.
 - Protocol traction metrics are necessary but insufficient for moat claims; require quality-of-volume tests (organic vs speculative, repeat utility, payer diversity).
@@ -220,6 +221,7 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - If adding very early-stage categories (for example, agent-fintech intersection), lower log-scale axis floors so early movement is visible rather than clipped.
 - Use a **100% stacked bar** for funding composition shift by year; pair with top-of-bar absolute totals so share changes are not misread as absolute growth.
 - When introducing a synthetic/emerging category slice (for readability), label it clearly as an estimate in chart footnotes.
+- Keep cohort type artifacts generated from one source script: `data/fintech_cohort_company_type_classification.csv`, `data/fintech_cohort_type_group_mix_estimated.csv`, and `charts/fintech/fintech_cohort_type_group_mix_estimated.png` should all come from `scripts/generate_fintech_cohort_outcome_split.py`.
 
 ### Chart Team Workflow Learnings
 - **Shared data module pattern works well for chart teams.** Create a `*_data.py` file with all raw data in pandas DataFrames, then have each chart agent import from it. Prevents data duplication and ensures consistency across all charts.
