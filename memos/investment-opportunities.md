@@ -8,6 +8,7 @@
 - Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
 - Full Hierarchy: [Memo Index](README.md)
 - Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md)
+- Canonical Assumptions: [Underwriting Assumptions Pack](../research/canonical-underwriting-assumptions-2026Q1.md)
 - Supporting Memos: [Agent Economy](agent-economy-memo.md), [Fintech Market Analysis](fintech-market-analysis.md), [Agent-Fintech Deep Dive](agent-fintech-intersection-deep-dive.md)
 
 ---
@@ -21,9 +22,21 @@ We identified **15 high-conviction investment opportunities** across three domai
 **Key numbers:**
 - AI agent market: **$5.4B (2024) → $47-52B by 2030** (~45% CAGR)
 - Agentic commerce opportunity: **$3-5T by 2030** (McKinsey)
-- Stablecoin circulation: **$300B+**, $27T annual volume
+- Stablecoin scale: **$300B+ supply; ~$46T raw transfer volume; ~$9T adjusted economic volume (annualized)**
 - CFO Stack funding: **$1.8B across 90 deals** in Q4 2025 alone
 - AI agent VC investment: **$8-12B in 2025**
+
+### Data Quality & Confidence
+
+- Funding/category charts blend reported values with directional estimates; category totals can overlap and should not be treated as additive accounting totals.
+- x402 evidence uses mixed-confidence sources; use canonical homepage counters for current-state underwriting and treat legacy peak claims as historical context only.
+
+### Canonical Assumptions Layer (Required For Requotes)
+
+Before changing headline numbers in this memo, update these artifacts first:
+1. `../research/canonical-underwriting-assumptions-2026Q1.md`
+2. `../data/x402_kpi_canonical.csv`
+3. `../research/mna-verification-ledger.md`
 
 ## Supporting Charts
 
@@ -56,7 +69,7 @@ We identified **15 high-conviction investment opportunities** across three domai
 ---
 
 ### 2. Agent Payment Infrastructure (The Intersection)
-**Why now:** Four major protocols (x402, ACP, AP2, TAP) launched in 2025, backed by Coinbase, Stripe/OpenAI, Google, and Visa. 157.6M cumulative transactions have already been processed via x402. a16z projects agents could drive $30T in purchases by 2030.
+**Why now:** Four major protocols (x402, ACP, AP2, TAP) launched in 2025, backed by Coinbase, Stripe/OpenAI, Google, and Visa. x402 public homepage counters show 75.41M transactions and $24.24M volume (Feb 9, 2026); higher legacy claims (157.6M / $600M+) remain low-confidence until reproducibly reconciled. a16z projects agents could drive $30T in purchases by 2030.
 
 | Company | Raised | Key Metric | Thesis |
 |---------|--------|------------|--------|
@@ -86,11 +99,11 @@ We identified **15 high-conviction investment opportunities** across three domai
 ---
 
 ### 4. Stablecoin Infrastructure
-**Why now:** Confirmed M&A plus credible report-level activity is accelerating in stablecoin infrastructure. Stripe/Bridge ($1.1B) is confirmed; Mastercard/Zero Hash ($1.5-2B) and Coinbase/BVNK (~$2B) remain unconfirmed report-level items as of Feb 9, 2026. GENIUS Act (effective Jan 2027) creates massive compliance infrastructure demand. The investment window for independent stablecoin companies is closing.
+**Why now:** Confirmed M&A plus report-level strategic interest indicates increasing urgency in stablecoin infrastructure. Stripe/Bridge ($1.1B) is confirmed; Mastercard/Zero Hash ($1.5-2B) and Coinbase/BVNK (~$2B) remain unconfirmed watchlist signals as of Feb 9, 2026. GENIUS Act (effective Jan 2027) still creates substantial compliance infrastructure demand.
 
 | Company | Raised/Valuation | Key Metric | Thesis |
 |---------|-----------------|------------|--------|
-| **BVNK** | $50M Series B, $750M val | Reported Coinbase acquisition exploration at ~$2B (unconfirmed) | Enterprise stablecoin APIs. Abstracts blockchain complexity for enterprises. Reported strategic interest still signals category importance. |
+| **BVNK** | $50M Series B, $750M val | Enterprise stablecoin API infrastructure for cross-border and treasury workflows | Abstracts blockchain complexity for enterprises. Any reported buyer interest is watchlist-only until primary confirmation. |
 | **Crossmint** | $23.6M (Ribbit, Franklin Templeton) | 1,100% subscription revenue growth; 40K+ companies; 150K GOAT SDK downloads | At the intersection of stablecoins + AI agents. MiCA authorized. If agent economy materializes, Crossmint has early infra positioning. |
 | **Circle** | Public (CRCL) | $2.6B projected 2025 revenue; $9.6T on-chain volume Q3 (580% YoY) | USDC issuer. Bull case: Circle Payment Network becomes SWIFT for stablecoins. Risk: 99%+ revenue from interest income. |
 | **Duna** | EUR 30M Series A (CapitalG, Index) | 10.6x faster onboarding; Adyen founder + ex-Stripe COO as advisors | "Stripe of identity" (KYB/KYC/AML). Stripe alumni founders. Every stablecoin issuer needs compliance infra post-GENIUS Act. |
@@ -256,6 +269,38 @@ We identified **15 high-conviction investment opportunities** across three domai
 
 ---
 
+## Auditable Conviction Scoring Appendix
+
+This ranking now uses a repeatable two-layer method instead of narrative-only ordering:
+1. `Opportunity Score` from `../data/agent_fintech_startup_opportunity_matrix.csv`
+2. `Deployment Readiness` and `Evidence Confidence` from `../data/investment_opportunity_conviction_overlay_2026Q1.csv`
+3. Composite formula: `0.60*Opportunity Score + 0.25*Deployment Readiness + 0.15*Evidence Confidence`
+
+Tier gates used in this memo:
+1. Tier 1: composite `>= 75`
+2. Tier 2: composite `67-74.9`
+3. Tier 3: composite `< 67`
+
+| Rank | Opportunity | Opp Score | Readiness | Evidence | Composite | Tier |
+|------|-------------|----------:|----------:|---------:|----------:|------|
+| 1 | Agent Security & Governance | 81.8 | 84 | 82 | **82.4** | Tier 1 |
+| 2 | Agent Payment Infrastructure (The Intersection) | 76.3 | 80 | 70 | **76.3** | Tier 1 |
+| 3 | Agent Compute & Sandboxing | 76.0 | 78 | 72 | **75.9** | Tier 1 |
+| 4 | Stablecoin Infrastructure | 81.2 | 82 | 78 | **80.9** | Tier 1 |
+| 5 | B2B / CFO Stack | 81.2 | 88 | 84 | **83.3** | Tier 1 |
+| 6 | Agent Memory & State Management | 76.1 | 78 | 74 | **76.3** | Tier 1 |
+| 7 | Agent Identity & Authentication | 81.4 | 60 | 58 | **72.5** | Tier 2 |
+| 8 | AI-Native Fintech (Vertical AI Workflows) | 81.3 | 58 | 55 | **71.5** | Tier 2 |
+| 9 | Vertical Agent Leaders (Proven Revenue) | 75.8 | 64 | 60 | **70.5** | Tier 2 |
+| 10 | Agent Observability (Datadog for Agents) | 74.5 | 70 | 66 | **72.1** | Tier 2 |
+| 11 | Embedded Finance 2.0 (Post-Synapse) | 75.4 | 70 | 67 | **72.8** | Tier 2 |
+| 12 | Agent-to-Agent Commerce Infrastructure | 76.5 | 50 | 45 | **65.2** | Tier 3 |
+| 13 | DeFAI (DeFi x AI Agents) | 63.0 | 48 | 45 | **56.5** | Tier 3 |
+| 14 | Agent Wallets & Financial Identity | 74.2 | 52 | 54 | **65.6** | Tier 3 |
+| 15 | Under-the-Radar Breakout Candidates | 71.2 | 52 | 50 | **63.2** | Tier 3 |
+
+---
+
 ## Evaluation Framework
 
 For each opportunity, assess across five dimensions:
@@ -388,31 +433,33 @@ This reinforces the ranking logic in this memo: prioritize companies that own tr
 
 ## Timeline: What to Watch in the Next 6-12 Months
 
+Canonical tracker: `../research/milestone-status-tracker.csv` (update status there using the milestone IDs below).
+
 ### Q1 2026 (Now)
-- [ ] FIS launches "Know Your Agent" for bank issuers — first mainstream KYA framework
-- [ ] UQPAY first compliant x402 platform goes live
-- [ ] OpenAI Frontier enterprise agent platform adoption signals
-- [ ] Daytona Series A traction (just raised $24M, doubling revenue every 6 weeks)
+- [ ] [MS-001] FIS launches "Know Your Agent" for bank issuers — first mainstream KYA framework
+- [ ] [MS-002] UQPAY first compliant x402 platform goes live
+- [ ] [MS-003] OpenAI Frontier enterprise agent platform adoption signals
+- [ ] [MS-004] Daytona Series A traction (just raised $24M, doubling revenue every 6 weeks)
 
 ### Q2 2026
-- [ ] Visa TAP moves from pilot to production — millions of agent-initiated transactions?
-- [ ] Stripe ACP expands beyond ChatGPT to other agent platforms
-- [ ] Mercury OCC bank charter decision
-- [ ] GENIUS Act implementing regulations expected
+- [ ] [MS-005] Visa TAP moves from pilot to production — millions of agent-initiated transactions?
+- [ ] [MS-006] Stripe ACP expands beyond ChatGPT to other agent platforms
+- [ ] [MS-007] Mercury OCC bank charter decision
+- [ ] [MS-008] GENIUS Act implementing regulations expected
 
 ### H2 2026
-- [ ] x402 organic transaction volume (excluding memecoin speculation) — is it growing?
-- [ ] Agent security becomes a procurement requirement in Fortune 500 RFPs
-- [ ] First cross-protocol payment orchestration company emerges
-- [ ] Google UCP Phase 2 with dynamic pricing/negotiation
-- [ ] Multi-agent systems go mainstream in enterprise (Gartner inflection point)
+- [ ] [MS-009] x402 organic transaction volume (excluding memecoin speculation) — is it growing?
+- [ ] [MS-010] Agent security becomes a procurement requirement in Fortune 500 RFPs
+- [ ] [MS-011] First cross-protocol payment orchestration company emerges
+- [ ] [MS-012] Google UCP Phase 2 with dynamic pricing/negotiation
+- [ ] [MS-013] Multi-agent systems go mainstream in enterprise (Gartner inflection point)
 
 ### 2027
-- [ ] GENIUS Act takes effect (Jan 2027) — stablecoin compliance infrastructure demand spikes
-- [ ] Agent-to-agent economies begin forming at scale
-- [ ] Enterprise spending on agents reaches $15-20B+ annually
-- [ ] Regulatory frameworks for agent financial identity mature
-- [ ] First $1B/month in agent-initiated transaction volume
+- [ ] [MS-014] GENIUS Act takes effect (Jan 2027) — stablecoin compliance infrastructure demand spikes
+- [ ] [MS-015] Agent-to-agent economies begin forming at scale
+- [ ] [MS-016] Enterprise spending on agents reaches $15-20B+ annually
+- [ ] [MS-017] Regulatory frameworks for agent financial identity mature
+- [ ] [MS-018] First $1B/month in agent-initiated transaction volume
 
 ---
 

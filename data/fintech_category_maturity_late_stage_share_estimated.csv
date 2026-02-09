@@ -1,111 +1,111 @@
-year,category,late_plus_growth_b,category_total_b,late_stage_share_pct
-2015,B2B Fintech Infrastructure,0.7694000000000001,2.0,38.470000000000006
-2016,B2B Fintech Infrastructure,1.0184,2.5,40.736
-2017,B2B Fintech Infrastructure,1.3031,3.0,43.43666666666666
-2018,B2B Fintech Infrastructure,2.4878,5.0,49.756
-2019,B2B Fintech Infrastructure,2.8941,5.5,52.62
-2020,B2B Fintech Infrastructure,3.4107000000000003,7.0,48.72428571428572
-2021,B2B Fintech Infrastructure,10.9544,18.0,60.85777777777778
-2022,B2B Fintech Infrastructure,6.6765,12.0,55.637499999999996
-2023,B2B Fintech Infrastructure,4.3674,10.0,43.674
-2024,B2B Fintech Infrastructure,3.9533,8.0,49.41625
-2025,B2B Fintech Infrastructure,5.8050999999999995,10.0,58.050999999999995
-2015,BNPL,0.0239,0.1,23.9
-2016,BNPL,0.0514,0.2,25.7
-2017,BNPL,0.1122,0.4,28.049999999999997
-2018,BNPL,0.267,0.8,33.375
-2019,BNPL,0.3978,1.1,36.16363636363636
-2020,BNPL,0.49420000000000003,1.5,32.946666666666665
-2021,BNPL,2.2178,5.0,44.356
-2022,BNPL,0.9842,2.5,39.367999999999995
-2023,BNPL,0.2924,1.0,29.24
-2024,BNPL,0.27280000000000004,0.8,34.1
-2025,BNPL,0.5041,1.2,42.00833333333334
-2015,Crypto / Blockchain,0.15510000000000002,0.5,31.020000000000003
-2016,Crypto / Blockchain,0.1988,0.6,33.13333333333334
-2017,Crypto / Blockchain,1.0701,3.0,35.67
-2018,Crypto / Blockchain,1.8739,4.5,41.642222222222216
-2019,Crypto / Blockchain,2.0919,4.7,44.508510638297864
-2020,Crypto / Blockchain,2.2444,5.5,40.80727272727273
-2021,Crypto / Blockchain,15.9779,30.2,52.9069536423841
-2022,Crypto / Blockchain,10.9956,23.1,47.599999999999994
-2023,Crypto / Blockchain,2.8947000000000003,8.0,36.18375
-2024,Crypto / Blockchain,5.6957,13.7,41.57445255474453
-2025,Crypto / Blockchain,9.01,18.0,50.05555555555555
-2015,Embedded Finance / BaaS,0.07680000000000001,0.3,25.600000000000005
-2016,Embedded Finance / BaaS,0.1378,0.5,27.560000000000002
-2017,Embedded Finance / BaaS,0.2396,0.8,29.95
-2018,Embedded Finance / BaaS,0.5319,1.5,35.46
-2019,Embedded Finance / BaaS,0.7654,2.0,38.269999999999996
-2020,Embedded Finance / BaaS,1.2217,3.5,34.90571428571428
-2021,Embedded Finance / BaaS,5.2141,11.2,46.55446428571429
-2022,Embedded Finance / BaaS,2.6938999999999997,6.5,41.44461538461538
-2023,Embedded Finance / BaaS,1.0827,3.5,30.934285714285714
-2024,Embedded Finance / BaaS,1.0779999999999998,3.0,35.93333333333333
-2025,Embedded Finance / BaaS,1.7610999999999999,4.0,44.027499999999996
-2015,Insurtech,0.8543999999999999,2.6,32.86153846153846
-2016,Insurtech,0.5951,1.7,35.00588235294118
-2017,Insurtech,1.1279000000000001,3.0,37.59666666666667
-2018,Insurtech,1.8346999999999998,4.2,43.68333333333332
-2019,Insurtech,2.9797000000000002,6.4,46.557812500000004
-2020,Insurtech,3.2085,7.5,42.78
-2021,Insurtech,7.9125,14.4,54.947916666666664
-2022,Insurtech,4.2679,8.6,49.62674418604651
-2023,Insurtech,1.7101,4.5,38.00222222222222
-2024,Insurtech,1.827,4.2,43.5
-2025,Insurtech,2.6029999999999998,5.0,52.059999999999995
-2015,Lending / Credit,5.2402,10.2,51.37450980392156
-2016,Lending / Credit,4.572,8.5,53.78823529411765
-2017,Lending / Credit,4.2443,7.5,56.590666666666664
-2018,Lending / Credit,6.2823,10.0,62.82300000000001
-2019,Lending / Credit,3.6033,5.5,65.51454545454546
-2020,Lending / Credit,4.9381,8.0,61.72625000000001
-2021,Lending / Credit,13.217600000000001,18.5,71.44648648648649
-2022,Lending / Credit,7.8743,12.0,65.61916666666666
-2023,Lending / Credit,3.9478,7.5,52.63733333333334
-2024,Lending / Credit,3.421,6.0,57.01666666666666
-2025,Lending / Credit,4.481199999999999,7.0,64.01714285714284
-2015,Neobanks / Digital Banking,0.43810000000000004,1.5,29.20666666666667
-2016,Neobanks / Digital Banking,0.6251,2.0,31.255
-2017,Neobanks / Digital Banking,1.1814,3.5,33.754285714285714
-2018,Neobanks / Digital Banking,1.9794999999999998,5.0,39.589999999999996
-2019,Neobanks / Digital Banking,2.971,7.0,42.44285714285714
-2020,Neobanks / Digital Banking,2.136,5.5,38.83636363636364
-2021,Neobanks / Digital Banking,7.116,14.0,50.82857142857142
-2022,Neobanks / Digital Banking,3.6448,8.0,45.56
-2023,Neobanks / Digital Banking,1.7200000000000002,5.0,34.400000000000006
-2024,Neobanks / Digital Banking,1.3885,3.5,39.67142857142857
-2025,Neobanks / Digital Banking,2.1622,4.5,48.04888888888888
-2015,Payments,5.5645,10.5,52.99523809523809
-2016,Payments,8.0352,14.5,55.4151724137931
-2017,Payments,7.5678,13.0,58.21384615384615
-2018,Payments,21.5676,33.5,64.38089552238806
-2019,Payments,71.85499999999999,107.8,66.65584415584415
-2020,Payments,17.9621,29.1,61.7254295532646
-2021,Payments,40.7959,57.1,71.44640980735552
-2022,Payments,34.8438,53.1,65.61920903954802
-2023,Payments,10.895999999999999,20.7,52.63768115942029
-2024,Payments,17.675,31.0,57.016129032258064
-2025,Payments,11.523,18.0,64.01666666666667
-2015,Regtech / Compliance,0.1709,0.6,28.483333333333334
-2016,Regtech / Compliance,0.24409999999999998,0.8,30.5125
-2017,Regtech / Compliance,0.3959,1.2,32.99166666666666
-2018,Regtech / Compliance,1.4343,3.7,38.76486486486486
-2019,Regtech / Compliance,2.0806,5.0,41.612
-2020,Regtech / Compliance,2.6634,7.0,38.048571428571435
-2021,Regtech / Compliance,5.8983,11.8,49.985593220338984
-2022,Regtech / Compliance,8.3219,18.6,44.74139784946236
-2023,Regtech / Compliance,1.4827,4.4,33.69772727272727
-2024,Regtech / Compliance,2.8798999999999997,7.4,38.91756756756756
-2025,Regtech / Compliance,2.3622,5.0,47.244
-2015,Wealthtech / Capital Markets,0.9239,2.0,46.195
-2016,Wealthtech / Capital Markets,1.2142,2.5,48.568
-2017,Wealthtech / Capital Markets,1.0272,2.0,51.35999999999999
-2018,Wealthtech / Capital Markets,2.3089,4.0,57.7225
-2019,Wealthtech / Capital Markets,2.1177,3.5,60.505714285714284
-2020,Wealthtech / Capital Markets,1.7012,3.0,56.70666666666667
-2021,Wealthtech / Capital Markets,4.096299999999999,6.0,68.27166666666665
-2022,Wealthtech / Capital Markets,2.8571,4.5,63.49111111111111
-2023,Wealthtech / Capital Markets,1.2947,2.5,51.788000000000004
-2024,Wealthtech / Capital Markets,1.5965,2.8,57.01785714285714
-2025,Wealthtech / Capital Markets,2.2406,3.5,64.01714285714286
+year,category,late_plus_growth_b,category_total_b,late_stage_share_pct,source_id,source_url,source_capture_method,last_verified_utc,confidence,status,dataset_name,notes
+2015,B2B Fintech Infrastructure,0.7694000000000001,2.0,38.470000000000006,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,B2B Fintech Infrastructure,1.0184,2.5,40.736,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,B2B Fintech Infrastructure,1.3031,3.0,43.43666666666666,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,B2B Fintech Infrastructure,2.4878,5.0,49.756,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,B2B Fintech Infrastructure,2.8941,5.5,52.62,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,B2B Fintech Infrastructure,3.4107000000000003,7.0,48.72428571428572,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,B2B Fintech Infrastructure,10.9544,18.0,60.85777777777778,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,B2B Fintech Infrastructure,6.6765,12.0,55.637499999999996,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,B2B Fintech Infrastructure,4.3674,10.0,43.674,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,B2B Fintech Infrastructure,3.9533,8.0,49.41625,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,B2B Fintech Infrastructure,5.8050999999999995,10.0,58.050999999999995,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,BNPL,0.0239,0.1,23.9,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,BNPL,0.0514,0.2,25.7,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,BNPL,0.1122,0.4,28.049999999999997,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,BNPL,0.267,0.8,33.375,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,BNPL,0.3978,1.1,36.16363636363636,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,BNPL,0.49420000000000003,1.5,32.946666666666665,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,BNPL,2.2178,5.0,44.356,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,BNPL,0.9842,2.5,39.367999999999995,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,BNPL,0.2924,1.0,29.24,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,BNPL,0.27280000000000004,0.8,34.1,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,BNPL,0.5041,1.2,42.00833333333334,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,Crypto / Blockchain,0.15510000000000002,0.5,31.020000000000003,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,Crypto / Blockchain,0.1988,0.6,33.13333333333334,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,Crypto / Blockchain,1.0701,3.0,35.67,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,Crypto / Blockchain,1.8739,4.5,41.642222222222216,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,Crypto / Blockchain,2.0919,4.7,44.508510638297864,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,Crypto / Blockchain,2.2444,5.5,40.80727272727273,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,Crypto / Blockchain,15.9779,30.2,52.9069536423841,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,Crypto / Blockchain,10.9956,23.1,47.599999999999994,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,Crypto / Blockchain,2.8947000000000003,8.0,36.18375,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,Crypto / Blockchain,5.6957,13.7,41.57445255474453,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,Crypto / Blockchain,9.01,18.0,50.05555555555555,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,Embedded Finance / BaaS,0.07680000000000001,0.3,25.600000000000005,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,Embedded Finance / BaaS,0.1378,0.5,27.560000000000002,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,Embedded Finance / BaaS,0.2396,0.8,29.95,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,Embedded Finance / BaaS,0.5319,1.5,35.46,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,Embedded Finance / BaaS,0.7654,2.0,38.269999999999996,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,Embedded Finance / BaaS,1.2217,3.5,34.90571428571428,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,Embedded Finance / BaaS,5.2141,11.2,46.55446428571429,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,Embedded Finance / BaaS,2.6938999999999997,6.5,41.44461538461538,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,Embedded Finance / BaaS,1.0827,3.5,30.934285714285714,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,Embedded Finance / BaaS,1.0779999999999998,3.0,35.93333333333333,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,Embedded Finance / BaaS,1.7610999999999999,4.0,44.027499999999996,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,Insurtech,0.8543999999999999,2.6,32.86153846153846,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,Insurtech,0.5951,1.7,35.00588235294118,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,Insurtech,1.1279000000000001,3.0,37.59666666666667,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,Insurtech,1.8346999999999998,4.2,43.68333333333332,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,Insurtech,2.9797000000000002,6.4,46.557812500000004,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,Insurtech,3.2085,7.5,42.78,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,Insurtech,7.9125,14.4,54.947916666666664,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,Insurtech,4.2679,8.6,49.62674418604651,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,Insurtech,1.7101,4.5,38.00222222222222,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,Insurtech,1.827,4.2,43.5,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,Insurtech,2.6029999999999998,5.0,52.059999999999995,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,Lending / Credit,5.2402,10.2,51.37450980392156,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,Lending / Credit,4.572,8.5,53.78823529411765,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,Lending / Credit,4.2443,7.5,56.590666666666664,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,Lending / Credit,6.2823,10.0,62.82300000000001,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,Lending / Credit,3.6033,5.5,65.51454545454546,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,Lending / Credit,4.9381,8.0,61.72625000000001,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,Lending / Credit,13.217600000000001,18.5,71.44648648648649,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,Lending / Credit,7.8743,12.0,65.61916666666666,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,Lending / Credit,3.9478,7.5,52.63733333333334,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,Lending / Credit,3.421,6.0,57.01666666666666,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,Lending / Credit,4.481199999999999,7.0,64.01714285714284,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,Neobanks / Digital Banking,0.43810000000000004,1.5,29.20666666666667,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,Neobanks / Digital Banking,0.6251,2.0,31.255,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,Neobanks / Digital Banking,1.1814,3.5,33.754285714285714,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,Neobanks / Digital Banking,1.9794999999999998,5.0,39.589999999999996,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,Neobanks / Digital Banking,2.971,7.0,42.44285714285714,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,Neobanks / Digital Banking,2.136,5.5,38.83636363636364,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,Neobanks / Digital Banking,7.116,14.0,50.82857142857142,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,Neobanks / Digital Banking,3.6448,8.0,45.56,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,Neobanks / Digital Banking,1.7200000000000002,5.0,34.400000000000006,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,Neobanks / Digital Banking,1.3885,3.5,39.67142857142857,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,Neobanks / Digital Banking,2.1622,4.5,48.04888888888888,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,Payments,5.5645,10.5,52.99523809523809,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,Payments,8.0352,14.5,55.4151724137931,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,Payments,7.5678,13.0,58.21384615384615,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,Payments,21.5676,33.5,64.38089552238806,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,Payments,71.85499999999999,107.8,66.65584415584415,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,Payments,17.9621,29.1,61.7254295532646,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,Payments,40.7959,57.1,71.44640980735552,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,Payments,34.8438,53.1,65.61920903954802,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,Payments,10.895999999999999,20.7,52.63768115942029,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,Payments,17.675,31.0,57.016129032258064,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,Payments,11.523,18.0,64.01666666666667,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,Regtech / Compliance,0.1709,0.6,28.483333333333334,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,Regtech / Compliance,0.24409999999999998,0.8,30.5125,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,Regtech / Compliance,0.3959,1.2,32.99166666666666,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,Regtech / Compliance,1.4343,3.7,38.76486486486486,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,Regtech / Compliance,2.0806,5.0,41.612,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,Regtech / Compliance,2.6634,7.0,38.048571428571435,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,Regtech / Compliance,5.8983,11.8,49.985593220338984,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,Regtech / Compliance,8.3219,18.6,44.74139784946236,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,Regtech / Compliance,1.4827,4.4,33.69772727272727,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,Regtech / Compliance,2.8798999999999997,7.4,38.91756756756756,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,Regtech / Compliance,2.3622,5.0,47.244,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2015,Wealthtech / Capital Markets,0.9239,2.0,46.195,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2016,Wealthtech / Capital Markets,1.2142,2.5,48.568,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2017,Wealthtech / Capital Markets,1.0272,2.0,51.35999999999999,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2018,Wealthtech / Capital Markets,2.3089,4.0,57.7225,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2019,Wealthtech / Capital Markets,2.1177,3.5,60.505714285714284,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2020,Wealthtech / Capital Markets,1.7012,3.0,56.70666666666667,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2021,Wealthtech / Capital Markets,4.096299999999999,6.0,68.27166666666665,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2022,Wealthtech / Capital Markets,2.8571,4.5,63.49111111111111,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2023,Wealthtech / Capital Markets,1.2947,2.5,51.788000000000004,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2024,Wealthtech / Capital Markets,1.5965,2.8,57.01785714285714,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.
+2025,Wealthtech / Capital Markets,2.2406,3.5,64.01714285714286,fintech_funding_stage_model_v1,data/fintech_funding_data.py,modeled_stage_split_from_category_maturity_and_cycle,2026-02-09T18:41:00Z,medium,supported,fintech_category_maturity_late_stage_share_estimated,Category maturity proxy derived from modeled late+growth share.

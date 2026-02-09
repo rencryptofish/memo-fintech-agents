@@ -19,11 +19,18 @@
 
 ![Fintech Stage Mix by Category 2025](../charts/fintech/fintech_stage_mix_by_category_2025.png)
 
+**Chart methodology note:** Stage charts are modeled estimates (category maturity + market-cycle regime) from `scripts/generate_fintech_stage_charts.py`, not raw round-tag aggregates from a single source.
+
 ---
 
 ## Executive Summary
 
 This memo prioritizes investable fintech opportunities in 2026 with an explicit confidence split between confirmed data and rumor-level signals. The highest-conviction themes remain AI-native fintech workflows, compliance infrastructure for stablecoins, and multi-rail enterprise payments. M&A signals are useful, but only definitive/official transactions are treated as base-case evidence; reported talks (for example, Mastercard/Zero Hash, Coinbase/BVNK) are maintained as watchlist signals only until primary confirmation.
+
+### Data Quality & Confidence
+
+- Funding category and stage datasets contain modeled/estimated components; use them for directional maturity analysis, not precise accounting.
+- Category totals can overlap and should not be interpreted as mutually exclusive market slices.
 
 ---
 
@@ -102,8 +109,8 @@ The GENIUS Act creates a massive compliance infrastructure opportunity. Every st
 #### BVNK ($750M valuation)
 - **What:** UK-based stablecoin infrastructure for enterprises -- APIs for sending, receiving, converting, and storing stablecoins
 - **Funding:** $50M Series B (Dec 2024) led by Haun Ventures, with Coinbase Ventures, Tiger Global
-- **M&A interest:** Coinbase reportedly explored a ~$2B acquisition but talks fell through (Nov 2025)
-- **Why it matters:** BVNK abstracts away blockchain complexity, regulatory burden, and custody risk for enterprises. The fact that Coinbase was willing to pay $2B (nearly 3x last round valuation) validates the market opportunity
+- **M&A signal (watchlist only):** Coinbase reportedly explored a ~$2B acquisition; this remains unconfirmed report-level information
+- **Why it matters:** BVNK abstracts away blockchain complexity, regulatory burden, and custody risk for enterprises. Reported buyer interest should be treated as strategic signal only, not a valuation anchor
 
 #### Zero Hash (approaching $1B valuation)
 - **What:** Crypto and stablecoin infrastructure enabling any platform to offer digital assets
@@ -312,7 +319,7 @@ The embedded finance market is projected at $228B by 2028 (23.8% CAGR). The winn
 
 ## Key M&A Signals (2025-2026)
 
-The M&A wave is accelerating and reveals where strategic buyers see value:
+Confirmed M&A plus report-level watchlist items indicate where strategic buyers may see value:
 
 | Acquirer | Target | Price | Category | Signal | Verification Status |
 |----------|--------|-------|----------|--------|---------------------|
@@ -331,7 +338,7 @@ The M&A wave is accelerating and reveals where strategic buyers see value:
 
 1. **AI is the new platform shift.** Just as smartphones created Stripe, Square, and Venmo (2008-2012), AI is creating the next cohort of category-defining fintech companies. The best opportunities are vertical AI plays for specific financial workflows (insurance, compliance, lending, identity)
 
-2. **Stablecoin infrastructure is being acquired at velocity.** If you want exposure, invest now or accept that the remaining independent companies will be acquired within 12-18 months
+2. **Stablecoin infrastructure is strategically contested.** Confirmed deals suggest consolidation pressure, but pace and outcomes remain uncertain; underwrite independents on fundamentals, not rumored exits
 
 3. **The CFO stack has a winner.** Ramp at $32B with $1B revenue is pulling away. Brex's acquisition at $5.15B (vs. $12.3B peak valuation) confirms the second-place penalty
 

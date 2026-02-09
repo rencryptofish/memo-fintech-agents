@@ -36,6 +36,11 @@ The biggest opportunities today center on **AI-native fintech** (agentic AI hand
 
 The clearest historical lesson: **B2B infrastructure plays that become embedded in customer workflows** (Stripe, Plaid, Adyen) have the highest success rates, while **B2C fintech without defensible moats** and **models subsidized by cheap capital** (BNPL, many neobanks) face the highest failure rates.
 
+### Data Quality & Confidence
+
+- This memo mixes multiple baselines (VC-only and VC+PE+M&A) and category estimates; trend direction is higher confidence than point precision.
+- Category buckets are partially overlapping and should be used for pattern detection, not additive accounting.
+
 ## Key Charts
 
 ![Fintech Market Size Projection](../charts/fintech/fintech_market_size_projection.png)
@@ -108,7 +113,7 @@ The clearest historical lesson: **B2B infrastructure plays that become embedded 
 - AI-powered fintech investment jumped from $24M (H1 2024) to **$160M (H2 2024)**
 
 ### 2. Stablecoin Infrastructure
-- Circulation passed **$300B** in 2025; transaction volumes hit **$27T annually**
+- Circulation passed **$300B** in 2025; transfer activity is roughly **$46T raw** and **~$9T adjusted economic volume** annualized
 - USDT + USDC control >94% of the market
 - **GENIUS Act** (July 2025) — first major US federal stablecoin legislation
 - Visa launched stablecoin settlement (USDC on Solana: <$0.01, <5 seconds)
@@ -513,7 +518,7 @@ AI (2024+)           → AI-native fintech, agentic finance
 | Opportunity | Market Size / Potential | Why Now | Key Players |
 |-------------|----------------------|---------|-------------|
 | **AI-Native Financial Services** | $97.7B by 2034 | GPT-4/Claude enabling agentic AI; 88% of top fintechs adopting | Catena Labs, Crossmint, Kira |
-| **Stablecoin Infrastructure** | $300B+ circulation, $27T annual volume | GENIUS Act provides clarity; Visa settling in USDC; institutional adoption | Circle, Visa, Cross River Bank |
+| **Stablecoin Infrastructure** | $300B+ supply; ~$46T raw / ~$9T adjusted annualized volume | GENIUS Act provides clarity; Visa settling in USDC; institutional adoption | Circle, Visa, Cross River Bank |
 | **B2B/SMB Financial Services** | $280B white-space; $500B in outstanding fintech loans | 40% of SMEs have unmet needs; AR/AP still manual | Ramp, Brex, various |
 | **Embedded Finance 2.0** | $85.8B → $370.9B by 2035 | Moved from buzzword to infrastructure; B2B embedded is next | Plaid, Marqeta, Unit |
 

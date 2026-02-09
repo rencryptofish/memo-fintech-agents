@@ -10,11 +10,11 @@ This repository contains research memos on fintech, AI agents, and the intersect
 memos/           — Research memos (markdown)
 charts/          — Generated visualizations (PNG)
   agent-economy/ — 13 agent economy charts
-  fintech/       — 7 fintech charts
+  fintech/       — 18 fintech charts
   intersection/  — 4 fintech-agent intersection charts
   x402/          — 14 x402 protocol charts
 scripts/         — Python chart generation scripts
-data/            — Structured data modules (Python)
+data/            — Structured datasets (CSV + Python modules)
 pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 ```
 
@@ -22,10 +22,11 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 
 - `agent-economy-memo.md` — AI agent economy: infrastructure stack, market map across 10 verticals (coding, CX, sales, legal, finance, HR, platforms, security, eval, marketplaces), market sizing ($7-8B 2025 → $47-52B 2030), funding landscape, emerging trends (MCP/A2A protocols, multi-agent systems, autonomy spectrum), and investment thesis
 - `fintech-market-analysis.md` — Comprehensive fintech market analysis: $340B market (2024), geographic founding patterns, cohort analysis from pre-2008 through 2026, success/failure patterns, unit economics, hottest segments (AI-native fintech, stablecoins, embedded finance, real-time payments, B2B/SMB)
-- `x402-research-memo.md` — x402 protocol deep dive: Coinbase's HTTP-native stablecoin payment protocol, 157.6M cumulative transactions, $600M+ volume, technical architecture (ERC-3009, facilitator model), SDK ecosystem, comparative advantage for agent micropayments, analyst sentiment
-- `x402-value-capture-analysis.md` — First-principles value capture analysis of x402 stack: raw adoption data (157M tx, $600M+ volume, facilitator market share shifts), full value chain map (8 layers from protocol to discovery), 9 historical analogies with revenue data (HTTP/Stripe/Lightning/DNS/SSL), seven-force framework applied to each layer, Coinbase vertical integration thesis, three investable opportunities (marketplace, compliance, differentiated apps)
+- `x402-research-memo.md` — x402 protocol deep dive: Coinbase's HTTP-native stablecoin payment protocol, canonical KPI reconciliation, technical architecture (ERC-3009, facilitator model), SDK ecosystem, comparative advantage for agent micropayments, analyst sentiment
+- `x402-value-capture-analysis.md` — First-principles value capture analysis of x402 stack: confidence-weighted adoption data, full value chain map (8 layers from protocol to discovery), 9 historical analogies with revenue data (HTTP/Stripe/Lightning/DNS/SSL), seven-force framework applied to each layer, Coinbase vertical integration thesis, three investable opportunities (marketplace, compliance, differentiated apps)
 - `x402-value-accrual-deep-dive.md` — Deep dive on buyer-seller dynamics and value accrual: ratio compression from 53:1 → 5:1 with projections, seller pricing power analysis (why it exists, why it erodes), 7-layer stack with revenue per $1B volume ($45M to Circle, $10M to Base, $880M to sellers, $100M to facilitators), Coinbase flywheel thesis ($35-38M revenue per $1B volume), facilitator layer as value trap (Dexter 5%→50% in 3 months), discovery layer as biggest whitespace
 - `fintech-agents-intersection.md` — The convergence of fintech and AI agents: four agentic payment protocols (x402, ACP, AP2, TAP), agent wallets and financial identity (Kite, Catena Labs, Crossmint, Skyfire), DeFAI movement, agent-to-agent commerce, KYA framework, "Stripe moment" analysis, regulatory landscape
+- `agent-fintech-mental-models-end-states.md` — Scenario and end-state memo: path dependence variables, probability-weighted outcomes, and stack-level winners under multiple market structures
 - `fintech-investment-opportunities-2026.md` — Specific investable opportunities: AI-native fintech startups (Sardine, FurtherAI, Catena Labs), stablecoin infrastructure (Circle, BVNK, Zero Hash, Crossmint), real-time payments (Column, Orum/Stripe), CFO stack (Ramp $32B, Mercury $3.5B, Brex/Capital One), embedded finance post-Synapse, pre-Series B breakouts (Duna, Hyperbots)
 - `investment-opportunities.md` — **Final synthesized memo**: Top 15 ranked investment opportunities across fintech, AI agent layer, and their intersection. Includes evaluation framework (moat, TAM, timing, risk, capital efficiency), M&A signal analysis, risk assessment, and 6-12 month watchlist
 
@@ -51,14 +52,25 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `12_infrastructure_gap_analysis.png` — Infrastructure gap analysis
 - `agent_economy_funding_vs_revenue.png` — Funding vs revenue trajectory scatter by category (2023-2026)
 
-### Fintech (`charts/fintech/`) — 7 charts
+### Fintech (`charts/fintech/`) — 18 charts
 - `fintech_funding_by_category.png` — Stacked bar: VC funding by 10 categories (2015-2025) with VC-total reference line and event annotations
 - `fintech_market_map.png` — Market map: categories as tiles with 2025 funding, status, and key players/valuations
 - `fintech_funding_heatmap.png` — Heatmap: funding intensity by category and year, black borders on peak years
 - `fintech_funding_vs_revenue.png` — Funding vs revenue trajectory scatter by category (2019-2026 snapshots)
+- `fintech_funding_vs_revenue_by_cohort.png` — Cohort-grouped funding vs revenue trajectory (category paths split by founding wave)
+- `fintech_vc_vs_revenue_breakdown_2026.png` — 2026 snapshot: VC deployed versus observed revenue scale by category
 - `fintech_cohort_outcome_split_estimated.png` — Estimated winner/survivor/failed split by fintech founding cohort
+- `fintech_cohort_type_group_mix_estimated.png` — 100% stacked cohort composition by company type group
 - `fintech_market_size_projection.png` — Global fintech market size trajectory from 2024 anchors through 2033 projection
 - `fintech_vc_vs_deals_trend.png` — Dual-axis trend of annual fintech VC funding vs deal count (2020-2025)
+- `fintech_funding_mix_percent_by_category.png` — Category share mix by year (stacked percent view)
+- `fintech_funding_by_stage_over_time.png` — Estimated stage composition of global fintech funding over time
+- `fintech_category_maturity_heatmap_late_stage_share.png` — Maturity proxy heatmap by category/year (late+growth funding share)
+- `fintech_stage_mix_by_category_2025.png` — 2025 stage mix by category with absolute totals
+- `fintech_geographic_opportunity_dashboard.png` — Multi-panel geography dashboard (regional share, India growth, Africa hub depth)
+- `fintech_failure_risk_kpi_dashboard.png` — Failure/risk KPI dashboard (unit economics, regulation, CAC pressure)
+- `fintech_value_creation_vs_destruction_cases.png` — Side-by-side comparison of major value creation and destruction cases
+- `fintech_category_company_map.png` — Category-to-company basket mapping used by trajectory and mix charts
 
 ### Intersection (`charts/intersection/`) — 4 charts
 - `01_protocol_launch_timeline.png` — Launch chronology of major agentic payment protocols and platforms (2025-Q1 2026)
@@ -88,6 +100,10 @@ pyproject.toml   — Project config (Python >=3.12, matplotlib, numpy, pandas)
 - `generate_agent_scatter.py` — Agent economy funding vs revenue trajectory scatter plot
 - `generate_fintech_scatter.py` — Fintech funding vs revenue trajectory scatter plot
 - `generate_fintech_cohort_outcome_split.py` — Fintech cohort outcome split visualization from data CSV anchors
+- `generate_fintech_stage_charts.py` — Fintech stage-mix chart pack + stage-estimate CSV exports
+- `generate_fintech_category_company_map.py` — Category-company mapping chart from curated CSV
+- `generate_fintech_coverage_gap_charts.py` — Geography, failure-risk, and value-creation/destruction dashboard chart pack
+- `check_governance_refresh.py` — Weekly/monthly/quarterly governance freshness and metadata schema checks
 - `generate_fintech_macro_charts.py` — Fintech market size projection + VC-vs-deals trend charts
 - `generate_intersection_charts.py` — Fintech-agent intersection protocol/layer/readiness chart pack
 - `generate_x402_sensitivity_charts.py` — x402 sensitivity/scenario/risk chart pack
@@ -207,8 +223,8 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Key company traction benchmarks (Feb 2026):** Harvey $195M ARR (3.9x YoY), Sierra $100M ARR in 7 quarters, Cursor $1B+ ARR, Ramp $1B annualized, Noma Security 1,300% ARR growth, E2B 88% Fortune 100, Mem0 186M API calls/quarter, Crossmint 1,100% subscription growth.
 - **Biggest whitespace identified:** Cross-protocol payment orchestration abstracting across x402/ACP/AP2/TAP. No company has built this. Could be the highest-value infrastructure play in the entire agent economy.
 - **Timing risk is the primary risk, not directional risk.** The direction (agents will transact autonomously and need financial infrastructure) is clear. Whether the market develops in 2026-2027 or 2028-2030 determines which companies survive. Capital-efficient companies that can survive either timeline are the best investments.
-
 - **Opportunity scoring matrices should be generated artifacts, not hand-edited tables.** Keep weights and raw 0-10 factor scores in one script (`scripts/generate_agent_fintech_opportunity_matrix.py`) and regenerate both the CSV (`data/agent_fintech_startup_opportunity_matrix.csv`) and scorecard chart (`charts/intersection/05_startup_opportunity_scorecard.png`) together so memo rankings stay traceable.
+
 ### Visualization & Tooling Learnings
 - This project has a `pyproject.toml` declaring matplotlib, numpy, and pandas — run scripts with `uv run python scripts/<script>.py`. For standalone scripts without a pyproject, use `uv run --with matplotlib --with numpy script.py`.
 - **Matplotlib color gotcha:** Use tuples `(1, 1, 1, 0.9)` for RGBA colors, NOT CSS-style `rgba(255,255,255,0.9)` strings. Matplotlib only accepts 0-1 float tuples, hex strings, or named colors.
@@ -231,7 +247,7 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Dark theme style recipe:** `plt.style.use('dark_background')`, `fig.patch.set_facecolor('#1a1a2e')`, `ax.set_facecolor('#1a1a2e')`, grid color `#333355`, figure size `(16, 9)`, dpi=150. Produces clean, presentation-ready charts.
 - **Best chart types by data story:** Log-scale line for adoption S-curves (orders of magnitude growth), stacked area for market share evolution (shows zero-sum dynamics), horizontal bars for value chain waterfalls (easy to label), proportional circles for ratio comparisons (53:1 buyer/seller).
 - **Annotation is critical for adoption data.** Raw line charts are meaningless without event labels (launch, Foundation, V2 release, etc.). Always annotate with arrows and labeled boxes for key inflection points.
-- **Chart inventory:** 38 total charts across 4 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/intersection/`, `charts/x402/`.
+- **Chart inventory:** 49 total charts across 4 domains — see Charts section above for full listing. Charts organized in `charts/agent-economy/`, `charts/fintech/`, `charts/intersection/`, `charts/x402/`.
 - **Generator scripts** in `scripts/` — all run with `uv run python scripts/<script>.py`
 
 ### x402 Buyer-Seller Dynamics & Value Accrual Insights

@@ -30,6 +30,7 @@ CHART_OUT = ROOT / "charts" / "fintech"
 DATA_OUT = ROOT / "data"
 CHART_OUT.mkdir(parents=True, exist_ok=True)
 DATA_OUT.mkdir(parents=True, exist_ok=True)
+LAST_VERIFIED_UTC = "2026-02-09T18:41:00Z"
 
 # Ensure project root is importable when script runs from /scripts.
 if str(ROOT) not in sys.path:
@@ -120,6 +121,25 @@ def _stage_split(category: str, year: int) -> dict[str, float]:
     adjusted = {stage: base_split[stage] * multipliers[stage] for stage in STAGES}
     norm = sum(adjusted.values())
     return {stage: adjusted[stage] / norm for stage in STAGES}
+
+
+def _with_metadata(
+    df: pd.DataFrame,
+    dataset_name: str,
+    notes: str,
+    confidence: str = "medium",
+    status: str = "supported",
+) -> pd.DataFrame:
+    out = df.copy()
+    out["source_id"] = "fintech_funding_stage_model_v1"
+    out["source_url"] = "data/fintech_funding_data.py"
+    out["source_capture_method"] = "modeled_stage_split_from_category_maturity_and_cycle"
+    out["last_verified_utc"] = LAST_VERIFIED_UTC
+    out["confidence"] = confidence
+    out["status"] = status
+    out["dataset_name"] = dataset_name
+    out["notes"] = notes
+    return out
 
 
 def build_stage_dataframe() -> pd.DataFrame:
@@ -389,7 +409,12 @@ def chart_stage_mix_latest_year(df: pd.DataFrame, year: int = 2025) -> None:
 def export_csvs(df: pd.DataFrame) -> None:
     """Export detailed and summary stage datasets."""
     full_out = DATA_OUT / "fintech_funding_stage_year_category_estimated.csv"
-    df.to_csv(full_out, index=False)
+    full_with_meta = _with_metadata(
+        df,
+        dataset_name="fintech_funding_stage_year_category_estimated",
+        notes="Stage values are modeled estimates derived from category maturity and year-cycle multipliers.",
+    )
+    full_with_meta.to_csv(full_out, index=False)
     print(f"Saved: {full_out}")
 
     wide = (
@@ -410,7 +435,12 @@ def export_csvs(df: pd.DataFrame) -> None:
     )
     wide = wide.sort_values(["year", "category"])
     wide_out = DATA_OUT / "fintech_stage_breakdown_by_year_category_wide_estimated.csv"
-    wide.to_csv(wide_out, index=False)
+    wide_with_meta = _with_metadata(
+        wide,
+        dataset_name="fintech_stage_breakdown_by_year_category_wide_estimated",
+        notes="Wide table reshaping of modeled stage estimates by year/category.",
+    )
+    wide_with_meta.to_csv(wide_out, index=False)
     print(f"Saved: {wide_out}")
 
     stage_totals = (
@@ -419,7 +449,12 @@ def export_csvs(df: pd.DataFrame) -> None:
         .sort_values(["year", "stage"])
     )
     stage_totals_out = DATA_OUT / "fintech_stage_totals_by_year_estimated.csv"
-    stage_totals.to_csv(stage_totals_out, index=False)
+    stage_totals_with_meta = _with_metadata(
+        stage_totals,
+        dataset_name="fintech_stage_totals_by_year_estimated",
+        notes="Year-stage aggregate from modeled category-level stage distributions.",
+    )
+    stage_totals_with_meta.to_csv(stage_totals_out, index=False)
     print(f"Saved: {stage_totals_out}")
 
     maturity = (
@@ -440,7 +475,12 @@ def export_csvs(df: pd.DataFrame) -> None:
     )
     maturity = maturity.sort_values(["category", "year"])
     maturity_out = DATA_OUT / "fintech_category_maturity_late_stage_share_estimated.csv"
-    maturity.to_csv(maturity_out, index=False)
+    maturity_with_meta = _with_metadata(
+        maturity,
+        dataset_name="fintech_category_maturity_late_stage_share_estimated",
+        notes="Category maturity proxy derived from modeled late+growth share.",
+    )
+    maturity_with_meta.to_csv(maturity_out, index=False)
     print(f"Saved: {maturity_out}")
 
 

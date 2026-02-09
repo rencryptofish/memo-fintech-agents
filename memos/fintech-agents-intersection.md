@@ -18,7 +18,7 @@ The convergence of fintech and AI agents represents what may be the most transfo
 
 Four major payment protocols (x402, ACP, AP2, TAP) launched within months of each other in 2025, backed by Coinbase, Stripe/OpenAI, Google, and Visa respectively. The agentic commerce market is projected to influence **$1T+ in e-commerce spending** near-term, with McKinsey estimating the global agentic commerce opportunity at **$3-5 trillion by 2030**. a16z projects AI agents could drive **$30 trillion in purchases by 2030**.
 
-The critical insight: **we are at the "Stripe 2010" moment for agentic finance**. The infrastructure being built today -- agent wallets, payment protocols, identity systems, compliance frameworks -- will define the next decade of financial services, just as Stripe's payment APIs defined the last decade of internet commerce.
+The critical insight: **we may be at a "Stripe 2010"-like moment for agentic finance**. The infrastructure being built today -- agent wallets, payment protocols, identity systems, compliance frameworks -- is likely to shape much of the next decade of financial services, just as Stripe's payment APIs shaped much of the last decade of internet commerce.
 
 ## Key Charts
 
@@ -71,7 +71,7 @@ The agentic payments landscape crystallized in 2025 with four complementary prot
 
 | Protocol | Production Status | Transaction Volume | Ecosystem Partners |
 |----------|------------------|-------------------|-------------------|
-| **x402** | Live (V2 Dec 2025) | 157.6M txns, $600M+ volume | Coinbase, Cloudflare, Google, 10+ chains |
+| **x402** | Live (V2 Dec 2025) | 75.41M txns / $24.24M volume (homepage counters, Feb 9, 2026); legacy 157.6M / $600M+ claims remain low-confidence | Coinbase, Cloudflare, Google, 10+ chains |
 | **ACP** | Live in ChatGPT | Not disclosed | Stripe, OpenAI, Salesforce, Shopify, BigCommerce, PwC; retailers URBN, Etsy, Coach |
 | **AP2** | Early adoption | Not disclosed | 60+ partners: Mastercard, Amex, PayPal, Adyen, Worldpay, Salesforce, Intuit |
 | **TAP** | Pilot stage | Hundreds of transactions | 100+ partners; 30+ building in sandbox; 20+ agent integrations |
@@ -214,7 +214,7 @@ DeFAI is **high-upside, high-risk**. The infrastructure plays (Almanak, CoW Prot
 Agent-to-agent (A2A) commerce -- where AI agents autonomously discover, negotiate with, and pay each other -- is the most futuristic but also the most infrastructure-dependent segment.
 
 **What exists today:**
-- x402 enables stateless, HTTP-native payments between agents (157.6M cumulative transactions)
+- x402 enables stateless, HTTP-native payments between agents (75.41M transactions on current homepage counter; higher legacy claims remain unreconciled)
 - Google's A2A protocol enables agent-to-agent discovery and communication
 - Fluora's MonetizedMCP marketplace enables agents to discover and purchase services
 - PayAI facilitates agent payments as the largest third-party x402 facilitator
@@ -343,7 +343,7 @@ The agentic finance ecosystem is at an analogous moment. Agent payments are too 
 
 | Company | "Stripe Moment" Thesis | Strength | Weakness |
 |---------|----------------------|----------|----------|
-| **Coinbase (x402 + AgentKit + CDP)** | Already has the protocol (x402), the wallet infra (AgentKit), and institutional backing (Cloudflare, Google). Could become the default payments backbone for agent-to-agent commerce. | Largest ecosystem; live at scale (157.6M txns); Google/Visa integration. | Crypto-only (requires stablecoin wallet); centralization risk (most traffic through Coinbase facilitator); regulatory gaps. |
+| **Coinbase (x402 + AgentKit + CDP)** | Already has the protocol (x402), the wallet infra (AgentKit), and institutional backing (Cloudflare, Google). Has a strong path to becoming a major payments backbone for agent-to-agent commerce. | Largest ecosystem; live production counters (75.41M txns homepage snapshot, Feb 9, 2026); Google/Visa integration. | Crypto-only (requires stablecoin wallet); centralization risk (most traffic through Coinbase facilitator); regulatory gaps. |
 | **Stripe (ACP + Agentic Commerce Suite)** | Extending its existing dominance in internet payments to agent commerce. ACP in production inside ChatGPT. Massive merchant base. | Already the payments backbone of the internet; existing merchant relationships; production deployment; fiat-native. | Fiat-only (higher costs, slower settlement); not designed for micropayments or A2A; subscription model, not usage-based. |
 | **Google (AP2 + UCP + A2A)** | Protocol layer play: AP2 for payments, UCP for commerce, A2A for communication. Rail-agnostic -- bridges x402 and fiat. | 60+ partners; rail-agnostic; bridges crypto and fiat; massive distribution. | Not a payments company; protocols without implementation; depends on others for execution. |
 | **Visa (TAP + Intelligent Commerce)** | Trust and identity layer for agent commerce. 100+ partners. Millions of merchants already on Visa network. | Largest payment network globally; trust/brand; existing merchant relationships. | Traditional infrastructure (slow, expensive); not built for micropayments; agent identity only, not payments execution. |
@@ -363,13 +363,13 @@ Layer 1: Settlement (x402 for crypto, Stripe/Visa/Mastercard for fiat)
 Layer 0: Wallets & Financial Identity (Coinbase AgentKit, Crossmint, Catena)
 ```
 
-**The most likely outcome:** Coinbase/x402 becomes the default settlement layer for agent-to-agent micropayments (crypto), while Stripe/ACP becomes the default for agent-to-merchant consumer commerce (fiat). Google's protocols bridge the two. Visa/Mastercard provide the trust and identity layer. And a new company -- possibly Kite, Catena, or one not yet founded -- builds the unified "agent financial services platform" that spans all of these.
+**The most likely outcome:** crypto rails (including x402-style implementations) capture a meaningful share of agent-to-agent micropayments, while Stripe/ACP-class fiat rails remain strong for agent-to-merchant consumer commerce. Google's protocols likely bridge both. Visa/Mastercard are well-positioned in trust and identity. A unified cross-rail "agent financial services platform" may emerge from incumbents, startups, or both.
 
 ### The Investable Wedge
 
 The "Stripe moment" company will likely emerge from one of these wedges:
 
-1. **The agent wallet company** that becomes the default way agents hold and manage money (Crossmint is closest today)
+1. **The agent wallet company** that becomes a leading default way agents hold and manage money (Crossmint is among the closest today)
 2. **The agent identity company** that becomes the trust layer for all agent transactions (Kite and Catena are racing)
 3. **The agent compliance company** that makes it easy for any agent to be financially compliant (UQPAY, Catena)
 4. **The agent payment orchestrator** that abstracts across all protocols and rails (nobody has built this yet -- **this is the biggest whitespace**)
@@ -479,13 +479,13 @@ Conclusion: crypto rails are likely to win specific lanes (API micropayments, cr
 
 ## Key Takeaways
 
-1. **The infrastructure window is NOW.** Just as Stripe (2010) and Plaid (2012) were founded in the "infrastructure before applications" phase of the mobile era, the companies building agent financial infrastructure in 2025-2026 will define the next decade. The founding window closes as protocols mature and incumbents entrench.
+1. **The infrastructure window appears open now.** Just as Stripe (2010) and Plaid (2012) were founded in the "infrastructure before applications" phase of the mobile era, companies building agent financial infrastructure in 2025-2026 are likely to influence the next decade. The window can narrow as protocols mature and incumbents entrench.
 
 2. **Follow the protocol stack, not individual companies.** Value will accrue at multiple layers (settlement, identity, orchestration, commerce). The winning strategy is identifying which layers are most defensible and investing across the stack.
 
 3. **Regulation is the moat.** Companies solving compliance for agent finance (Catena Labs, UQPAY, Kite) will build the deepest moats. History shows that financial regulation, while painful to acquire, creates 10x barriers to competition.
 
-4. **Crypto and fiat will coexist.** The market is not "x402 vs. Stripe." Agent-to-agent micropayments will settle on crypto rails (x402/stablecoins) due to economics ($0.001 fees vs. $0.30+ for cards). Agent-to-merchant consumer commerce will settle on fiat rails (Stripe/Visa) due to merchant adoption. The bridge between these two worlds is a massive opportunity.
+4. **Crypto and fiat will coexist.** The market is not "x402 vs. Stripe." Agent-to-agent micropayments are likely to over-index to crypto rails (x402/stablecoins) due to economics ($0.001 fees vs. $0.30+ for cards). Agent-to-merchant consumer commerce is likely to remain more fiat-heavy (Stripe/Visa) due to merchant adoption. The bridge between these two worlds is a massive opportunity.
 
 5. **The biggest risk is timing, not direction.** The direction is clear -- agents will autonomously transact, and they need financial infrastructure. The question is whether the market develops in 2026-2027 (early but large outcome) or 2028-2030 (later but potentially larger). Capital-efficient companies that can survive either timeline are the best investments.
 

@@ -57,11 +57,13 @@ Value is most likely to accrue to control points, not commodity pipes.
 
 Use these canonical files for committee updates before changing headline metrics:
 
-1. `../data/x402_kpi_canonical.csv` — reconciled x402 counters with confidence and conflict tags.
-2. `../data/x402_organic_share_weekly.csv` — organic/speculative split baseline and method linkage.
-3. `../research/rails-metrics-pack-2026Q1.md` — ACH/RTP/FedNow comparables used in rail migration framing.
-4. `../research/mna-verification-ledger.md` — official vs report-level deal status.
-5. `../research/memo-citation-backfill-matrix.csv` — claim-level confidence and refresh tracking.
+1. `../research/canonical-underwriting-assumptions-2026Q1.md` — single assumptions layer for memo-level requotes.
+2. `../data/x402_kpi_canonical.csv` — reconciled x402 counters with confidence and conflict tags.
+3. `../data/x402_organic_share_weekly.csv` — organic/speculative split baseline and method linkage.
+4. `../research/rails-metrics-pack-2026Q1.md` — ACH/RTP/FedNow comparables used in rail migration framing.
+5. `../research/mna-verification-ledger.md` — official vs report-level deal status.
+6. `../research/memo-citation-backfill-matrix.csv` — claim-level confidence and refresh tracking.
+7. `../data/investment_opportunity_conviction_overlay_2026Q1.csv` — auditable Top-15 score overlay used for tier mapping.
 
 ## Base-Rate Evidence (Added Feb 9, 2026)
 
@@ -117,6 +119,19 @@ Priority buckets:
 1. Tier 1: Identity/compliance infrastructure and orchestration control-plane plays.
 2. Tier 2: Enterprise agent-finance applications with proprietary data/workflow lock-in.
 3. Tier 3: Discovery/marketplace bets only where early network effects are demonstrated.
+
+## Portfolio Construction Parameters (Execution Layer)
+
+1. Theme sleeve size: allocate **8-12%** of next-12-month new deployment to this theme; hard cap at **12%** without IC re-approval.
+2. Tranche release plan: deploy sleeve in **30% / 40% / 30%** stages.
+3. Tranche-2 gate: release only after at least **3 of 5** milestones are met, including either `MS-009` (organic payment-quality improvement) or equivalent canonical proof in `../research/milestone-status-tracker.csv`.
+4. Tranche-3 gate: release only after at least **4 of 5** milestones are met, plus evidence of repeatable paid production adoption in at least two target companies.
+5. Initial position sizing by tier (as % of sleeve): Tier 1 **12-18%**, Tier 2 **6-10%**, Tier 3 **2-5%**.
+6. Maximum single-name exposure cap (as % of sleeve): Tier 1 **22%**, Tier 2 **15%**, Tier 3 **8%**.
+7. Reserve policy: keep **35-45%** of sleeve uncalled for follow-ons tied to milestone and underwriting upgrades.
+8. Concentration guardrail: max **35%** of sleeve linked to any single protocol ecosystem (for example one of x402/ACP/AP2/TAP rails).
+9. Rumor-only deal guardrail: **0%** deployment based solely on unconfirmed acquisition narratives.
+10. Scoring gate: prefer new positions with composite conviction `>= 67` from `../data/investment_opportunity_conviction_overlay_2026Q1.csv`; require IC exception memo for scores below that threshold.
 
 ## Where Not To Invest
 

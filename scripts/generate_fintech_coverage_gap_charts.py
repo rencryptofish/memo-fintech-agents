@@ -21,6 +21,28 @@ CHART_DIR = ROOT / "charts" / "fintech"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 CHART_DIR.mkdir(parents=True, exist_ok=True)
 
+LAST_VERIFIED_UTC = "2026-02-09T18:41:00Z"
+
+
+def with_metadata(
+    df: pd.DataFrame,
+    source_id: str,
+    source_url: str,
+    source_capture_method: str,
+    confidence: str = "medium",
+    status: str = "supported",
+    notes: str = "",
+) -> pd.DataFrame:
+    out = df.copy()
+    out["source_id"] = source_id
+    out["source_url"] = source_url
+    out["source_capture_method"] = source_capture_method
+    out["last_verified_utc"] = LAST_VERIFIED_UTC
+    out["confidence"] = confidence
+    out["status"] = status
+    out["notes"] = notes
+    return out
+
 
 def build_geography_data() -> pd.DataFrame:
     """Regional/hub metrics that were previously only in prose tables."""
@@ -62,7 +84,9 @@ def chart_geography_dashboard(df: pd.DataFrame) -> None:
 
     # Panel 2: India growth.
     india = df[df["metric_group"] == "india_market_size"].copy()
-    years = np.array([2024, 2029])
+    india["year"] = india["label"].str.extract(r"(\d{4})").astype(int)
+    india = india.sort_values("year")
+    years = india["year"].to_numpy()
     vals = india["value"].to_numpy()
     ax = axes[1]
     ax.plot(years, vals, color="#0EA5E9", linewidth=3, marker="o", markersize=7)
@@ -80,10 +104,15 @@ def chart_geography_dashboard(df: pd.DataFrame) -> None:
     ax.text(2026.5, 410, f"Implied CAGR: {cagr * 100:.2f}%", ha="center", fontsize=9, color="#0C4A6E")
 
     # Panel 3: Africa hub activity vs funding.
-    hub_rows = [
-        ("Lagos", 503, 6.03),
-        ("Nairobi", 210, 4.64),
-    ]
+    hubs = df[df["metric_group"] == "africa_hubs"].copy()
+    firms = hubs[hubs["unit"] == "active_firms"].set_index("label")["value"].to_dict()
+    funding = hubs[hubs["unit"] == "usd_b"].copy()
+    funding["hub"] = funding["label"].str.replace(" funding", "", regex=False)
+    funding_map = funding.set_index("hub")["value"].to_dict()
+
+    hub_rows = []
+    for hub in sorted(set(firms.keys()) & set(funding_map.keys())):
+        hub_rows.append((hub, firms[hub], funding_map[hub]))
     ax = axes[2]
     for hub, firms, funding in hub_rows:
         ax.scatter(firms, funding, s=150, alpha=0.9, edgecolor="white", linewidth=1.1, label=hub)
@@ -183,16 +212,16 @@ def build_value_creation_vs_destruction_data() -> pd.DataFrame:
     """Comparable case metrics for winners vs failure events."""
     rows = [
         # Value creation proxies (valuation/status snapshots, USD billions).
-        {"side": "value_creation", "label": "Stripe valuation", "amount_b": 106.7},
-        {"side": "value_creation", "label": "Revolut valuation", "amount_b": 75.0},
-        {"side": "value_creation", "label": "Nubank 2024 revenue", "amount_b": 11.5},
-        {"side": "value_creation", "label": "Chime IPO valuation", "amount_b": 18.4},
-        {"side": "value_creation", "label": "Plaid valuation", "amount_b": 6.1},
+        {"side": "value_creation", "label": "Stripe valuation", "amount_b": 106.7, "metric_type": "valuation"},
+        {"side": "value_creation", "label": "Revolut valuation", "amount_b": 75.0, "metric_type": "valuation"},
+        {"side": "value_creation", "label": "Nubank 2024 revenue", "amount_b": 11.5, "metric_type": "revenue"},
+        {"side": "value_creation", "label": "Chime IPO valuation", "amount_b": 18.4, "metric_type": "valuation"},
+        {"side": "value_creation", "label": "Plaid valuation", "amount_b": 6.1, "metric_type": "valuation"},
         # Value destruction proxies (capital/value wiped).
-        {"side": "value_destruction", "label": "Klarna valuation drop", "amount_b": 45.6 - 6.7},
-        {"side": "value_destruction", "label": "FTX valuation collapse", "amount_b": 32.0},
-        {"side": "value_destruction", "label": "Wirecard fraud hole", "amount_b": 1.9},
-        {"side": "value_destruction", "label": "Synapse funds affected", "amount_b": 0.265},
+        {"side": "value_destruction", "label": "Klarna valuation drop", "amount_b": 45.6 - 6.7, "metric_type": "valuation_drop"},
+        {"side": "value_destruction", "label": "FTX valuation collapse", "amount_b": 32.0, "metric_type": "valuation_drop"},
+        {"side": "value_destruction", "label": "Wirecard fraud hole", "amount_b": 1.9, "metric_type": "fraud_gap"},
+        {"side": "value_destruction", "label": "Synapse funds affected", "amount_b": 0.265, "metric_type": "customer_funds_impacted"},
     ]
     return pd.DataFrame(rows)
 
@@ -252,15 +281,39 @@ def write_csv(df: pd.DataFrame, path: Path) -> None:
 if __name__ == "__main__":
     print("Generating fintech coverage-gap datasets and charts...")
 
-    geo = build_geography_data()
+    geo = with_metadata(
+        build_geography_data(),
+        source_id="fintech_market_analysis_geography",
+        source_url="memos/fintech-market-analysis.md",
+        source_capture_method="manual_extraction_from_memo_tables",
+        confidence="medium",
+        status="supported",
+        notes="Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.",
+    )
     write_csv(geo, DATA_DIR / "fintech_geographic_opportunity_metrics.csv")
     chart_geography_dashboard(geo)
 
-    risk = build_failure_risk_data()
+    risk = with_metadata(
+        build_failure_risk_data(),
+        source_id="fintech_market_analysis_failure_patterns",
+        source_url="memos/fintech-market-analysis.md",
+        source_capture_method="manual_extraction_from_memo_bullets",
+        confidence="medium",
+        status="supported",
+        notes="Failure/risk KPIs derived from memo case-study and failure-pattern sections.",
+    )
     write_csv(risk, DATA_DIR / "fintech_failure_risk_kpis.csv")
     chart_failure_risk_dashboard(risk)
 
-    cases = build_value_creation_vs_destruction_data()
+    cases = with_metadata(
+        build_value_creation_vs_destruction_data(),
+        source_id="fintech_market_analysis_case_outcomes",
+        source_url="memos/fintech-market-analysis.md",
+        source_capture_method="manual_extraction_from_case_tables",
+        confidence="medium",
+        status="supported",
+        notes="Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics.",
+    )
     write_csv(cases, DATA_DIR / "fintech_value_creation_vs_destruction_cases.csv")
     chart_value_creation_vs_destruction(cases)
 

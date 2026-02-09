@@ -14,7 +14,7 @@
 
 ## Executive Summary
 
-x402 is an open protocol with zero protocol-level fees. This means value capture is entirely a function of which **layers above the protocol** can sustain pricing power. After analyzing raw adoption data, mapping the full value chain, and studying 9 historical analogies, we identify **three layers with durable value capture potential** and **three that will commoditize**. The single most important insight: **Coinbase has architected a vertical stack where they capture value at 4+ layers simultaneously** — facilitator, chain sequencer, wallet, and USDC float — making them the primary beneficiary regardless of which layer "wins." Current counter reconciliation now requires confidence-weighting: live homepage counters and legacy peak claims diverge and should not be treated as equivalent evidence quality.
+x402 is an open protocol with zero protocol-level fees. This means value capture is entirely a function of which **layers above the protocol** can sustain pricing power. After analyzing raw adoption data, mapping the full value chain, and studying 9 historical analogies, we identify **three layers with durable value capture potential** and **three that will commoditize**. The single most important insight: **Coinbase has architected a vertical stack where they capture value at 4+ layers simultaneously** — facilitator, chain sequencer, wallet, and USDC float — making them one of the most likely beneficiaries across multiple outcomes. Current counter reconciliation now requires confidence-weighting: live homepage counters and legacy peak claims diverge and should not be treated as equivalent evidence quality.
 
 ---
 
@@ -86,13 +86,16 @@ Use the high-confidence canonical rows for base-case underwriting. Treat legacy 
 
 | Metric | Value | Date |
 |--------|-------|------|
-| Unique buyers | ~74,000 | Oct 26, 2025 |
-| Unique sellers | ~1,405 | Oct 26, 2025 |
-| Buyer:seller ratio | 53:1 | — |
+| Unique buyers (snapshot) | ~74,000 | Oct 26, 2025 |
+| Unique sellers (snapshot) | ~1,405 | Oct 26, 2025 |
+| Buyer:seller ratio (snapshot) | 53:1 | Oct 26, 2025 |
+| Homepage buyers counter (cumulative) | 94.06K | Feb 9, 2026 |
+| Homepage sellers counter (cumulative) | 22K | Feb 9, 2026 |
+| Buyer:seller ratio (homepage counters) | ~4.3:1 | Feb 9, 2026 |
 | Average payment size | $0.60-$1.00 | — |
 | 90-day buyer growth | +279.6% | Late Oct 2025 |
 
-**Key observation:** The 53:1 buyer-to-seller ratio reveals an extreme supply-side bottleneck. There are far more agents/clients willing to pay than services accepting payment. This is the classic two-sided marketplace bootstrapping problem — and it tells us where the power currently sits (with sellers/services).
+**Key observation:** The Oct 2025 snapshot (53:1) showed an extreme early supply-side bottleneck. Current cumulative homepage counters (~4.3:1) suggest the bottleneck may be easing but not resolved.
 
 ---
 
@@ -188,7 +191,7 @@ For each layer of the x402 stack, we evaluate:
 | Regulatory moat | None |
 | Data advantage | None |
 | Bottleneck control | Spec governance (soft power only) |
-| Power law | Winner-take-all for the standard itself |
+| Power law | Winner-take-most for the standard family |
 
 **Value capture: $0.** By design. The Foundation captures influence, not revenue. This is correct strategy — charging for the protocol would invite forking and slow adoption. The value of controlling the standard is **optionality** and **ecosystem positioning**, not direct revenue.
 
@@ -263,7 +266,7 @@ At current volumes, facilitator revenue is trivially small. Even at 500x growth,
 
 **The "fat application" argument:** In the x402 stack, the application layer resembles Web2 more than crypto. Apps with proprietary data, unique capabilities, or strong developer ecosystems will capture the lion's share of economic value. The protocol and infrastructure layers are cost centers, not profit centers.
 
-**Key data point:** The 53:1 buyer-to-seller ratio means sellers (apps/services) have immense pricing power today. There is far more demand from agents than supply of x402-enabled services. This imbalance will persist until the ecosystem matures.
+**Key data point:** The early 53:1 snapshot and current ~4.3:1 cumulative ratio both indicate supply constraints versus demand. Seller pricing power is likely elevated, though less extreme than the early snapshot implied.
 
 **Verdict: Strongest value capture layer for differentiated services. The app layer is where most of the money will be, but only for services with proprietary data or capabilities. Generic services will face price competition.**
 
@@ -303,7 +306,7 @@ More importantly, **wallet providers own the customer relationship**. The DNS an
 | Bottleneck control | **Very high.** x402 V1 literally cannot function without ERC-3009, which currently means USDC. |
 | Power law | **Winner-take-most.** USDC has ~98.7% share of x402 payment value. |
 
-**Value capture thesis:** Circle is the **invisible monopolist** of the x402 stack. They don't charge per-transaction fees — instead, they earn ~5% APY on the USDC reserves (invested in Treasury bills). Every dollar of USDC sitting in agent wallets, facilitator escrows, and seller accounts earns Circle money.
+**Value capture thesis:** Circle is a **quasi-monopolistic beneficiary in the current stack design**. They don't charge per-transaction fees — instead, they earn ~5% APY on the USDC reserves (invested in Treasury bills). Every dollar of USDC sitting in agent wallets, facilitator escrows, and seller accounts earns Circle money.
 
 **The math:** If the x402 economy reaches $10B in annual volume with an average USDC float of $500M across wallets and escrows, Circle earns ~$25M/year from that float alone. At $100B in volume, the float could be $5B, generating $250M/year. This scales linearly with the size of the x402 economy, costs Circle essentially nothing to service, and cannot be competed away as long as USDC dominates.
 
@@ -325,7 +328,7 @@ More importantly, **wallet providers own the customer relationship**. The DNS an
 | Bottleneck control | **Will become mandatory.** As volumes scale, regulators will require KYC/AML for x402 transactions. |
 | Power law | **Strong.** Compliance is winner-take-most due to trust and audit requirements. |
 
-**Value capture thesis:** Compliance is the **most undervalued layer** today. UQPAY just launched (Feb 8, 2026). There is essentially no competition. As x402 volumes grow and regulators notice (and they will — autonomous AI agents moving hundreds of millions in stablecoins without KYC will attract attention), compliance will become a **mandatory chokepoint**.
+**Value capture thesis:** Compliance is the **most undervalued layer** today. UQPAY just launched (Feb 8, 2026). There is essentially no competition. As x402 volumes grow and regulators pay closer attention, compliance is likely to become a mandatory control point.
 
 The SSL/TLS analogy inverts here: Let's Encrypt destroyed paid CAs because certificates were a commodity. But compliance is NOT a commodity — it's jurisdiction-specific, requires legal expertise, and creates real switching costs (audit history, regulatory relationships). The compliance layer is **structurally resistant to commoditization**.
 
@@ -342,10 +345,10 @@ The SSL/TLS analogy inverts here: Let's Encrypt destroyed paid CAs because certi
 | Commoditization | **Moderate.** Basic indexing is easy. Curation, quality scoring, and reputation are hard. |
 | Regulatory moat | **Low.** |
 | Data advantage | **Very high.** The marketplace sees all search queries — what agents want but can't find. This is the most valuable signal in the ecosystem. |
-| Bottleneck control | **Potentially high.** If one marketplace becomes the default discovery layer, it controls agent-to-service routing. |
-| Power law | **Winner-take-all.** Marketplaces are the strongest network-effect business. Google won search. One x402 marketplace will likely dominate. |
+| Bottleneck control | **Potentially high.** If one marketplace becomes a leading discovery layer, it controls agent-to-service routing. |
+| Power law | **Winner-take-most.** Marketplaces are strong network-effect businesses; concentration is likely but not guaranteed to be single-winner. |
 
-**Value capture thesis:** The discovery layer is **the biggest open opportunity** in the x402 stack. Today, x402 Bazaar is a free, open directory. Fluora is early. There is no dominant "Google of x402 APIs." Whoever builds the marketplace that agents default to for finding and evaluating x402-enabled services will capture enormous value through:
+**Value capture thesis:** The discovery layer is **the biggest open opportunity** in the x402 stack. Today, x402 Bazaar is a free, open directory. Fluora is early. There is no dominant "Google of x402 APIs." A marketplace that becomes a leading default for finding and evaluating x402-enabled services could capture meaningful value through:
 
 1. **Routing fees** (taking a cut of each transaction they facilitate)
 2. **Data monetization** (knowing what agents search for before services exist)
@@ -354,7 +357,7 @@ The SSL/TLS analogy inverts here: Let's Encrypt destroyed paid CAs because certi
 
 The search query data alone — "what are agents trying to buy that nobody sells yet?" — is extraordinarily valuable market intelligence.
 
-**Verdict: Biggest greenfield opportunity. Winner-take-all dynamics. The marketplace that becomes the default agent discovery layer could be the most valuable company in the x402 ecosystem.**
+**Verdict: Biggest greenfield opportunity. Winner-take-most dynamics are plausible. A marketplace that becomes a leading discovery layer could become one of the most valuable companies in the x402 ecosystem.**
 
 ---
 
@@ -366,7 +369,7 @@ The search query data alone — "what are agents trying to buy that nobody sells
 |------|-------|-------------|------------|----------------|----------|
 | 1 | **Stablecoin Issuer (Circle)** | Float yield | Very high | Scales with total USDC supply | USDC loses share to USDT/others |
 | 2 | **Application Layer** | 88% of payment | High (for differentiated) | Scales with agent economy | Commoditization of generic services |
-| 3 | **Discovery/Marketplace** | ~$0 today | Very high once established | Winner-take-all | Hasn't been built yet |
+| 3 | **Discovery/Marketplace** | ~$0 today | Very high once established | Winner-take-most | Hasn't been built yet |
 | 4 | **Compliance** | ~$0 today | Very high | Mandatory as regulation arrives | Regulation timeline uncertain |
 | 5 | **Chain/Sequencer (Base)** | ~$0.001/tx | High | Scales with tx count | Multi-chain fragmentation |
 | 6 | **Wallet/Identity** | $0-0.01/sig | Moderate-high | Owns agent relationship | Coinbase bundling squeezes margins |
@@ -395,22 +398,22 @@ This vertical integration is Coinbase's true strategic moat. Even if the facilit
 ### The Three Investable Theses
 
 **Thesis 1: "Build the marketplace" (Discovery layer)**
-- Winner-take-all opportunity
+- Winner-take-most opportunity
 - No dominant player exists
-- Whoever becomes the default agent discovery mechanism captures routing fees + data
+- A provider that becomes a leading default discovery mechanism could capture routing fees + data
 - Analogous to early Google (organize the world's x402 APIs)
 - Risk: the x402 ecosystem may stay too small to support a standalone marketplace business
 
 **Thesis 2: "Be the compliance layer" (UQPAY model)**
 - Regulatory moats create durable pricing power
 - Only one entrant (UQPAY, launched yesterday)
-- As volumes scale, compliance becomes mandatory — this is a "when not if" opportunity
+- As volumes scale, compliance is likely to become mandatory — this is a high-probability opportunity
 - Analogous to early Stripe Atlas / compliance infrastructure
 - Risk: regulation could kill x402 entirely rather than creating a compliance opportunity
 
 **Thesis 3: "Build differentiated applications" (Service layer)**
 - 88% of payment value goes to the seller
-- 53:1 buyer-to-seller ratio = massive seller pricing power today
+- Early 53:1 snapshot and current ~4.3:1 cumulative ratio both point to meaningful seller-side pricing power
 - Proprietary data services have the strongest moats
 - This is the "build a business on x402" thesis rather than "invest in x402 infrastructure"
 - Risk: requires a real product, not just x402 integration
@@ -444,7 +447,7 @@ This vertical integration is Coinbase's true strategic moat. Even if the facilit
 
 ### Long-term (2029+)
 
-- x402 becomes the default standard for machine-to-machine payments (analogous to HTTPS for security)
+- x402 becomes a leading standard for machine-to-machine payments (analogous to HTTPS for security)
 - The protocol layer remains free; value concentrates in: applications, compliance, discovery
 - Total x402 volume reaches $100B+/year if agent economy forecasts are correct
 - Circle's USDC float yield from x402-adjacent balances alone generates $100M+/year
@@ -492,7 +495,7 @@ $100M → $12B in 2 weeks is pure memecoin mania, not protocol adoption. The rec
 ![Developer Adoption Funnel](../charts/x402/x402_07_developer_adoption.png)
 
 ### Chart 8: Buyer/Seller Ratio — The supply-side opportunity
-The proportional circles make it impossible to miss: 74,000 buyers dwarfing 1,405 sellers. This 53:1 ratio is the single most actionable data point in the entire set. It means: **(a)** sellers have extreme pricing power today, **(b)** the biggest opportunity is building services that accept x402, not building infrastructure, and **(c)** the ecosystem won't grow until the supply side catches up.
+The proportional circles represent a point-in-time snapshot (Oct 26, 2025): 74,000 buyers versus 1,405 sellers (53:1). Later homepage counters (~94K buyers, 22K sellers; ~4.3:1) indicate some normalization, but supply-side depth remains a key constraint. Implication: **(a)** seller-side pricing power has been elevated, **(b)** building differentiated services that accept x402 remains attractive, and **(c)** ecosystem growth still depends on expanding service supply.
 
 ![Buyer vs Seller Ratio](../charts/x402/x402_08_buyer_seller_ratio.png)
 

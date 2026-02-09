@@ -1,9 +1,9 @@
-kpi,value_pct
-Fintech startups failing from poor unit economics,67.0
-Startups facing serious regulatory challenges,73.0
-Cross-border expansions failing on compliance,58.0
-Failures with banking partnership issues,42.0
-Digital banks reaching breakeven,5.0
-Challenger banks profitable (92 of 650),14.153846153846153
-BNPL users late on payments (2025),41.0
-Average value destruction in fintech SPACs,67.0
+kpi,value_pct,source_id,source_url,source_capture_method,last_verified_utc,confidence,status,notes
+Fintech startups failing from poor unit economics,67.0,fintech_market_analysis_failure_patterns,memos/fintech-market-analysis.md,manual_extraction_from_memo_bullets,2026-02-09T18:41:00Z,medium,supported,Failure/risk KPIs derived from memo case-study and failure-pattern sections.
+Startups facing serious regulatory challenges,73.0,fintech_market_analysis_failure_patterns,memos/fintech-market-analysis.md,manual_extraction_from_memo_bullets,2026-02-09T18:41:00Z,medium,supported,Failure/risk KPIs derived from memo case-study and failure-pattern sections.
+Cross-border expansions failing on compliance,58.0,fintech_market_analysis_failure_patterns,memos/fintech-market-analysis.md,manual_extraction_from_memo_bullets,2026-02-09T18:41:00Z,medium,supported,Failure/risk KPIs derived from memo case-study and failure-pattern sections.
+Failures with banking partnership issues,42.0,fintech_market_analysis_failure_patterns,memos/fintech-market-analysis.md,manual_extraction_from_memo_bullets,2026-02-09T18:41:00Z,medium,supported,Failure/risk KPIs derived from memo case-study and failure-pattern sections.
+Digital banks reaching breakeven,5.0,fintech_market_analysis_failure_patterns,memos/fintech-market-analysis.md,manual_extraction_from_memo_bullets,2026-02-09T18:41:00Z,medium,supported,Failure/risk KPIs derived from memo case-study and failure-pattern sections.
+Challenger banks profitable (92 of 650),14.153846153846153,fintech_market_analysis_failure_patterns,memos/fintech-market-analysis.md,manual_extraction_from_memo_bullets,2026-02-09T18:41:00Z,medium,supported,Failure/risk KPIs derived from memo case-study and failure-pattern sections.
+BNPL users late on payments (2025),41.0,fintech_market_analysis_failure_patterns,memos/fintech-market-analysis.md,manual_extraction_from_memo_bullets,2026-02-09T18:41:00Z,medium,supported,Failure/risk KPIs derived from memo case-study and failure-pattern sections.
+Average value destruction in fintech SPACs,67.0,fintech_market_analysis_failure_patterns,memos/fintech-market-analysis.md,manual_extraction_from_memo_bullets,2026-02-09T18:41:00Z,medium,supported,Failure/risk KPIs derived from memo case-study and failure-pattern sections.

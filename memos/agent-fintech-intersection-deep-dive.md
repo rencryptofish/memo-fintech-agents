@@ -23,7 +23,7 @@ The intersection of AI agents and fintech is producing a new economic layer wher
 2. **6 major protocols** launched across 2025 to early 2026 (x402, ACP, AP2, TAP, Agent Pay in 2025; UCP in Jan 2026), backed by every major payment network
 3. **The biggest whitespace is cross-protocol payment orchestration** (Layer 7) — $0 in dedicated startup funding against a $10B+ TAM
 4. **Business models follow a clear hierarchy:** Identity/compliance SaaS (70-80% gross margin) > float/yield (95% margin, scales with balances) > marketplace take rates (60% operating margin) > transaction processing (commoditizing)
-5. **Traction is real but early:** x402 has 157.6M cumulative transactions but only ~$24M organic volume (4% of total); Stripe ACP is live in ChatGPT; Mastercard Agent Pay covers all US cardholders; only 33% of consumers would let AI agents make purchases autonomously
+5. **Traction is real but early:** x402 homepage counters show 75.41M transactions and $24.24M volume (Feb 9, 2026), while higher legacy claims remain low-confidence until reconciled; Stripe ACP is live in ChatGPT; Mastercard Agent Pay covers all US cardholders; only 33% of consumers would let AI agents make purchases autonomously
 
 ## Key Charts
 
@@ -80,7 +80,7 @@ Every agent financial transaction traverses an 8-stage lifecycle. Understanding 
 | **Agent discovers services** | Fluora (MonetizedMCP), x402 Bazaar, Google UCP (Shopify/Walmart) | Funded marketplace with discovery + payments + reputation | Very High |
 | **Agent negotiates terms** | Google UCP Phase 2 roadmap (late 2026) | Dynamic pricing protocols; machine-readable SLAs | High |
 | **Transaction authorized** | Google AP2 (60+ partners), Mastercard Web Bot Auth (IETF standard) | Cross-protocol policy engine; unified spending controls | High |
-| **Payment settles** | x402 (157.6M txns), Stripe ACP (live in ChatGPT), PayPal Agent Ready (GA early 2026) | Cross-rail optimization (auto-route x402 vs Stripe vs card based on cost/speed) | Very High |
+| **Payment settles** | x402 (75.41M txns homepage counter as of Feb 9, 2026), Stripe ACP (live in ChatGPT), PayPal Agent Ready (GA early 2026) | Cross-rail optimization (auto-route x402 vs Stripe vs card based on cost/speed) | Very High |
 | **Service delivered** | Basic HTTP response delivery | Verified fulfillment; quality scoring; conditional release | Medium |
 | **Audit & dispute** | PayAI building dispute resolution (Q2-Q3 2026), PayPal buyer protection | Agent-native audit trails; automated dispute arbitration; regulatory reporting | High |
 
@@ -195,7 +195,7 @@ Build the "Google of agent services" — a marketplace where agents discover, ev
 
 | Protocol | Stage | Hard Traction | Organic vs Hype | Verdict |
 |----------|-------|--------------|-----------------|---------|
-| **x402** (Coinbase) | Live at scale | 157.6M txns, $600M+ vol, 850K/day steady | **~4% organic** ($24M of $600M). 96% is memecoin/speculative. Organic = pay-per-API volume. | Real protocol, mostly speculative volume. Watch organic growth in H1 2026. |
+| **x402** (Coinbase) | Live at scale | 75.41M txns, $24.24M volume (homepage counters, Feb 9, 2026); legacy 157.6M/$600M+ claims are low-confidence | Organic/share estimates are directional until counter conflicts are fully reconciled. | Real protocol with mixed-confidence traction data. Watch canonical organic growth in H1 2026. |
 | **ACP** (Stripe) | Live in ChatGPT | Undisclosed volume. Merchants: URBN, Etsy, Coach, Shopify (1M+). 10+ AI agent platforms integrated. | **Real B2C commerce.** ChatGPT has 400M+ users. Stripe's existing merchant base = instant supply. | Strongest near-term traction potential. Fiat-native = mainstream adoption path. |
 | **AP2** (Google) | Early adoption | 60+ partners signed. No public volume data. Walmart, Target, Mastercard, Amex on board. | **Standards play, not payments company.** Google provides the protocol; others execute. | Most partnerships but least direct traction data. Depends on ecosystem execution. |
 | **TAP** (Visa) | Pilot stage | 100+ partners, 30+ building in sandbox, 20+ agent integrations. "Hundreds of transactions." | **Serious infrastructure play** but very early in production volume. | Trust layer positioning is smart. TAP doesn't need to process payments — it verifies identities. |
@@ -257,14 +257,14 @@ Build the "Google of agent services" — a marketplace where agents discover, ev
 | **Proxy** | Early | N/A | N/A | Virtual cards per agent with hard spending limits |
 | **Prava** | Early | N/A | N/A | Multi-agent wallet infrastructure |
 
-**Endgame:** Coinbase dominates crypto, Mastercard dominates fiat. Crossmint is the leading independent.
+**Endgame (base case):** Coinbase is well-positioned in crypto, Mastercard is well-positioned in fiat rails, and Crossmint is a leading independent contender.
 
 #### Layer 1: Settlement Rails (~$480M+ in startup funding)
 
 | Company | Stage | Raised | Investors | Position |
 |---------|-------|--------|-----------|----------|
 | **Mesh** | Series C | $200M+ | Dragonfly, Paradigm, Coinbase Ventures | $1B unicorn. Universal crypto payments. AP2 integration. |
-| **BVNK** | Series B | $50M | Various | $750M val. Enterprise stablecoin APIs. Coinbase tried to acquire for $2B. |
+| **BVNK** | Series B | $50M | Various | $750M val. Enterprise stablecoin APIs. Reported Coinbase acquisition exploration (~$2B) remains unconfirmed watchlist data. |
 | **Skyfire** | Seed | $9.5M | Coinbase Ventures, a16z CSX | First pure-play agent payment network. USDC settlement. |
 | **PayAI** | Token | Token-based | Community | Largest third-party x402 facilitator. Building dispute resolution. |
 | **UQPAY** | Early | N/A | N/A | First compliant x402 platform (Feb 2026). |
@@ -272,7 +272,7 @@ Build the "Google of agent services" — a marketplace where agents discover, ev
 | **InFlow** | Early | N/A | N/A | "PayPal for AI agents." Launched Dec 2025. |
 | **Highnote** | Growth | N/A | N/A | Stablecoin settlement via card rails (Visa/Cross River). |
 
-**Endgame:** x402 for A2A micropayments, Stripe for B2C, card networks for traditional. 2-3 settlement layers coexist.
+**Endgame (base case):** x402-style crypto rails likely over-index in A2A micropayments, Stripe-class rails remain strong in B2C, and card networks continue serving traditional flows. A 2-3 rail settlement mix is most plausible.
 
 #### Layer 2: Payment Authorization & Governance (~$43M startup funding)
 
@@ -317,7 +317,7 @@ Build the "Google of agent services" — a marketplace where agents discover, ev
 | **Fluora** | Early | N/A | MonetizedMCP — only company with payment-integrated agent discovery |
 | **Payman AI** | Early | N/A | Reverse marketplace: agents pay humans for tasks |
 
-**Massive whitespace.** The "app store for agent services" has not been built. Winner-take-all dynamics.
+**Massive whitespace.** The "app store for agent services" has not been built. Winner-take-most dynamics are plausible if network effects consolidate.
 
 #### Layer 6: Compliance & Audit (~$230M+)
 
@@ -432,30 +432,32 @@ WEAKEST MOATS (Avoid Unless Other Factors Compensate)
 
 ## Part VII: What to Watch — The Leading Indicators
 
+Canonical tracker: `../research/milestone-status-tracker.csv` (update status there using the milestone IDs below).
+
 ### Q1 2026 (Now)
-- [ ] FIS launches KYA for bank issuers — first mainstream agent identity framework
-- [ ] UQPAY compliant x402 platform goes live — validates compliance demand
-- [ ] Kite mainnet on Avalanche — proves purpose-built L1 for agents works
-- [ ] x402 organic volume trajectory (excluding memecoin speculation)
+- [ ] [MS-001] FIS launches KYA for bank issuers — first mainstream agent identity framework
+- [ ] [MS-002] UQPAY compliant x402 platform goes live — validates compliance demand
+- [ ] [MS-019] Kite mainnet on Avalanche — proves purpose-built L1 for agents works
+- [ ] [MS-009] x402 organic volume trajectory (excluding memecoin speculation)
 
 ### Q2 2026
-- [ ] Visa TAP moves from pilot to production — agent identity at merchant scale
-- [ ] Stripe ACP expands beyond ChatGPT to Anthropic, Perplexity, others
-- [ ] Mercury OCC bank charter decision — tech-native institution precedent
-- [ ] PayAI dispute resolution launches — first agent-to-agent arbitration
+- [ ] [MS-005] Visa TAP moves from pilot to production — agent identity at merchant scale
+- [ ] [MS-006] Stripe ACP expands beyond ChatGPT to Anthropic, Perplexity, others
+- [ ] [MS-007] Mercury OCC bank charter decision — tech-native institution precedent
+- [ ] [MS-020] PayAI dispute resolution launches — first agent-to-agent arbitration
 
 ### H2 2026
-- [ ] Agent security becomes enterprise procurement requirement
-- [ ] First cross-protocol payment orchestration company emerges
-- [ ] Google UCP Phase 2 with dynamic pricing/negotiation
-- [ ] Consumer willingness surveys show improvement from 33%
-- [ ] Total organic x402 + ACP + AP2 volume crosses $1B annualized
+- [ ] [MS-010] Agent security becomes enterprise procurement requirement
+- [ ] [MS-011] First cross-protocol payment orchestration company emerges
+- [ ] [MS-012] Google UCP Phase 2 with dynamic pricing/negotiation
+- [ ] [MS-021] Consumer willingness surveys show improvement from 33%
+- [ ] [MS-022] Total organic x402 + ACP + AP2 volume crosses $1B annualized
 
 ### 2027
-- [ ] GENIUS Act takes effect (Jan 2027) — stablecoin compliance demand spikes
-- [ ] Agent-to-agent marketplace reaches meaningful transaction volume
-- [ ] First $10B/year in agent-initiated commerce across all protocols
-- [ ] 2-3 dominant agent identity providers emerge
+- [ ] [MS-014] GENIUS Act takes effect (Jan 2027) — stablecoin compliance demand spikes
+- [ ] [MS-023] Agent-to-agent marketplace reaches meaningful transaction volume
+- [ ] [MS-024] First $10B/year in agent-initiated commerce across all protocols
+- [ ] [MS-025] 2-3 dominant agent identity providers emerge
 
 ---
 
@@ -475,11 +477,11 @@ Only 33% of consumers trust agents to make purchases. But enterprises already de
 
 ### 4. Crypto and Fiat Will Coexist (Not Compete)
 
-The market is not "x402 vs. Stripe." Agent-to-agent micropayments will settle on crypto rails (x402/stablecoins) because the economics demand it ($0.001 fees vs. $0.30+ for cards). Agent-to-merchant consumer commerce will settle on fiat rails (Stripe/Visa) because merchants already accept them. The bridge between these two worlds — the payment orchestrator that routes optimally across both — is the massive unfilled opportunity.
+The market is not "x402 vs. Stripe." Agent-to-agent micropayments are likely to over-index to crypto rails (x402/stablecoins) because of fee economics ($0.001 fees vs. $0.30+ for cards). Agent-to-merchant consumer commerce is likely to remain more fiat-heavy (Stripe/Visa) because merchants already accept these rails. The bridge between these two worlds — the payment orchestrator that routes optimally across both — is the massive unfilled opportunity.
 
-### 5. Identity Wins in the End
+### 5. Identity Is a Primary Control Point
 
-Every layer of the stack ultimately depends on answering one question: **"Who is this agent, and can it be trusted?"** Visa TAP, Mastercard Web Bot Auth, Kite AIR, Catena ACK-ID, Descope, Keycard — they're all racing to become the identity standard. Identity is a natural-monopoly layer. Expect 1-2 winners for enterprise identity and 1-2 for financial identity. The winners will capture value from every transaction that flows through the agent economy.
+Every layer of the stack ultimately depends on answering one question: **"Who is this agent, and can it be trusted?"** Visa TAP, Mastercard Web Bot Auth, Kite AIR, Catena ACK-ID, Descope, Keycard — they're all racing to become identity standards. Identity is likely to be an oligopoly with strong concentration, not a guaranteed monopoly. Expect a small number of winners across enterprise and financial identity.
 
 ---
 

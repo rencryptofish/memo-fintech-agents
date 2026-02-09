@@ -1,10 +1,10 @@
-side,label,amount_b
-value_creation,Stripe valuation,106.7
-value_creation,Revolut valuation,75.0
-value_creation,Nubank 2024 revenue,11.5
-value_creation,Chime IPO valuation,18.4
-value_creation,Plaid valuation,6.1
-value_destruction,Klarna valuation drop,38.9
-value_destruction,FTX valuation collapse,32.0
-value_destruction,Wirecard fraud hole,1.9
-value_destruction,Synapse funds affected,0.265
+side,label,amount_b,metric_type,source_id,source_url,source_capture_method,last_verified_utc,confidence,status,notes
+value_creation,Stripe valuation,106.7,valuation,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."
+value_creation,Revolut valuation,75.0,valuation,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."
+value_creation,Nubank 2024 revenue,11.5,revenue,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."
+value_creation,Chime IPO valuation,18.4,valuation,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."
+value_creation,Plaid valuation,6.1,valuation,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."
+value_destruction,Klarna valuation drop,38.9,valuation_drop,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."
+value_destruction,FTX valuation collapse,32.0,valuation_drop,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."
+value_destruction,Wirecard fraud hole,1.9,fraud_gap,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."
+value_destruction,Synapse funds affected,0.265,customer_funds_impacted,fintech_market_analysis_case_outcomes,memos/fintech-market-analysis.md,manual_extraction_from_case_tables,2026-02-09T18:41:00Z,medium,supported,"Case-outcome values are mixed proxies (valuation, revenue, or value loss) and should not be interpreted as homogeneous accounting metrics."

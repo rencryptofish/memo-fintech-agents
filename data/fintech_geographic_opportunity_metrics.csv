@@ -1,10 +1,10 @@
-metric_group,label,value,unit
-share_indicator_pct,North America market share (2024),35.8,percent
-share_indicator_pct,Brazil share of LatAm fintechs,58.7,percent
-share_indicator_pct,Singapore share of ASEAN fintechs,40.0,percent
-india_market_size,India fintech market (2024),111.0,usd_b
-india_market_size,India fintech market (2029),421.0,usd_b
-africa_hubs,Lagos,503.0,active_firms
-africa_hubs,Lagos funding,6.03,usd_b
-africa_hubs,Nairobi,210.0,active_firms
-africa_hubs,Nairobi funding,4.64,usd_b
+metric_group,label,value,unit,source_id,source_url,source_capture_method,last_verified_utc,confidence,status,notes
+share_indicator_pct,North America market share (2024),35.8,percent,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.
+share_indicator_pct,Brazil share of LatAm fintechs,58.7,percent,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.
+share_indicator_pct,Singapore share of ASEAN fintechs,40.0,percent,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.
+india_market_size,India fintech market (2024),111.0,usd_b,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.
+india_market_size,India fintech market (2029),421.0,usd_b,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.
+africa_hubs,Lagos,503.0,active_firms,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.
+africa_hubs,Lagos funding,6.03,usd_b,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.
+africa_hubs,Nairobi,210.0,active_firms,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.
+africa_hubs,Nairobi funding,4.64,usd_b,fintech_market_analysis_geography,memos/fintech-market-analysis.md,manual_extraction_from_memo_tables,2026-02-09T18:41:00Z,medium,supported,Regional indicators extracted from memo section 'Market Landscape & Size' and 'Geographic Founding Patterns'.

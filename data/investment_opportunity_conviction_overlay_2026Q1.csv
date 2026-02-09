@@ -1,0 +1,16 @@
+rank,opportunity,tier,opportunity_score_100,deployment_readiness_100,evidence_confidence_100,composite_conviction_100,composite_formula,notes
+1,Agent Security & Governance,Tier 1,81.8,84,82,82.4,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,High urgency and strong readiness in enterprise security budgets.
+2,Agent Payment Infrastructure (The Intersection),Tier 1,76.3,80,70,76.3,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Strong strategic importance but mixed evidence quality on protocol traction.
+3,Agent Compute & Sandboxing,Tier 1,76.0,78,72,75.9,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Production demand is real and monetization is near-term.
+4,Stablecoin Infrastructure,Tier 1,81.2,82,78,80.9,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Regulatory tailwinds and confirmed strategic M&A support near-term demand.
+5,B2B / CFO Stack,Tier 1,81.2,88,84,83.3,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Strongest current revenue evidence and buyer urgency.
+6,Agent Memory & State Management,Tier 1,76.1,78,74,76.3,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Infrastructure need is clear with improving production readiness.
+7,Agent Identity & Authentication,Tier 2,81.4,60,58,72.5,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Excellent long-term moat profile with still-forming enterprise deployment patterns.
+8,AI-Native Fintech (Vertical AI Workflows),Tier 2,81.3,58,55,71.5,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Strong opportunity size but uneven underwriting-grade evidence across names.
+9,Vertical Agent Leaders (Proven Revenue),Tier 2,75.8,64,60,70.5,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Revenue-proven category but premium entry valuations lower current conviction.
+10,Agent Observability (Datadog for Agents),Tier 2,74.5,70,66,72.1,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Real demand signal with unresolved category consolidation dynamics.
+11,Embedded Finance 2.0 (Post-Synapse),Tier 2,75.4,70,67,72.8,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Clear need but uneven moat quality by operator.
+12,Agent-to-Agent Commerce Infrastructure,Tier 3,76.5,50,45,65.2,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,High upside but market readiness and liability standards remain early.
+13,DeFAI (DeFi x AI Agents),Tier 3,63.0,48,45,56.5,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Speculative dynamics and regulatory uncertainty dominate at this stage.
+14,Agent Wallets & Financial Identity,Tier 3,74.2,52,54,65.6,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Foundational category with unresolved platform concentration risk.
+15,Under-the-Radar Breakout Candidates,Tier 3,71.2,52,50,63.2,0.60*opportunity_score+0.25*deployment_readiness+0.15*evidence_confidence,Interesting pipeline but low confidence dispersion is high across names.

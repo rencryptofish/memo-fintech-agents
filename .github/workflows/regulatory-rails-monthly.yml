@@ -1,0 +1,21 @@
+name: Regulatory Rails Monthly
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 14 1 * *"
+
+jobs:
+  monthly-refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Monthly governance refresh check
+        run: python scripts/check_governance_refresh.py --mode monthly
