@@ -10,6 +10,7 @@ Use this index to navigate the memo set in a structured order.
 
 1. [Investment Committee Memo (Current Stance)](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md)
 2. [Top 15 Investment Opportunities (Cross-Domain Ranking)](investment-opportunities.md)
+3. [Final Synthesis Memo (Agent x Fintech, 2026)](final-memo-agent-fintech-intersection-2026.md)
 
 ## Level 2: Convergence Layer (Fintech x Agents)
 
@@ -27,5 +28,10 @@ Use this index to navigate the memo set in a structured order.
 
 ## Level 4: Reference Appendices
 
-1. [Agent-Fintech Market Map](../research/market-map.md)
-2. [x402 Value Accrual Deep Dive](../x402-value-accrual-deep-dive.md)
+1. [Research Appendix Index](../research/README.md)
+2. [Agent-Fintech Market Map](../research/market-map.md)
+3. [Protocol Scoreboard (2026 Q1)](../research/protocol-scoreboard-2026Q1.md)
+4. [Rails Metrics Pack (2026 Q1)](../research/rails-metrics-pack-2026Q1.md)
+5. [Regulatory Tracker (US, 2026)](../research/regulatory-tracker-us-2026.md)
+6. [M&A Verification Ledger](../research/mna-verification-ledger.md)
+7. [x402 Value Accrual Deep Dive](../x402-value-accrual-deep-dive.md)
