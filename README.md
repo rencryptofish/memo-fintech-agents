@@ -28,7 +28,9 @@ Hierarchy and reading order:
 1. [Research Appendix Index](research/README.md)
 2. [Market Map](research/market-map.md)
 3. [Protocol Scoreboard (2026 Q1)](research/protocol-scoreboard-2026Q1.md)
-4. [M&A Verification Ledger](research/mna-verification-ledger.md)
+4. [Canonical Underwriting Assumptions (2026 Q1)](research/canonical-underwriting-assumptions-2026Q1.md)
+5. [M&A Verification Ledger](research/mna-verification-ledger.md)
+6. [Top-15 Conviction Overlay (2026 Q1)](data/investment_opportunity_conviction_overlay_2026Q1.csv)
 
 ## Charts
 

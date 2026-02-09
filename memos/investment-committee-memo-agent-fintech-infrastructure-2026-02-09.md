@@ -161,4 +161,4 @@ Proceed, but stage capital. Start with a concentrated watchlist and small initia
 
 ---
 
-*Sources: `../data/x402_kpi_canonical.csv`, `../data/x402_organic_share_weekly.csv`, `../research/rails-metrics-pack-2026Q1.md`, `../research/mna-verification-ledger.md`, `../research/protocol-scoreboard-2026Q1.md`, `../research/source-registry.md`, and referenced primary-source links therein.*
+*Sources: `../research/canonical-underwriting-assumptions-2026Q1.md`, `../data/x402_kpi_canonical.csv`, `../data/x402_organic_share_weekly.csv`, `../data/investment_opportunity_conviction_overlay_2026Q1.csv`, `../research/rails-metrics-pack-2026Q1.md`, `../research/mna-verification-ledger.md`, `../research/protocol-scoreboard-2026Q1.md`, `../research/source-registry.md`, and referenced primary-source links therein.*

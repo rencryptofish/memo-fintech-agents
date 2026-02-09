@@ -8,6 +8,7 @@
 - Start Here: [Top-Level Takeaways](00-top-level-takeaways.md)
 - Full Hierarchy: [Memo Index](README.md)
 - Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md), [Top 15 Opportunities](investment-opportunities.md)
+- Canonical Assumptions: [Underwriting Assumptions Pack](../research/canonical-underwriting-assumptions-2026Q1.md)
 - Related: [Agent-Fintech Deep Dive](agent-fintech-intersection-deep-dive.md), [x402 Research Memo](x402-research-memo.md)
 
 ---
