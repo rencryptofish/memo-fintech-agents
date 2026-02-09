@@ -1,207 +1,170 @@
 """
-Generate x402 Charts 7 & 8:
-  Chart 7: Developer Adoption Funnel
-  Chart 8: Buyer-to-Seller Ratio
+Generate Chart 7 (Developer Adoption) and Chart 8 (Buyer/Seller Ratio)
+for the x402 protocol adoption analysis.
+
+Usage: uv run python gen_x402_charts_7_8.py
 """
 
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+import matplotlib.ticker as ticker
+import matplotlib.patches as mpatches
 import numpy as np
 from x402_data import DEVELOPER_METRICS, USER_METRICS
 
 # ---------------------------------------------------------------------------
-# Chart 7: Developer Adoption Funnel
+# Global style
 # ---------------------------------------------------------------------------
+plt.style.use("dark_background")
 
-def chart_7():
-    plt.style.use("dark_background")
+BG = "#1a1a2e"
+GRID_COLOR = "#333355"
+
+
+# =========================================================================
+# CHART 7 -- Developer Adoption Funnel
+# =========================================================================
+
+def build_chart_7():
     fig, ax = plt.subplots(figsize=(16, 9), dpi=150)
-    fig.patch.set_facecolor("#1a1a2e")
-    ax.set_facecolor("#1a1a2e")
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
 
-    # Funnel data (top = largest, bottom = smallest)
+    # Data: ordered from broad interest -> narrow production usage
     labels = [
         "GitHub Stars",
         "GitHub Forks",
-        "Hackathon Submissions",
+        "npm Downloads/wk",
         "Ecosystem Projects",
+        "Infra/Tooling",
         "Live Services",
         "Facilitators",
-        "npm Dependent Projects",
     ]
     values = [
         DEVELOPER_METRICS["github_stars"],           # 5400
         DEVELOPER_METRICS["github_forks"],           # 1000
-        DEVELOPER_METRICS["hackathon_submissions_total"],  # 600
-        DEVELOPER_METRICS["total_ecosystem_projects"],     # 117
-        DEVELOPER_METRICS["live_services_endpoints"],      # 31
-        DEVELOPER_METRICS["facilitator_count"],            # 19
-        DEVELOPER_METRICS["npm_dependent_projects"],       # 19
+        DEVELOPER_METRICS["npm_weekly_downloads_coinbase_x402"],  # 2826
+        DEVELOPER_METRICS["total_ecosystem_projects"],  # 117
+        DEVELOPER_METRICS["infra_tooling_projects"],    # 48
+        DEVELOPER_METRICS["live_services_endpoints"],   # 31
+        DEVELOPER_METRICS["facilitator_count"],         # 19
     ]
 
-    n = len(labels)
-    y_pos = np.arange(n)
+    # Color gradient from bright cyan (broad) to deep purple (narrow)
+    colors = ["#00d4aa", "#00c4b8", "#22b8db", "#4fc3f7", "#7c7cf7", "#a855f7", "#d946ef"]
 
-    # Color gradient: bright cyan at top -> muted teal at bottom
-    colors = []
-    for i in range(n):
-        t = i / (n - 1)  # 0..1
-        r = 0.0 + t * 0.18
-        g = 0.90 - t * 0.45
-        b = 0.95 - t * 0.30
-        a = 1.0 - t * 0.25
-        colors.append((r, g, b, a))
+    bars = ax.barh(labels[::-1], values[::-1], color=colors[::-1], edgecolor="white",
+                   linewidth=0.5, height=0.65, zorder=5)
 
-    bars = ax.barh(y_pos, values, color=colors, edgecolor="white", linewidth=0.4, height=0.65)
+    # Value labels on bars
+    for bar, val in zip(bars, values[::-1]):
+        width = bar.get_width()
+        ax.text(width + max(values) * 0.015, bar.get_y() + bar.get_height() / 2,
+                f"{val:,}", va="center", ha="left", fontsize=14,
+                fontweight="bold", color="white")
 
-    # Value labels on each bar
-    for i, (bar, val) in enumerate(zip(bars, values)):
-        label_x = bar.get_width() + max(values) * 0.015
-        ax.text(
-            label_x, bar.get_y() + bar.get_height() / 2,
-            f"{val:,}",
-            va="center", ha="left",
-            fontsize=14, fontweight="bold", color="white",
-        )
-
-    ax.set_yticks(y_pos)
-    ax.set_yticklabels(labels, fontsize=13, color="white")
-    ax.invert_yaxis()  # largest at top
-
-    ax.set_xlabel("Count", fontsize=12, color="#aaaacc")
-    ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"{x:,.0f}"))
-    ax.tick_params(axis="x", colors="#888899", labelsize=10)
-    ax.grid(axis="x", color="#333355", linewidth=0.5, alpha=0.6)
+    ax.set_title("x402 Developer Adoption Funnel",
+                 fontsize=18, fontweight="bold", color="white", pad=16)
+    ax.set_xlabel("Count", fontsize=13, color="white")
+    ax.tick_params(colors="white", labelsize=12)
+    ax.grid(True, axis="x", color=GRID_COLOR, linewidth=0.5, alpha=0.7)
     ax.set_axisbelow(True)
+    for spine in ax.spines.values():
+        spine.set_color(GRID_COLOR)
 
-    # Remove top/right spines
-    for spine in ["top", "right"]:
-        ax.spines[spine].set_visible(False)
-    ax.spines["bottom"].set_color("#555577")
-    ax.spines["left"].set_color("#555577")
+    # Annotate the funnel story
+    ax.annotate("Broad interest\n(awareness)",
+                xy=(5400, 6), xytext=(5400 + 300, 6.4),
+                fontsize=10, color="#00d4aa", fontweight="bold",
+                arrowprops=dict(arrowstyle="->", color="#00d4aa", lw=1.2))
+    ax.annotate("Narrow production\nusage (traction)",
+                xy=(19, 0), xytext=(1200, -0.1),
+                fontsize=10, color="#d946ef", fontweight="bold",
+                arrowprops=dict(arrowstyle="->", color="#d946ef", lw=1.2))
 
-    # Title & subtitle
-    fig.suptitle(
-        "x402 Developer Adoption Funnel",
-        fontsize=22, fontweight="bold", color="white",
-        x=0.5, y=0.96,
-    )
-    ax.set_title(
-        "Broad interest (5.4K stars) but narrow production usage (31 live services)",
-        fontsize=13, color="#aaaacc", pad=14,
-    )
+    # Conversion ratio callout
+    ax.text(0.97, 0.50,
+            "Funnel conversion:\n5,400 stars -> 31 live services\n= 0.6% to production",
+            transform=ax.transAxes, fontsize=11, color="white",
+            ha="right", va="center",
+            bbox=dict(boxstyle="round,pad=0.5", fc=BG, ec="#4fc3f7", alpha=0.9))
 
-    # Add a conversion annotation
-    conversion = values[-1] / values[0] * 100
-    ax.annotate(
-        f"Top-to-bottom conversion: {conversion:.1f}%",
-        xy=(0.98, 0.04), xycoords="axes fraction",
-        ha="right", va="bottom",
-        fontsize=11, color="#66ddaa",
-        bbox=dict(boxstyle="round,pad=0.4", fc="#1a1a2e", ec="#66ddaa", lw=1),
-    )
-
-    plt.tight_layout(rect=[0, 0, 1, 0.93])
-    fig.savefig("charts/x402_07_developer_adoption.png", facecolor=fig.get_facecolor(), bbox_inches="tight")
+    fig.tight_layout()
+    fig.savefig("/Users/cat/memo-fintech-agents/charts/x402_07_developer_adoption.png",
+                facecolor=fig.get_facecolor(), edgecolor="none")
     plt.close(fig)
     print("Saved charts/x402_07_developer_adoption.png")
 
 
-# ---------------------------------------------------------------------------
-# Chart 8: Buyer-to-Seller Ratio
-# ---------------------------------------------------------------------------
+# =========================================================================
+# CHART 8 -- Buyer/Seller Ratio
+# =========================================================================
 
-def chart_8():
-    plt.style.use("dark_background")
+def build_chart_8():
     fig, ax = plt.subplots(figsize=(16, 9), dpi=150)
-    fig.patch.set_facecolor("#1a1a2e")
-    ax.set_facecolor("#1a1a2e")
-    ax.set_xlim(0, 16)
-    ax.set_ylim(0, 9)
-    ax.set_aspect("equal")
-    ax.axis("off")
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
 
-    buyers = int(USER_METRICS.loc[USER_METRICS["date"] == "2025-10-26", "buyers"].values[0])
-    sellers = int(USER_METRICS.loc[USER_METRICS["date"] == "2025-10-26", "sellers"].values[0])
-    ratio = buyers / sellers  # ~52.7
+    # Latest data point: Oct 26 2025
+    row = USER_METRICS.iloc[-1]
+    buyers = int(row["buyers"])    # 74,000
+    sellers = int(row["sellers"])  # 1,405
+    ratio = buyers / sellers       # ~52.7
 
-    # Proportional circles: area proportional to count
-    # buyer area / seller area = 74000 / 1405 ~ 52.7
-    # radius ratio = sqrt(52.7) ~ 7.26
-    max_radius = 3.2  # buyer circle radius
-    seller_radius = max_radius / np.sqrt(ratio)
+    # Proportional area circles
+    # Area proportional to count; radius ~ sqrt(count)
+    max_r = 3.5
+    buyer_r = max_r
+    seller_r = max_r * np.sqrt(sellers / buyers)
 
-    buyer_color = "#3b82f6"
-    seller_color = "#f59e0b"
+    buyer_circle = plt.Circle((5.5, 5), buyer_r, color="#4fc3f7", alpha=0.85, zorder=5)
+    seller_circle = plt.Circle((12.5, 5), seller_r, color="#ff6b6b", alpha=0.85, zorder=5)
 
-    # Position circles
-    buyer_cx, buyer_cy = 5.0, 4.2
-    seller_cx, seller_cy = 12.2, 4.2
-
-    # Draw buyer circle
-    buyer_circle = plt.Circle(
-        (buyer_cx, buyer_cy), max_radius,
-        fc=buyer_color, ec="white", linewidth=1.5, alpha=0.85,
-    )
     ax.add_patch(buyer_circle)
-
-    # Draw seller circle
-    seller_circle = plt.Circle(
-        (seller_cx, seller_cy), seller_radius,
-        fc=seller_color, ec="white", linewidth=1.5, alpha=0.85,
-    )
     ax.add_patch(seller_circle)
 
     # Labels inside/near circles
-    ax.text(buyer_cx, buyer_cy + 0.3, "BUYERS", ha="center", va="center",
-            fontsize=18, fontweight="bold", color="white")
-    ax.text(buyer_cx, buyer_cy - 0.4, f"{buyers:,}", ha="center", va="center",
-            fontsize=28, fontweight="bold", color="white")
+    ax.text(5.5, 5, f"{buyers:,}\nBuyers", ha="center", va="center",
+            fontsize=22, fontweight="bold", color="white", zorder=10)
+    ax.text(12.5, 5, f"{sellers:,}\nSellers", ha="center", va="center",
+            fontsize=14, fontweight="bold", color="white", zorder=10)
 
-    ax.text(seller_cx, seller_cy + seller_radius + 0.55, "SELLERS", ha="center", va="center",
-            fontsize=14, fontweight="bold", color=seller_color)
-    ax.text(seller_cx, seller_cy + seller_radius + 1.1, f"{sellers:,}", ha="center", va="center",
-            fontsize=18, fontweight="bold", color=seller_color)
+    # Giant ratio number
+    ax.text(9.0, 8.8, f"{ratio:.0f}:1", ha="center", va="center",
+            fontsize=64, fontweight="bold", color="#00d4aa", zorder=10)
+    ax.text(9.0, 7.7, "Buyer-to-Seller Ratio", ha="center", va="center",
+            fontsize=16, color="white", zorder=10)
 
-    # Central ratio stat
-    ratio_cx = (buyer_cx + max_radius + seller_cx - seller_radius) / 2
-    ratio_cy = buyer_cy
-    ax.text(ratio_cx, ratio_cy + 0.25, "53:1", ha="center", va="center",
-            fontsize=52, fontweight="bold", color="white",
-            bbox=dict(boxstyle="round,pad=0.3", fc="#1a1a2e", ec="#888899", lw=1.5))
-    ax.text(ratio_cx, ratio_cy - 1.0, "buyer : seller", ha="center", va="center",
-            fontsize=14, color="#aaaacc")
+    # Arrow connecting them
+    ax.annotate("", xy=(12.5 - seller_r - 0.3, 5), xytext=(5.5 + buyer_r + 0.3, 5),
+                arrowprops=dict(arrowstyle="->", color="#00d4aa", lw=2.5))
 
-    # Annotation: sellers have pricing power
-    ax.text(8.0, 0.7,
-            "Sellers have extreme pricing power -- demand outstrips supply by 53x",
-            ha="center", va="center", fontsize=13, color="#f59e0b", style="italic")
+    # Insight callout
+    ax.text(9.0, 1.5,
+            "Massive demand surplus: sellers have pricing power.\n"
+            "70,000 buyers added in just 3 days (Oct 23-26, 2025).",
+            ha="center", va="center", fontsize=12, color="#cccccc",
+            bbox=dict(boxstyle="round,pad=0.6", fc=BG, ec=GRID_COLOR, alpha=0.9))
 
-    # Title & subtitle
-    fig.suptitle(
-        "x402 Buyer-to-Seller Ratio: Sellers Have Pricing Power",
-        fontsize=22, fontweight="bold", color="white",
-        x=0.5, y=0.97,
-    )
-    fig.text(
-        0.5, 0.915,
-        "74,000 buyers competing for 1,405 sellers (Oct 26, 2025)",
-        ha="center", fontsize=13, color="#aaaacc",
-    )
+    ax.set_xlim(0, 18)
+    ax.set_ylim(0, 10.5)
+    ax.set_aspect("equal")
+    ax.axis("off")
 
-    # Area proportionality note
-    fig.text(
-        0.5, 0.03,
-        "Circle area proportional to count",
-        ha="center", fontsize=10, color="#666688",
-    )
+    ax.set_title("x402 Buyer vs. Seller Imbalance",
+                 fontsize=18, fontweight="bold", color="white", pad=16)
 
-    fig.savefig("charts/x402_08_buyer_seller_ratio.png", facecolor=fig.get_facecolor(), bbox_inches="tight")
+    fig.tight_layout()
+    fig.savefig("/Users/cat/memo-fintech-agents/charts/x402_08_buyer_seller_ratio.png",
+                facecolor=fig.get_facecolor(), edgecolor="none")
     plt.close(fig)
     print("Saved charts/x402_08_buyer_seller_ratio.png")
 
 
+# =========================================================================
+# Main
+# =========================================================================
+
 if __name__ == "__main__":
-    chart_7()
-    chart_8()
-    print("Done: Charts 7 & 8 generated.")
+    build_chart_7()
+    build_chart_8()
+    print("Done -- both charts generated.")
