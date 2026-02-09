@@ -9,6 +9,16 @@
 - Decision Layer: [IC Memo](investment-committee-memo-agent-fintech-infrastructure-2026-02-09.md), [Top 15 Opportunities](investment-opportunities.md)
 - Related: [Fintech Market Analysis](fintech-market-analysis.md), [Fintech x Agents Intersection](fintech-agents-intersection.md)
 
+## Key Charts
+
+![Fintech Funding by Category](../charts/fintech/fintech_funding_by_category.png)
+
+![Fintech Funding vs Revenue Trajectory](../charts/fintech/fintech_funding_vs_revenue.png)
+
+![Fintech Funding by Stage Over Time](../charts/fintech/fintech_funding_by_stage_over_time.png)
+
+![Fintech Stage Mix by Category 2025](../charts/fintech/fintech_stage_mix_by_category_2025.png)
+
 ---
 
 ## 1. AI-Native Fintech Startups
