@@ -122,6 +122,8 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - Always rewrite the memo after receiving all agent findings — the first draft compiled before all agents finish will have stale/incomplete data
 - AI agent market data changes rapidly — always search for the latest numbers rather than relying on cached knowledge
 - Valuation and ARR figures can differ significantly across sources — note the source and date for each data point
+- For high-impact M&A claims (acquisitions, pending deals, rumored bids), require at least one primary source and one corroborating source before elevating to "signal" status in synthesis memos.
+- Treat rumor-based deal narratives as unverified until confirmed; never let unverified M&A claims drive top-level recommendations.
 
 ### Memo Consistency & Canonical Facts
 - Maintain a canonical fact table for cross-memo anchor data (protocol volumes, company ARR, key funding totals, protocol launch dates, and partner attributions) before drafting or revising multiple memos.
@@ -130,6 +132,9 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - Keep partner attribution stable for TAP (`Visa + Akamai`) and avoid alternate pairings in derivative memos unless explicitly sourced and date-scoped.
 - Normalize repeated company metrics before publishing (for example, `Salesforce Agentforce` and `Noma Security`) to prevent internal contradictions across synthesis docs.
 - Run a final repo-wide consistency grep for stale values/phrases before commit (old numbers, outdated ARR/customer counts, alternate partner attributions).
+- When one metric has multiple accepted baselines (for example, fintech VC 2024 at `40.8` vs `43.4`), state both and show implied deltas explicitly rather than presenting a single "true" growth rate.
+- Keep cumulative and annualized values strictly separate in tables/headlines (for example, do not mix "cumulative volume" rows with "annualized" labels).
+- Run quick arithmetic sanity checks on derived tables (percent-of-payment, implied averages, YoY math) before writing takeaways.
 
 ### Fintech Domain Insights
 - The recurring fintech pattern: crisis/platform shift → infrastructure companies → application companies → mania → correction → survivors become platforms → next cycle. We are at the AI platform shift stage.
@@ -150,6 +155,9 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Outcome split modeling works best as two artifacts**: (1) `data/fintech_cohort_outcome_split_estimated.csv` for cohort pools and assumed winner/loser shares, and (2) `data/fintech_cohort_outcome_driver_anchors.csv` for explicit company/category funding anchors.
 - **Keep estimated and observed values visibly separate.** Include a `method` field (`estimated_split`) and avoid blending anchor evidence with rolled-up estimates in the same table.
 - **Use a single generator script for sync between data and visual** (`scripts/generate_fintech_cohort_outcome_split.py`) so CSVs and `charts/fintech/fintech_cohort_outcome_split_estimated.png` cannot drift.
+- **Cohort type classification should be first-class data.** Maintain `data/fintech_cohort_company_type_classification.csv` with one row per cohort covering `company_type`, `type_group`, examples, and profile narrative.
+- **Type-group composition needs explicit assumptions in data form.** Store mix assumptions in `data/fintech_cohort_type_group_mix_estimated.csv` with a separate `method` tag (`estimated_mix`) and generated funding amounts.
+- **When adding stacked composition charts, enforce 100% cohort mix checks before publishing.** This prevents silent drift between narrative taxonomy and plotted totals in `charts/fintech/fintech_cohort_type_group_mix_estimated.png`.
 
 ### AI Agent Domain Insights
 - AI agent market: ~$7-8B (2025), 44-46% CAGR to $47-52B by 2030. Broader estimates reach $200B by early 2030s.
@@ -223,3 +231,4 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Replace unresolved placeholders with explicit assumptions.** Avoid `TBD/???` in production memos/charts; use scenario ranges (for example, `2-8%`) and record the assumption basis inline.
 - **Never hardcode machine-specific paths in scripts.** Use `Path(__file__).resolve()` + repo-relative output folders so scripts run on any machine/clone.
 - **Keep generated artifacts in a single canonical directory.** Writing the same chart set to both `charts/` and `charts/x402/` creates drift; standardize outputs under the domain folder only.
+- **Use a hierarchical memo system with explicit navigation.** Keep a top-level memo (`memos/00-top-level-takeaways.md`), a hierarchy index (`memos/README.md`), and a short "Memo Navigation" block near the top of every core memo.
