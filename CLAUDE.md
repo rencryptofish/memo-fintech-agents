@@ -94,3 +94,10 @@ This repository contains research memos on fintech, AI agents, and the intersect
 - **Key company traction benchmarks (Feb 2026):** Harvey $195M ARR (3.9x YoY), Sierra $100M ARR in 7 quarters, Cursor $1B+ ARR, Ramp $1B annualized, Noma Security 1,300% ARR growth, E2B 88% Fortune 100, Mem0 186M API calls/quarter, Crossmint 1,100% subscription growth.
 - **Biggest whitespace identified:** Cross-protocol payment orchestration abstracting across x402/ACP/AP2/TAP. No company has built this. Could be the highest-value infrastructure play in the entire agent economy.
 - **Timing risk is the primary risk, not directional risk.** The direction (agents will transact autonomously and need financial infrastructure) is clear. Whether the market develops in 2026-2027 or 2028-2030 determines which companies survive. Capital-efficient companies that can survive either timeline are the best investments.
+
+### Visualization & Tooling Learnings
+- Use `uv run --with matplotlib --with numpy script.py` for chart generation — avoids managing venvs or installing packages permanently.
+- **Matplotlib color gotcha:** Use tuples `(1, 1, 1, 0.9)` for RGBA colors, NOT CSS-style `rgba(255,255,255,0.9)` strings. Matplotlib only accepts 0-1 float tuples, hex strings, or named colors.
+- For funding data by category, KPMG Pulse of Fintech has the best sector-level breakdowns (2019-2024 confirmed figures). For earlier years (2015-2018), derive from percentage shares. Always attach confidence ratings (H/M/L) per datapoint.
+- **Three complementary chart types for funding data:** (1) Stacked bar — shows composition and total over time, (2) Market map / treemap — shows current landscape with key players, (3) Heatmap — shows exact values + peak identification. Together they tell the full story.
+- Agent teams work best when the research agent also produces the structured data file (with sources and confidence), and the leader builds the visualization from it. Separation of data sourcing from visualization prevents hallucinated numbers.
