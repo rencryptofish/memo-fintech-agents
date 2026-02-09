@@ -68,9 +68,15 @@ Use these canonical files for committee updates before changing headline metrics
 ## Base-Rate Evidence (Added Feb 9, 2026)
 
 1. Market size is large enough for control-point winners: global payments generated ~$2.5T revenue on ~$2.0 quadrillion flows in 2024.
-2. Rail migration is slow even when infrastructure is live: ACH still processed $93T in 2025; RTP needed years to pass $1T cumulative value; FedNow had 1,192 institutions but only 1.5M transactions in 2024.
+2. Rail migration still shows coexistence economics: ACH processed 33.6B payments worth $86.2T in 2025; RTP surpassed $1T cumulative value in 2025 (with 125M payments and $405B value in Q4 2025); FedNow processed 8.4M payments worth $853B in 2025.
 3. Existing friction and fraud are already large: 70.19% checkout abandonment, $33.41B global card fraud losses, and $12.5B reported US consumer fraud losses.
-4. Stablecoins are now material but still compliance-sensitive: $300B+ supply and ~$46T raw (~$9T adjusted) annualized transfer volume, with persistent illicit-risk monitoring requirements.
+4. Stablecoins are now material but still compliance-sensitive: roughly $274B circulating supply, >$35T raw annual transfer volume, and >$10T adjusted annualized economic volume in 2025, with persistent illicit-risk monitoring requirements.
+
+## External Challenge-Test Deltas (Feb 2026)
+
+1. US stablecoin policy moved from "if" to "how": the GENIUS Act is enacted (Public Law 119-27), so underwriting should shift from binary policy risk to implementation and compliance-cost timing risk.
+2. Agent productivity upside should be haircut in early deployment models: controlled evidence from experienced OSS developers showed negative net productivity under real workflows, reinforcing the need for evaluation and human-escalation budget assumptions.
+3. Concentration risk is non-trivial even in "open" crypto rails: supply and volume concentration in a small set of issuers/chains increases platform and counterparty correlation risk.
 
 ## Probability-Weighted Outcomes to 2030
 

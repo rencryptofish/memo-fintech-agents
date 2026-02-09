@@ -213,7 +213,36 @@ Update scenario weights quarterly based on these indicators:
 
 ---
 
-## 8. Weighted Startup Opportunity Matrix (0-100)
+## 8. External Challenge-Test: Additional Mental Models (Added Feb 2026)
+
+The core thesis remains directionally right, but external evidence adds several high-signal models that should be incorporated into underwriting:
+
+1. **Flow Quality > Flow Quantity**
+   - Raw transaction volume overstates true economic adoption.
+   - Stablecoin data now needs `raw`, `adjusted`, and `velocity/turnover` views by default.
+2. **Compliance Fixed-Cost Scale Curve**
+   - Regulation is not just a moat; it creates a minimum efficient scale.
+   - As disclosure/audit requirements increase, smaller issuers and thin middleware face margin compression faster than integrated operators.
+3. **Concentration Risk Behind "Open" Rails**
+   - Stablecoin supply and activity concentration can recreate platform risk even in nominally open systems.
+   - Cross-rail strategy must include issuer and chain concentration limits, not only protocol coverage.
+4. **Adversarial Co-Evolution**
+   - Fraud and abuse industrialize alongside automation.
+   - Policy and identity controls should be modeled as recurring spend categories, not one-time compliance setup.
+5. **Capability-Production Gap**
+   - Benchmark gains and production ROI can diverge materially.
+   - Agent deployment models should assume an evaluation tax (monitoring, guardrails, human escalation) before net productivity appears.
+6. **Policy Clock vs Product Clock**
+   - "Law enacted" and "operationally de-risked" are separate milestones.
+   - Investment pacing should follow implementation milestones (rulemaking, supervision, enforcement norms), not statute signatures alone.
+7. **Coexistence Acceleration**
+   - Legacy rails can keep growing while new rails grow faster; replacement framing is often wrong.
+   - Routing/orchestration theses should be built on coexistence economics, not displacement assumptions.
+8. **Access Toll Capture**
+   - In machine-native commerce, value can shift to access-control points (API gates, crawl/payment interfaces), not only settlement endpoints.
+   - Discovery and policy-enforced access may become monetization layers adjacent to payments.
+
+## 9. Weighted Startup Opportunity Matrix (0-100)
 
 Method: weighted score on six dimensions:
 
@@ -247,7 +276,33 @@ Interpretation:
 
 ---
 
+## 10. Updated Open Questions (External Challenge-Test)
+
+1. How much of adjusted stablecoin volume is enterprise settlement versus exchange and treasury rebalancing?
+2. What issuer/chain concentration limits should be hard-coded into portfolio risk policy?
+3. Which compliance controls become mandatory under US stablecoin rule implementation, and on what timeline?
+4. What is the true net productivity delta for agent deployments after including evaluation and exception-handling overhead?
+5. Are RTP/FedNow growth rates converging to coexistence equilibrium or signaling a near-term routing inflection?
+6. Which "paywalled access" control points in agent traffic become durable revenue pools versus temporary protocol experiments?
+
 ## Bottom Line
 
 The end state is most likely **hybrid and layered**, with value captured by entities that own trust, policy, routing, and workflow context.  
 Path dependence means small early default decisions (SDKs, procurement standards, regulatory templates) can lock in multi-year market structure, so probability updates should be treated as an ongoing process, not a one-time forecast.
+
+---
+
+### External Source Refresh (Feb 2026)
+
+1. BIS Annual Economic Report 2025: https://www.bis.org/publ/arpdf/ar2025e3.htm
+2. BIS Bulletin on stablecoins and monetary system tests: https://www.bis.org/publ/bisbull97.htm
+3. Nacha ACH 2025 records: https://www.nacha.org/news/new-ach-network-records-set-2025
+4. The Clearing House RTP 2025 milestone update: https://www.theclearinghouse.org/payment-systems/articles/2026/01/rtp-growth-accelerates-in-2025-as-the-network-surpasses-1-trillion-in-cumulative-payments
+5. FedNow volume/value statistics (Q4 2025): https://www.frbservices.org/resources/financial-services/fednow/volume-value-stats
+6. Chainalysis 2025 crypto crime data reference: https://www.chainalysis.com/blog/2025-crypto-crime-report-introduction/
+7. Visa stablecoin strategy and market structure update: https://usa.visa.com/solutions/crypto/stablecoin-payments.html
+8. Stripe Sessions 2025 letter (agentic commerce themes): https://stripe.com/sessions/2025/highlights
+9. METR randomized trial on AI coding productivity: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-oss-dev-study/
+10. NIST AI RMF Generative AI Profile: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
+11. OWASP Top 10 for LLM Applications (2025): https://owasp.org/www-project-top-10-for-large-language-model-applications/
+12. ISO/IEC 42001 AI management systems standard: https://www.iso.org/standard/81230.html

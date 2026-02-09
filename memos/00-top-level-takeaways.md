@@ -13,6 +13,7 @@
 6. **Facilitator-only payment models are vulnerable** without compliance/policy/workflow differentiation.
 7. The strongest open whitespace remains **cross-protocol orchestration** and **agent service discovery**.
 8. Data quality varies across the corpus; several headline metrics are directional and require diligence before hard underwriting.
+9. Use the canonical assumptions layer before requoting metrics: [Underwriting Assumptions Pack](../research/canonical-underwriting-assumptions-2026Q1.md).
 
 ## Visual Dashboard
 

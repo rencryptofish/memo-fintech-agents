@@ -280,3 +280,10 @@ Most scripts run with `uv run python scripts/<script>.py` (deps declared in `pyp
 - **Resolve legal status from dual primary anchors when possible.** For major regulatory claims (for example GENIUS), pair legislative status (Congress bill page / public law) with executive signing confirmation (White House release) before marking a claim high confidence.
 - **Separate “law enacted” from “implementation complete.”** A statute being signed does not remove rulemaking risk; track agency NPR/comment/finalization milestones separately in regulatory trackers.
 - **Mark unresolved claims explicitly, not implicitly.** If a claim is rumor-only, conflicting, or method-dependent, encode that in structured files (`status`, `confidence`, `last_verified`) so downstream memo text cannot silently promote weak evidence to fact.
+
+### Decision-Readiness Learnings (Feb 9, 2026)
+- **Narrative conviction rankings need a machine-readable overlay to stay auditable.** Add a maintained score artifact (for example `data/investment_opportunity_conviction_overlay_2026Q1.csv`) with explicit formula, readiness, and evidence-confidence factors.
+- **Use a single canonical assumptions layer for all headline requotes.** Centralize definitions and confidence in one pack (`research/canonical-underwriting-assumptions-2026Q1.md`) and require memo updates to flow through it.
+- **Separate market attractiveness from deployment readiness.** High theoretical opportunity scores should still be haircut for readiness/evidence quality before assigning Tier 1 capital.
+- **IC memos should include executable portfolio parameters, not only thesis.** Add sleeve size, tranche gates, position limits, reserve policy, and protocol concentration caps directly in the memo to make decisions implementation-ready.
+- **Milestones should have stable IDs and a tracker, not prose-only checklists.** Tie watch items to `MS-###` keys and maintain status in one CSV so cross-memo updates cannot drift.

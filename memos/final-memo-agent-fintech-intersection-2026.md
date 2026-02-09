@@ -125,6 +125,43 @@ Build where customers must buy, not where developers can easily copy.
 
 ---
 
+## Startup and Protocol Table by Promising Area
+
+`Note:` YoY values are included only where explicitly reported in this repo. For newly launched protocols and early startups, YoY is often not yet disclosed.
+
+| Promising Area | Company / Protocol | Usage Metric (from repo) | YoY Growth Metric | Funds Raised |
+|---|---|---|---|---|
+| Compliance + Audit Infrastructure | Sardine | 300+ enterprise customers | 130% ARR growth (2024) | $145M total |
+| Compliance + Audit Infrastructure | Duna | 10.6x faster onboarding (KYB/KYC/AML) | N/A disclosed | EUR 30M Series A (~$32M) |
+| Compliance + Audit Infrastructure | Vouched | $10M+ ARR; KnowThat.ai reputation directory live | N/A disclosed | $22M Series A |
+| Compliance + Audit Infrastructure | UQPAY | First commercial-grade compliant x402 platform (launched Feb 8, 2026) | N/A disclosed | N/A disclosed |
+| Vertical Agentic Finance Workflows (CFO/AP/AR/Treasury) | Ramp | $1B annualized revenue (Aug 2025) | N/A disclosed | $1.6B+ raised |
+| Vertical Agentic Finance Workflows (CFO/AP/AR/Treasury) | Mercury | $650M annualized revenue; 200K+ business customers | +30% revenue (2025 vs 2024) | $300M Series C |
+| Vertical Agentic Finance Workflows (CFO/AP/AR/Treasury) | Truewind | Used by top accounting firms; close automation adoption | 4x revenue growth YoY | $17.5M |
+| Vertical Agentic Finance Workflows (CFO/AP/AR/Treasury) | FurtherAI | Processing billions in premiums annually | N/A disclosed (seed-to-A in 6 months) | $30M total |
+| Agent Identity + Authorization (KYA) | Descope | Agentic Identity Hub 2.0 in market (Frost NHI leader mention) | N/A disclosed | $88M total |
+| Agent Identity + Authorization (KYA) | Keycard | Agent-specific cryptographic token controls live | N/A disclosed | $38M |
+| Agent Identity + Authorization (KYA) | Composio | 100K+ developers, 200+ paying companies, 3,000+ integrations | N/A disclosed | $29M ($25M Series A) |
+| Agent Identity + Authorization (KYA) | Kite (AIR) | Programmable identity for agents (financial + auth workflows) | N/A disclosed | $33M Series A |
+| Agent Identity + Authorization (KYA) | Catena Labs (ACK-ID) | ACK-ID and Agent Commerce Kit released | N/A disclosed | $18M seed |
+| Cross-Protocol / Cross-Rail Orchestration | x402 | 75.41M tx; $24.24M volume; 94.06K buyers; 22K sellers (Feb 9, 2026) | N/A YoY (launched 2025) | Protocol (no startup raise) |
+| Cross-Protocol / Cross-Rail Orchestration | ACP (Stripe + OpenAI) | Live in ChatGPT; 10+ agent platforms; Shopify 1M+ merchant channel | N/A disclosed | Protocol / incumbent-funded |
+| Cross-Protocol / Cross-Rail Orchestration | AP2 (Google) | 60+ partners | N/A disclosed | Protocol / incumbent-funded |
+| Cross-Protocol / Cross-Rail Orchestration | TAP (Visa + Akamai) | 100+ partners; 30+ sandbox builders; 20+ integrations | N/A disclosed | Protocol / incumbent-funded |
+| Discovery + Reputation for Agent Services | Fluora | MonetizedMCP marketplace live (agent discovery + payment flow) | N/A disclosed | N/A disclosed |
+| Discovery + Reputation for Agent Services | Payman AI | Reverse marketplace model live in early stage | N/A disclosed | N/A disclosed |
+| Discovery + Reputation for Agent Services | x402 Bazaar | Open service directory live | N/A disclosed | N/A (ecosystem directory) |
+| Dispute Resolution + Recovery | PayAI | Largest third-party x402 facilitator; 10M+ cumulative tx; ~15% daily share | N/A disclosed | Token-based / not disclosed |
+| Dispute Resolution + Recovery | PayPal Agent Ready | Millions of merchants enabled; buyer-protection layer | N/A disclosed | Product line under PayPal |
+
+### Readthrough of the table
+
+1. The strongest *reported* YoY growth signals are concentrated in compliance and vertical workflow players (Sardine, Truewind, Mercury).
+2. Identity, orchestration, discovery, and dispute layers are strategically promising but still early in public KPI disclosure.
+3. For orchestration in particular, protocol readiness is ahead of startup category formation; the memo's "no dominant startup yet" conclusion still holds.
+
+---
+
 ## The 3 Strongest Startup Playbooks (2026-2027)
 
 ### 1) Compliance and Policy Control Plane for Agent Transactions
